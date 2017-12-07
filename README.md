@@ -17,10 +17,10 @@ SOFTWARE REQUIREMENTS
 
 Perl EXTENTIONS
 ==============================
-Statistics::TTest
-Statistics::DependantTTest
-Statistics::Distributions
-Statistics::R
+  * Statistics::TTest
+  * Statistics::DependantTTest
+  * Statistics::Distributions
+  * Statistics::R
 
 LIMITATIONS
 ===========
