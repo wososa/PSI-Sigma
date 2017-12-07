@@ -1,4 +1,7 @@
-# The New PSI index
-Traditionally, the PSI index is denoted as (a+b)/(a+b+2c), where a and b stand for the number of splice-junction reads connecting the alternative exon to the upstream and downstream constitutive exons, respectively (Barbosa-Morais et al. 2012). c stands for the number of junction reads connecting the two constitutive exons. We modified the PSI index as follows:
+The New PSI index
+=================
+Previous single-exon PSI approaches were designed for simple splicing events with only one alternative exon, but they can be ambiguous in the case of mutually exclusive exons, multi-exon skipping, and more complex events. The new PSI index is flexible, can incoporate novel junctions, and can compute PSI values of individual exons in complex splicing events.
+
+
 
 
