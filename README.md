@@ -9,10 +9,10 @@ Kuan-Ting (Woody) Lin, klin@cshl.edu
 MANUAL
 ======
 
-HARDWARE/SOFTWARE REQUIREMENTS
+SOFTWARE REQUIREMENTS
 ==============================
-  * x86-64 compatible processors
-  * 64 bit Linux or Mac OS X
+  * An alignment file (.bam) from splice-aware alignment tools (e.g. https://github.com/alexdobin/STAR, https://ccb.jhu.edu/software/hisat2/index.shtml)
+  * Perl
 
 LIMITATIONS
 ===========
