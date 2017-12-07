@@ -13,14 +13,12 @@ SOFTWARE REQUIREMENTS
 ==============================
   * Alignment files (.bam) from splice-aware alignment tools (e.g., STAR: https://github.com/alexdobin/STAR)
   * Perl (https://www.perl.org/get.html)
-  * R
 
 Perl EXTENTIONS
 ==============================
   * Statistics::TTest
   * Statistics::DependantTTest
   * Statistics::Distributions
-  * Statistics::R
 
 LIMITATIONS
 ===========
