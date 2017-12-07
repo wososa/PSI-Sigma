@@ -11,9 +11,7 @@ MANUAL
 
 SOFTWARE REQUIREMENTS
 ==============================
-  * Alignment files (.bam) from splice-aware alignment tools
-  STAR: https://github.com/alexdobin/STAR
-  HISAT2: https://ccb.jhu.edu/software/hisat2/index.shtml
+  * Alignment files (.bam) from splice-aware alignment tools (e.g., STAR: https://github.com/alexdobin/STAR)
   * Perl
 
 LIMITATIONS
