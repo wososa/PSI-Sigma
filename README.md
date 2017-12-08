@@ -9,6 +9,10 @@ Kuan-Ting (Woody) Lin, klin@cshl.edu
 MANUAL
 ======
 
+Performance
+==============
+
+
 SOFTWARE REQUIREMENTS
 ==============================
   * Alignment files (.bam) from splice-aware alignment tools (e.g., STAR: https://github.com/alexdobin/STAR)
@@ -16,9 +20,9 @@ SOFTWARE REQUIREMENTS
 
 Perl EXTENTIONS
 ==============================
-  * Statistics::TTest
-  * Statistics::DependantTTest
-  * Statistics::Distributions
+  * PDL::LiteF
+  * PDL::Stats
+  * Statistics::Multtest
 
 LIMITATIONS
 ===========
