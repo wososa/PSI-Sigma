@@ -28,6 +28,7 @@ Linux, Mac and "Linux Bash Shell on Windows"
 -----
 
 ```
+# Install Per extentions
 sudo cpan
 o conf urllist ftp://cpan.hexten.net/ ftp://mirrors.rit.edu/CPAN/ http://mirror.nyi.net/CPAN/
 o conf commit
