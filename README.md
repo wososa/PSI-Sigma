@@ -29,7 +29,7 @@ Linux, Mac and "Linux Bash Shell on Windows"
 
 ```
 # Install Perl extentions
-sudo cpan App::cpanminus
+cpan App::cpanminus
 cpanm PDL::LiteF
 cpanm Statistics::Multtest
 
