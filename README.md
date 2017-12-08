@@ -27,9 +27,9 @@ Perl EXTENTIONS
 
 Linux, Mac and "Linux Bash Shell on Windows"
 -----
-Install extentions:
+Install Perl extentions:
 ```
-# 1. Install Perl extentions
+# 1. Install cpanm
 cpan App::cpanminus
 cpanm PDL::LiteF
 cpanm PDL::Stats
