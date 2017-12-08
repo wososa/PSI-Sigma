@@ -21,6 +21,7 @@ SOFTWARE REQUIREMENTS
 Perl EXTENTIONS
 ==============================
   * PDL::LiteF
+  * PDL::Stats
 
 Linux, Mac and "Linux Bash Shell on Windows"
 -----
@@ -29,12 +30,14 @@ Linux, Mac and "Linux Bash Shell on Windows"
 # Install Perl extentions
 cpan App::cpanminus
 cpanm PDL::LiteF
+cpanm PDL::Stats
 
 #Alternatively,
 cpan
 o conf urllist ftp://cpan.hexten.net/ ftp://mirrors.rit.edu/CPAN/ http://mirror.nyi.net/CPAN/
 o conf commit
 install PDL::LiteF
+install PDL::Stats
 
 # If the urllist is slow for you, please visit http://www.cpan.org/SITES.html and pick the ones closer to your region.
 # Linux Bash Shell on Windows: https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/
