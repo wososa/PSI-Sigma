@@ -23,15 +23,24 @@ Perl EXTENTIONS
   * PDL::LiteF
   * PDL::Stats
   * PDL::GSL::CDF
+  * Statistics::Multtest
 
 Linux, Mac and "Linux Bash Shell on Windows"
 -----
 
 ```
-# Install Perl extentions
+# (Step 1) Install Perl extentions
 cpan App::cpanminus
 cpanm PDL::LiteF
 cpanm PDL::Stats
+# (Step 2) Install GSL
+wget ftp://ftp.gnu.org/gnu/gsl/gsl-2.4.tar.gz
+tar zxvf gsl-2.4.tar.gz
+cd gsl-2.4
+./configure
+make
+make install
+# (Step 3) Install PDL::GSL
 cpanm PDL::GSL::CDF
 
 #Alternatively,
