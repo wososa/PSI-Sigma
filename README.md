@@ -34,7 +34,7 @@ cpanm PDL::LiteF
 cpanm Statistics::Multtest
 
 #Alternatively,
-sudo cpan
+cpan
 o conf urllist ftp://cpan.hexten.net/ ftp://mirrors.rit.edu/CPAN/ http://mirror.nyi.net/CPAN/
 o conf commit
 install PDL::LiteF
