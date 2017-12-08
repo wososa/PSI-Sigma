@@ -21,23 +21,24 @@ SOFTWARE REQUIREMENTS
 Perl EXTENTIONS
 ==============================
   * PDL::LiteF
-  * PDL::Stats
+ # * PDL::Stats
   * Statistics::Multtest
 
 Linux, Mac and "Linux Bash Shell on Windows"
 -----
 
 ```
-# Install Per extentions
+# Install Perl extentions
 sudo cpan
 o conf urllist ftp://cpan.hexten.net/ ftp://mirrors.rit.edu/CPAN/ http://mirror.nyi.net/CPAN/
 o conf commit
 install PDL::LiteF
-install PDF::Stats
+#install PDF::Stats
 install Statistics::Multtest
 
 # If the urllist is slow for you, please visit http://www.cpan.org/SITES.html and pick the ones closer to your region.
 # Linux Bash Shell on Windows: https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/
+
 ```
 
 
