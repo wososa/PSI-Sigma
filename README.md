@@ -29,6 +29,9 @@ Linux, Mac and "Linux Bash Shell on Windows"
 -----
 Install Perl extentions:
 ```
+# 0. Set up working directory for Perl library (I am using Perl 5.18 as an example)
+export PERL5LIB=/usr/local/lib/perl/5.18
+
 # 1. Install cpanm
 cpan App::cpanminus
 cpanm PDL::LiteF
