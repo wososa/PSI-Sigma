@@ -29,11 +29,15 @@ Linux, Mac and "Linux Bash Shell on Windows"
 
 ```
 # Install Perl extentions
+sudo cpan App::cpanminus
+cpanm PDL::LiteF
+cpanm Statistics::Multtest
+
+#Alternatively,
 sudo cpan
 o conf urllist ftp://cpan.hexten.net/ ftp://mirrors.rit.edu/CPAN/ http://mirror.nyi.net/CPAN/
 o conf commit
 install PDL::LiteF
-#install PDF::Stats
 install Statistics::Multtest
 
 # If the urllist is slow for you, please visit http://www.cpan.org/SITES.html and pick the ones closer to your region.
