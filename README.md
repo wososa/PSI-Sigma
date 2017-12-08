@@ -27,7 +27,7 @@ Perl EXTENTIONS
 
 Linux, Mac and "Linux Bash Shell on Windows"
 -----
-
+Install extentions:
 ```
 # (Step 1) Install Perl extentions
 cpan App::cpanminus
