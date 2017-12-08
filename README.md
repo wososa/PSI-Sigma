@@ -33,6 +33,7 @@ Install extentions:
 cpan App::cpanminus
 cpanm PDL::LiteF
 cpanm PDL::Stats
+
 # 2. Install GSL
 wget ftp://ftp.gnu.org/gnu/gsl/gsl-2.4.tar.gz
 tar zxvf gsl-2.4.tar.gz
@@ -40,6 +41,8 @@ cd gsl-2.4
 ./configure
 make
 make install
+cd ..
+
 # 3. Install PDL::GSL
 cpanm PDL::GSL::CDF
 
