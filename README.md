@@ -9,7 +9,7 @@ Kuan-Ting (Woody) Lin, klin@cshl.edu
 MANUAL
 ======
 
-Performance
+PERFORMANCE
 ==============
 
 
