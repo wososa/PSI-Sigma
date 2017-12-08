@@ -29,7 +29,7 @@ Linux, Mac and "Linux Bash Shell on Windows"
 -----
 Install Perl extentions:
 ```
-# 0. Set up working directory for Perl library (I am using Perl version 5.18 as an example)
+# 0. Set up working directory for Perl library (Using Perl version 5.18 as an example)
 export PERL5LIB=/usr/local/lib/perl/5.18
 
 # 1. Install cpanm
@@ -37,7 +37,7 @@ cpan App::cpanminus
 cpanm PDL::LiteF
 cpanm PDL::Stats
 
-# 2. Install GSL (I am using GSL version 2.4 as an example)
+# 2. Install GSL (Using GSL version 2.4 as an example)
 wget ftp://ftp.gnu.org/gnu/gsl/gsl-2.4.tar.gz
 tar zxvf gsl-2.4.tar.gz
 cd gsl-2.4
