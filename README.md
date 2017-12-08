@@ -24,6 +24,19 @@ Perl EXTENTIONS
   * PDL::Stats
   * Statistics::Multtest
 
+Linux
+-----
+
+```bash
+# install extentions
+sudo cpan
+install PDL::LiteF PDF::Stats Statistics::Multtest
+
+# Alternatively,
+
+```
+
+
 LIMITATIONS
 ===========
 
