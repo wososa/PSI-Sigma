@@ -9,11 +9,12 @@ Kuan-Ting (Woody) Lin, klin@cshl.edu
 MANUAL
 ======
 Step 0. Generate alignment files (.bam) by splice-aware alignment tools (e.g., STAR: https://github.com/alexdobin/STAR)
-Step 1. Extract junction read information
+Step 1. Extract junction read information (If you don't have SJ.out.tab file from STAR)
 ```
 
+mv <Junction Read Files> <Junction Folder>
 ```
-Step 2. Build a database of splicing events
+Step 2. Build a database of splicing events for each chromosome (or download here:)
 ```
 perl PSIsigma-db.pl <GTF File> <Junction Folder> <Chromosome>
 cat chr*.db > <Database File>
@@ -23,9 +24,11 @@ Step 3. (Optional) Extract intronic read information
  Long-read RNA-seq data: Type = 2
 ```
 perl ir.pl <Database File> <BAM File> <Type>
+mv <Intronic Read Files> <Junction Folder>
 ```
 Step 4. Estimate PSI values for each splicing event
 ```
+cd <Junction Folder>
 perl PSIsigma-v.1.0.pl <Database File> <Output File>
 ```
 Step 5. Filter and annotated splicing events
