@@ -34,12 +34,12 @@ Step 5. Filter and annotated splicing events
 perl mapping.pl <GTF File>
 perl filter.pl <Mapping File> <Output File>
 ```
- * <Junction Read Files>: *.SJ.out.tab
- * <Intronic Read Files>: *.IR.out.tab
- * <Database File>: *.db
- * <BAM File>: *.bam
- * <GTF File>: *.gtf (http://useast.ensembl.org/info/data/ftp/index.html/)
- * <Junction Read Files>: *.SJ.out.tab
+ * Junction Read File: *.SJ.out.tab
+ * Intronic Read File: *.IR.out.tab
+ * Database File: *.db
+ * BAM File: *.bam
+ * GTF File: *.gtf (http://useast.ensembl.org/info/data/ftp/index.html/)
+
 
 PERFORMANCE
 ==============
