@@ -8,14 +8,37 @@ Kuan-Ting (Woody) Lin, klin@cshl.edu
 
 MANUAL
 ======
+Four steps
+ 0. Generate alignment files (.bam) by splice-aware alignment tools (e.g., STAR: https://github.com/alexdobin/STAR)
+ 1. Extract junction read information
+```
 
+```
+ 2. Build a database of splicing events
+```
+perl PSIsigma-db.pl <GTF File> <Junction Folder> <Chromosome>
+cat chr*.db > <Database File>
+```
+ 3. (Optional) Extract intronic read information
+ Short-read RNA-seq data: Type = 1
+ Long-read RNA-seq data: Type = 2
+```
+perl ir.pl <Database File> <BAM File> <Type>
+```
+ 3. Estimate PSI values for each splicing event
+```
+perl PSIsigma-v.1.0.pl <Database File> <Output File>
+```
+ 4. Filter and annotated splicing events
+```
+perl filter.pl GRCh38.87.mapping.txt <Output File>
+```
 PERFORMANCE
 ==============
 
 
 SOFTWARE REQUIREMENTS
 ==============================
-  * Alignment files (.bam) from splice-aware alignment tools (e.g., STAR: https://github.com/alexdobin/STAR)
   * Perl (https://www.perl.org/get.html)
 
 Perl EXTENTIONS
