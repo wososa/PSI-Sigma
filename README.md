@@ -1,6 +1,6 @@
-PSI-Sigma Ψ<sub>Σ</sub>
+Ψ<sub>Σ</sub>
 =================
-Previous single-exon PSI approaches were designed for simple splicing events with only one alternative exon, but they can be ambiguous in the case of mutually exclusive exons, multi-exon skipping, and more complex events. The PSI-sigma is using a new splicing index that is more flexible, can incoporate novel junctions, and can compute PSI values of individual exons in complex splicing events.
+Previous single-exon PSI approaches were designed for simple splicing events with only one alternative exon, but they can be ambiguous in the case of mutually exclusive exons, multi-exon skipping, and more complex events. Ψ<sub>Σ</sub> is using a new splicing index that is more flexible, can incoporate novel junctions, and can compute PSI values of individual exons in complex splicing events.
 
 AUTHOR/SUPPORT
 ==============
