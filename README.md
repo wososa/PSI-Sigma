@@ -12,7 +12,7 @@ Step 0. Generate alignment files (.bam) by splice-aware alignment tools (e.g., S
 Step 1. Extract junction read information (If you don't have SJ.out.tab file from STAR)
 ```
 
-mv <Junction Read Files> <Junction Folder>
+mv <Junction Information Files> <Junction Folder>
 ```
 Step 2. Build a database of splicing events for each chromosome (or download here:)
 ```
@@ -31,8 +31,16 @@ perl PSIsigma-v.1.0.pl <Database File> <Output File>
 ```
 Step 5. Filter and annotated splicing events
 ```
-perl filter.pl GRCh38.87.mapping.txt <Output File>
+perl mapping.pl <GTF File>
+perl filter.pl <Mapping File> <Output File>
 ```
+ * <Junction Read Files>: *.SJ.out.tab
+ * <Intronic Read Files>: *.IR.out.tab
+ * <Database File>: *.db
+ * <BAM File>: *.bam
+ * <GTF File>: *.gtf (http://useast.ensembl.org/info/data/ftp/index.html/)
+ * <Junction Read Files>: *.SJ.out.tab
+
 PERFORMANCE
 ==============
 
