@@ -1,6 +1,6 @@
 PSI-Sigma ΨΣ
 =================
-Previous single-exon PSI approaches were designed for simple splicing events with only one alternative exon, but they can be ambiguous in the case of mutually exclusive exons, multi-exon skipping, and more complex events. PSI-sigma is more flexible, can incoporate novel junctions, and can compute PSI values of individual exons in complex splicing events.
+Previous single-exon PSI approaches were designed for simple splicing events with only one alternative exon, but they can be ambiguous in the case of mutually exclusive exons, multi-exon skipping, and more complex events. The PSI-sigma is using a new splicing index that is more flexible, can incoporate novel junctions, and can compute PSI values of individual exons in complex splicing events.
 
 AUTHOR/SUPPORT
 ==============
@@ -20,8 +20,6 @@ perl PSIsigma-db.pl <GTF File> <Junction Folder> <Chromosome>
 cat chr*.db > <Database File>
 ```
 Step 3. (Optional) Extract intronic read information
- Short-read RNA-seq data: Type = 1
- Long-read RNA-seq data: Type = 2
 ```
 perl ir.pl <Database File> <BAM File> <Type>
 mv <Intronic Read Files> <Junction Folder>
