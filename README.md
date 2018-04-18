@@ -24,6 +24,17 @@ Perl EXTENTIONS
   * PDL::Stats
   * PDL::GSL::CDF
   * Statistics::Multtest
+ 
+ ```
+
+# Install cpanm to install the modules
+cpan App::cpanminus
+cpanm PDL::LiteF
+cpanm PDL::Stats
+cpanm PDL::GSL::CDF
+cpanm Statistics::Multtest
+
+```
 
 Linux, Mac and "Linux Bash Shell on Windows"
 -----
