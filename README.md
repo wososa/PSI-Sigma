@@ -8,27 +8,27 @@ Kuan-Ting (Woody) Lin, klin@cshl.edu
 
 MANUAL
 ======
- Step 0. Generate alignment files (.bam) by splice-aware alignment tools (e.g., STAR: https://github.com/alexdobin/STAR)
- Step 1. Extract junction read information
+Step 0. Generate alignment files (.bam) by splice-aware alignment tools (e.g., STAR: https://github.com/alexdobin/STAR)
+Step 1. Extract junction read information
 ```
 
 ```
- Step 2. Build a database of splicing events
+Step 2. Build a database of splicing events
 ```
 perl PSIsigma-db.pl <GTF File> <Junction Folder> <Chromosome>
 cat chr*.db > <Database File>
 ```
- Step 3. (Optional) Extract intronic read information
+Step 3. (Optional) Extract intronic read information
  Short-read RNA-seq data: Type = 1
  Long-read RNA-seq data: Type = 2
 ```
 perl ir.pl <Database File> <BAM File> <Type>
 ```
- Step 4. Estimate PSI values for each splicing event
+Step 4. Estimate PSI values for each splicing event
 ```
 perl PSIsigma-v.1.0.pl <Database File> <Output File>
 ```
- Step 5. Filter and annotated splicing events
+Step 5. Filter and annotated splicing events
 ```
 perl filter.pl GRCh38.87.mapping.txt <Output File>
 ```
@@ -38,14 +38,14 @@ PERFORMANCE
 
 SOFTWARE REQUIREMENTS
 ==============================
-  * Perl (https://www.perl.org/get.html)
+ * Perl (https://www.perl.org/get.html)
 
 Perl EXTENTIONS
 ==============================
-  * PDL::LiteF
-  * PDL::Stats
-  * PDL::GSL::CDF
-  * Statistics::Multtest
+ * PDL::LiteF
+ * PDL::Stats
+ * PDL::GSL::CDF
+ * Statistics::Multtest
 
 INSTALLATION EXAMPLE
 ============================== 
@@ -79,4 +79,4 @@ LIMITATIONS
 CITATION
 ===========
 Please cite: https://www.ncbi.nlm.nih.gov/pubmed/29449409
-Lin KT, Ma WK, Scharner J, Liu YR, Krainer AR. 2018. A human-specific switch of alternatively spliced AFMID isoforms contributes to TP53 mutations and tumor recurrence in hepatocellular carcinoma. Genome Res doi:10.1101/gr.227181.117.
+* Lin KT, Ma WK, Scharner J, Liu YR, Krainer AR. 2018. A human-specific switch of alternatively spliced AFMID isoforms contributes to TP53 mutations and tumor recurrence in hepatocellular carcinoma. Genome Res doi:10.1101/gr.227181.117.
