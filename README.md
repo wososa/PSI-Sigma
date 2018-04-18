@@ -24,21 +24,7 @@ Perl EXTENTIONS
   * PDL::Stats
   * PDL::GSL::CDF
   * Statistics::Multtest
- 
- ```
-
-# Install cpanm to install the modules
-cpan App::cpanminus
-cpanm PDL::LiteF
-cpanm PDL::Stats
-cpanm PDL::GSL::CDF
-cpanm Statistics::Multtest
-
-```
-
-Linux, Mac and "Linux Bash Shell on Windows"
------
-Install Perl extentions:
+Example: 
 ```
 # 0. Set up working directory for Perl library (Using Perl version 5.18 as an example)
 export PERL5LIB=/usr/local/lib/perl/5.18
@@ -59,8 +45,7 @@ cd ..
 
 # 3. Install PDL::GSL
 cpanm PDL::GSL::CDF
-
-
+cpanm Statistics::Multtest
 ```
 * Linux Bash Shell on Windows: https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/
 
