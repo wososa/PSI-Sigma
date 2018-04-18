@@ -24,7 +24,9 @@ Perl EXTENTIONS
   * PDL::Stats
   * PDL::GSL::CDF
   * Statistics::Multtest
-Example: 
+
+INSTALLATION EXAMPLE
+============================== 
 ```
 # 0. Set up working directory for Perl library (Using Perl version 5.18 as an example)
 export PERL5LIB=/usr/local/lib/perl/5.18
