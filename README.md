@@ -27,13 +27,13 @@ The examples here are assuming for .bam files downloaded from TCGA:
 ls *-11A-*.bam > groupa.txt
 ls *-01A-*.bam > groupb.txt
 ```
-Run dumpai.pl and specify the folder where you put the PSIsigma scripts.
+Run dumpai.pl and specify the folder (e.g., ~/PSIsigma) where you put the PSIsigma scripts.
 Please specify 1 for short-read RNA-seq and 2 for long-read RNA-seq:
 ```
 #For short-read RNA-seq
-perl ~/tools/PSIsigma/dumpai.pl ~/tools/PSIsigma Homo_sapiens.GRCh38.87.sorted.gtf PSIsigma 1
+perl ~/PSIsigma/dumpai.pl ~/PSIsigma Homo_sapiens.GRCh38.87.sorted.gtf PSIsigma 1
 #For long-read RNA-seq
-perl ~/tools/PSIsigma/dumpai.pl ~/tools/PSIsigma Homo_sapiens.GRCh38.87.sorted.gtf PSIsigma 2
+perl ~/PSIsigma/dumpai.pl ~/PSIsigma Homo_sapiens.GRCh38.87.sorted.gtf PSIsigma 2
 ```
 That's it.
 The results will be in the PSIsigma_r10_ir3.filtered.txt.
