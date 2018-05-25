@@ -8,8 +8,9 @@ Kuan-Ting (Woody) Lin, klin@cshl.edu
 
 MANUAL
 ======
-Step 0. Generate alignment files (.bam) by splice-aware alignment tools (e.g., STAR: https://github.com/alexdobin/STAR)
-Step 1. Extract junction read information (If you don't have SJ.out.tab file from STAR)
+0. Generate alignment files (.bam) by splice-aware alignment tools (e.g., STAR: https://github.com/alexdobin/STAR)
+
+1. Extract junction read information (If you don't have SJ.out.tab file from STAR)
 ```
 
 mv <Junction Information Files> <Junction Folder>
