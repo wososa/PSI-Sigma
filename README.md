@@ -48,6 +48,7 @@ PERFORMANCE
 SOFTWARE REQUIREMENTS
 ==============================
  * Perl (https://www.perl.org/get.html)
+ * Samtools (http://www.htslib.org)
 
 Perl EXTENTIONS
 ==============================
