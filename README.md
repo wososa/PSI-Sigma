@@ -13,7 +13,6 @@ Generate .bam files by splice-aware alignment tools (e.g., STAR: https://github.
 mkdir afolder
 cd afolder
 ln -s bamfolder/*.bam .
-
 ```
 Download a .gtf file and sort the coordinates.
 ```
