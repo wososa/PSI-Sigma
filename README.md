@@ -62,7 +62,7 @@ Perl EXTENTIONS
  * Statistics::Multtest
  * threads
 
-INSTALLATION EXAMPLE
+EXAMPLE of INSTALLING Perl EXTENTIONS
 ============================== 
 ```
 # 0. Set up working directory for Perl library (Using Perl version 5.18 as an example)
