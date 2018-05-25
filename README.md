@@ -8,33 +8,37 @@ Kuan-Ting (Woody) Lin, klin@cshl.edu
 
 MANUAL
 ======
-0. Generate alignment files (.bam) by splice-aware alignment tools (e.g., STAR: https://github.com/alexdobin/STAR)
+Generate .bam files by splice-aware alignment tools (e.g., STAR: https://github.com/alexdobin/STAR) and create a folder (afolder) for the links to the .bam files.
+```
+mkdir afolder
+cd afolder
+ln -s bamfolder/*.bam .
 
-1. Extract junction read information (If you don't have SJ.out.tab file from STAR)
 ```
+Download a .gtf file and sort the coordinates.
+```
+get ftp://ftp.ensembl.org/pub/release-87/gtf/homo_sapiens//Homo_sapiens.GRCh38.87.gtf.gz
+gzip -d Homo_sapiens.GRCh38.87.gtf.gz
+(grep "^#" Homo_sapiens.GRCh38.87.gtf; grep -v "^#" Homo_sapiens.GRCh38.87.gtf | sort -k1,1 -k4,4n) > Homo_sapiens.GRCh38.87.sorted.gtf
+rm Homo_sapiens.GRCh38.87.gtf
+```
+Create two files: (1) groupa.txt and (2) groupb.txt. The .bam files in groupa.txt will be compared with groupb.txt.
+The examples here are assuming for .bam files downloaded from TCGA:
+```
+ls *-11A-*.bam > groupa.txt
+ls *-01A-*.bam > groupb.txt
+```
+Run dumpai.pl and specify the folder where you put the PSIsigma scripts.
+Please specify 1 for short-read RNA-seq and 2 for long-read RNA-seq:
+```
+#For short-read RNA-seq
+perl ~/tools/PSIsigma/dumpai.pl ~/tools/PSIsigma Homo_sapiens.GRCh38.87.sorted.gtf PSIsigma 1
+#For long-read RNA-seq
+perl ~/tools/PSIsigma/dumpai.pl ~/tools/PSIsigma Homo_sapiens.GRCh38.87.sorted.gtf PSIsigma 2
+```
+That's it.
+The results will be in the PSIsigma_r10_ir3.filtered.txt.
 
-mv <Junction Information Files> <Junction Folder>
-```
-Step 2. Build a database of splicing events for each chromosome (or download here:)
-```
-perl PSIsigma-db.pl <GTF File> <Junction Folder> <Chromosome>
-cat chr*.db > <Database File>
-```
-Step 3. (Optional) Extract intronic read information
-```
-perl ir.pl <Database File> <BAM File> <Type>
-mv <Intronic Read Files> <Junction Folder>
-```
-Step 4. Estimate PSI values for each splicing event
-```
-cd <Junction Folder>
-perl PSIsigma-v.1.0.pl <Database File> <Output File>
-```
-Step 5. Filter and annotated splicing events
-```
-perl mapping.pl <GTF File>
-perl filter.pl <Mapping File> <Output File>
-```
  * Junction Read File: *.SJ.out.tab
  * Intronic Read File: *.IR.out.tab
  * Database File: *.db
