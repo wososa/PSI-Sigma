@@ -96,3 +96,9 @@ CITATION
 ===========
 Please cite: https://www.ncbi.nlm.nih.gov/pubmed/29449409
 * Lin KT, Ma WK, Scharner J, Liu YR, Krainer AR. 2018. A human-specific switch of alternatively spliced AFMID isoforms contributes to TP53 mutations and tumor recurrence in hepatocellular carcinoma. Genome Res doi:10.1101/gr.227181.117.
+
+Commercial Uses
+===========
+Multi-thread pipeline: smartai.pl
+Excel export
+Confidence score
