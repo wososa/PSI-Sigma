@@ -101,4 +101,5 @@ Commercial Uses
 ===========
 Multi-thread pipeline: smartai.pl
 Excel export
+sjawk for more file formats
 Confidence score
