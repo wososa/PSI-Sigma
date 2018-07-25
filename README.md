@@ -8,11 +8,12 @@ Kuan-Ting (Woody) Lin, klin@cshl.edu
 
 MANUAL
 ======
-Generate .bam files by splice-aware alignment tools (e.g., STAR: https://github.com/alexdobin/STAR) and create a folder (afolder) for the links to the .bam files.
+Generate .bam files by splice-aware alignment tools (e.g., STAR: https://github.com/alexdobin/STAR) and create a folder (afolder) for the links to the .bam, bai, and .SJ.out files.
 ```
 mkdir afolder
 cd afolder
-ln -s bamfolder/*.bam .
+ln -s bamfolder/*.bam* .
+ln -s bamfolder/*.SJ.* .
 ```
 Download a .gtf file and sort the coordinates.
 ```
