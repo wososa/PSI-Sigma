@@ -8,7 +8,7 @@ Kuan-Ting (Woody) Lin, klin@cshl.edu
 
 MANUAL
 ======
-Generate .bam files by splice-aware alignment tools (e.g., STAR: https://github.com/alexdobin/STAR) and create a folder (afolder) for the links to the .bam, bai, and .SJ.out files.
+Generate .bam, .bai and .SJ.out files by STAR (https://github.com/alexdobin/STAR). Create links to the .bam, bai, and .SJ.out files in the a folder (afolder).
 ```
 mkdir afolder
 cd afolder
