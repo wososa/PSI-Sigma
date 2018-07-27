@@ -86,7 +86,9 @@ cd ..
 cpanm PDL::GSL::CDF
 cpanm Statistics::Multtest
 ```
-Running PSI-Sigma on Windows:
+PSI-Sigma on Windows OS
+===========
+PSI-Sigma has been tested in Linux and Mac OS environment. You can install Linux bash shell on Windows to run PSI-Sigma.
 * Linux Bash Shell on Windows: https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/
 
 LIMITATIONS
