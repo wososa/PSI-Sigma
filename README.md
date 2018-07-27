@@ -29,15 +29,15 @@ ls *-11A-*.bam > groupa.txt
 ls *-01A-*.bam > groupb.txt
 ```
 Run dumpai.pl and specify the folder (e.g., ~/PSIsigma) where you put the PSIsigma scripts.
-Please specify 1 for short-read RNA-seq and 2 for long-read RNA-seq:
+Please specify 1 for short-read RNA-seq and 2 for long-read RNA-seq. The last number (3) means a minimum 3 supporting reads for an AS event.
 ```
-#For short-read RNA-seq
-perl ~/PSIsigma/dumpai.pl ~/PSIsigma Homo_sapiens.GRCh38.87.sorted.gtf PSIsigma 1
-#For long-read RNA-seq
-perl ~/PSIsigma/dumpai.pl ~/PSIsigma Homo_sapiens.GRCh38.87.sorted.gtf PSIsigma 2
+#For short-read RNA-seq (minimum 3 supporting reads for an AS event)
+perl ~/PSIsigma/dumpai.pl Homo_sapiens.GRCh38.87.sorted.gtf PSIsigma 1 3
+#For long-read RNA-seq (minimum 3 supporting reads for an AS event)
+perl ~/PSIsigma/dumpai.pl Homo_sapiens.GRCh38.87.sorted.gtf PSIsigma 2 3
 ```
 That's it.
-The results will be in the PSIsigma_r10_ir3.filtered.txt.
+The results will be in the PSIsigma_r10_ir3.sorted.txt.
 
  * Junction Read File: *.SJ.out.tab
  * Intronic Read File: *.IR.out.tab
