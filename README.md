@@ -85,7 +85,6 @@ cd ..
 # 3. Install PDL::GSL
 cpanm PDL::GSL::CDF
 cpanm Statistics::Multtest
-cpanm threads
 ```
 * Linux Bash Shell on Windows: https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/
 
