@@ -23,7 +23,7 @@ gzip -d Homo_sapiens.GRCh38.87.gtf.gz
 rm Homo_sapiens.GRCh38.87.gtf
 ```
 Create two files: (1) groupa.txt and (2) groupb.txt. The .bam files in groupa.txt will be compared with groupb.txt.
-The examples here are assuming for .bam files downloaded from TCGA:
+The examples here are assuming for .bam files were generated RNA-seq data from TCGA:
 ```
 ls *-11A-*.bam > groupa.txt
 ls *-01A-*.bam > groupb.txt
