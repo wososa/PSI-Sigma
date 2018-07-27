@@ -37,7 +37,7 @@ perl ~/PSIsigma/dumpai.pl Homo_sapiens.GRCh38.87.sorted.gtf PSIsigma 1 3
 perl ~/PSIsigma/dumpai.pl Homo_sapiens.GRCh38.87.sorted.gtf PSIsigma 2 3
 ```
 That's it.
-The results will be in the PSIsigma_r10_ir3.sorted.txt.
+The results will be in the PSIsigma_r3_ir3.sorted.txt.
 
  * Junction Read File: *.SJ.out.tab
  * Intronic Read File: *.IR.out.tab
