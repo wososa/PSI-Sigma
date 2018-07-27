@@ -61,7 +61,6 @@ Perl EXTENTIONS
  * PDL::Stats
  * PDL::GSL::CDF
  * Statistics::Multtest
- * threads
 
 EXAMPLE of INSTALLING Perl EXTENTIONS
 ============================== 
