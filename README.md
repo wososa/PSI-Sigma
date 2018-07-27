@@ -8,7 +8,7 @@ Kuan-Ting (Woody) Lin, klin@cshl.edu
 
 MANUAL
 ======
-Generate .bam, .bai and .SJ.out files by STAR (https://github.com/alexdobin/STAR). Create links to the .bam, bai, and .SJ.out files in the a folder (afolder).
+Generate .bam, .bai and .SJ.out files by using STAR (https://github.com/alexdobin/STAR) for short-read RNA-seq data. Please use GMAP (http://research-pub.gene.com/gmap/src/gmap-gsnap-2017-11-15.tar.gz) for long-read RNA-seq data. Create links to the .bam, bai, and .SJ.out files in the a folder (afolder). If you are using long-read RNA-seq data, .SJ.out files will be generated automatically since GMAP doesn't produce the file.
 ```
 mkdir afolder
 cd afolder
