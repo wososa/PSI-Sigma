@@ -8,7 +8,27 @@ Kuan-Ting (Woody) Lin, klin@cshl.edu
 
 MANUAL
 ======
-Generate .bam, .bai and .SJ.out files by using STAR (https://github.com/alexdobin/STAR) for short-read RNA-seq data. Please use GMAP (http://research-pub.gene.com/gmap/src/gmap-gsnap-2017-11-15.tar.gz) for long-read RNA-seq data. Create links to the .bam, bai, and .SJ.out files in the a folder (afolder). If you are using long-read RNA-seq data, .SJ.out files will be generated automatically since GMAP doesn't produce the file.
+For short-read RNA-seq data, please generate .bam, .bai and .SJ.out files by using STAR (https://github.com/alexdobin/STAR).
+```
+###This is an example for short-read RNA-seq###
+STAR --runThreadN 6 \
+	--outSAMtype BAM SortedByCoordinate \
+	--outFilterIntronMotifs RemoveNoncanonical \
+	--genomeDir ~/index/starR100H38 \
+	--twopassMode Basic \
+	--readFilesIn R1.fastq R2.fastq \
+	--outFileNamePrefix <NAME>.
+samtools index <NAME>.Aligned.sortedByCoord.out.bam
+```
+For long-read RNA-seq data, please use GMAP (http://research-pub.gene.com/gmap/src/gmap-gsnap-2017-11-15.tar.gz).
+```
+###This is an example for long-read RNA-seq###
+~/gmap-2017-11-15/bin/gmap -d GRCh38 -f samse --min-trimmed-coverage=0.5 --no-chimeras -B 5 -t 6 ~/MinION_long_read.fastq > <NAME>.sam
+samtools view -bS <NAME>.sam > <NAME>.bam
+samtools sort <NAME>.bam -o <NAME>.Aligned.sortedByCoord.out.bam
+samtools index <NAME>.Aligned.sortedByCoord.out.bam
+```
+Create links to the .bam, bai, and .SJ.out files in the a folder (afolder). If you are using long-read RNA-seq data, .SJ.out files will be generated automatically since GMAP doesn't produce the file.
 ```
 mkdir afolder
 cd afolder
