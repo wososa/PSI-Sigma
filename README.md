@@ -127,3 +127,15 @@ https://www.ncbi.nlm.nih.gov/pubmed/29449409
 Commercial Use
 ===========
 * For licensing, please contact CSHL tech transfer office: narayan@cshl.edu
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123441271-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-123441271-1');
+</script>
+
+
