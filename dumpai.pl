@@ -1,7 +1,7 @@
 =begin
 PSI-Sigma: A splicing-detection method for short-read and long-read RNA-seq data
 © Kuan-Ting Lin, 2018-2024
-PSI-Sigma is free for non-commercial purposes by individuals at an academic or non-profit institutions.
+PSI-Sigma is free for non-commercial purposes by individuals at an academic or non-profit institution.
 For commercial purposes, please contact tech transfer office of CSHL via narayan@cshl.edu
 =end
 =cut
