@@ -9,7 +9,7 @@ AUTHOR/SUPPORT
 ==============
 Kuan-Ting (Woody) Lin, klin@cshl.edu
 
-MANUAL
+Alignment files
 ======
 For short-read RNA-seq data, please generate .bam, .bai and .SJ.out files by using STAR (https://github.com/alexdobin/STAR).
 ```
@@ -31,6 +31,8 @@ samtools view -bS <NAME>.sam > <NAME>.bam
 samtools sort <NAME>.bam -o <NAME>.Aligned.sortedByCoord.out.bam
 samtools index <NAME>.Aligned.sortedByCoord.out.bam
 ```
+Quick Start
+======
 Create links to the .bam, bai, and .SJ.out files in the a folder (afolder). If you are using long-read RNA-seq data, .SJ.out files will be generated automatically since GMAP doesn't produce the file.
 ```
 mkdir afolder
