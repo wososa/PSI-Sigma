@@ -55,9 +55,9 @@ ls *-01A-*.bam > groupb.txt
 ```
 Run dumpai.pl. After the .gtf file, please specify 1 for short-read RNA-seq and 2 for long-read RNA-seq. The last column is used to specify the minimum number of supporting reads for an AS event (10 is specified in the example below).
 ```
-#For short-read RNA-seq (minimum 3 supporting reads for an AS event)
+#For short-read RNA-seq (minimum 10 supporting reads for an AS event)
 perl ~/PSIsigma/dumpai.pl Homo_sapiens.GRCh38.87.sorted.gtf PSIsigma 1 10
-#For long-read RNA-seq (minimum 3 supporting reads for an AS event)
+#For long-read RNA-seq (minimum 10 supporting reads for an AS event)
 perl ~/PSIsigma/dumpai.pl Homo_sapiens.GRCh38.87.sorted.gtf PSIsigma 2 10
 ```
 That's it.
