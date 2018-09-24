@@ -52,6 +52,10 @@ Create two files: (1) groupa.txt and (2) groupb.txt. Groupa.txt will be compared
 #For TCGA files:
 ls *-11A-*.SJ* | sed s/.SJ.out.tab//g > groupa.txt
 ls *-01A-*.SJ* | sed s/.SJ.out.tab//g > groupb.txt
+
+#Alternatively, you can just put the names of your .bam files:
+echo Sequins_MixA.Aligned.sortedByCoord.out.bam > groupa.txt
+echo Sequins_MixB.Aligned.sortedByCoord.out.bam > groupb.txt
 ```
 Run dummyai.pl. After the .gtf file, please specify 1 for short-read RNA-seq and 2 for long-read RNA-seq. The last column is used to specify the minimum number of supporting reads for an AS event (10 is specified in the example below).
 ```
