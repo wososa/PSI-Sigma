@@ -33,7 +33,7 @@ samtools index <NAME>.Aligned.sortedByCoord.out.bam
 ```
 Quick Start
 ======
-Create links to the .bam, bai, and .SJ.out files in the a folder (afolder). If you are using long-read RNA-seq data, .SJ.out files will be generated automatically since GMAP doesn't produce the file.
+Create links to the .bam, .bai, and .SJ.out files in the a folder (afolder). If you are using long-read RNA-seq data, .SJ.out files will be generated automatically since GMAP doesn't produce the file.
 ```
 mkdir afolder
 cd afolder
