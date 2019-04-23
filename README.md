@@ -119,8 +119,13 @@ PSI-Sigma on Windows OS
 PSI-Sigma has been tested in Linux and Mac OS environment. You can install Linux bash shell on Windows to run PSI-Sigma.
 * Linux Bash Shell on Windows: https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/
 
-LIMITATIONS
+Gene Expression Analysis for nanopore long-read RNA-seq
 ===========
+To use the PSIsigma-longread-gene-expression.pl:
+```
+perl ~/PSIsigma/PSIsigma-longread-gene-expression.pl Homo_sapiens.GRCh38.87.sorted.gtf Experiment.Aligned.sortedByCoord.out.bam
+```
+The default setting is using 4 CPUs to calculate gene expression levels by matching constitutive exons in the gene annotation.
 
 CITATION
 ===========
