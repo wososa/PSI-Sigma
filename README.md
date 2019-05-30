@@ -129,11 +129,13 @@ The default setting is using 4 CPUs to calculate gene expression levels by match
 
 CITATION
 ===========
+https://www.ncbi.nlm.nih.gov/pubmed/31135034
+* Lin, K. T. & Krainer, A. R. PSI-Sigma: a comprehensive splicing-detection method for short-read and long-read RNA-seq analysis. Bioinformatics, doi:10.1093/bioinformatics/btz438 (2019).
 
 PUBLICATIONS USING PSI-Sigma
 ===========
 https://www.ncbi.nlm.nih.gov/pubmed/29449409
-* Lin KT, Ma WK, Scharner J, Liu YR, Krainer AR. 2018. A human-specific switch of alternatively spliced AFMID isoforms contributes to TP53 mutations and tumor recurrence in hepatocellular carcinoma. Genome Res doi:10.1101/gr.227181.117.
+* Lin, K. T., Ma, W. K., Scharner, J., Liu, Y. R. & Krainer, A. R. A human-specific switch of alternatively spliced AFMID isoforms contributes to TP53 mutations and tumor recurrence in hepatocellular carcinoma. Genome Res, doi:10.1101/gr.227181.117 (2018).
 
 Commercial Use
 ===========
