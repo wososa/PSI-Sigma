@@ -17,6 +17,244 @@ GNU General Public License for more details.
 =end
 =cut
 #!/usr/bin/perl -w
-eval unpack u=>q{_=7-E('-T<FEC=#L*"75S92!#=V0@<7<H86)S7W!A=&@I.PH)"@EM>2`H)&=T9BPD;F%M92PD;&]N9W)E860L_)'-U<'!O<G1I;F=?<F5A9%]C<FET97)I82D@/2!`05)'5CL*"0H);7D@)'!A=&@@/2!A8G-?<&%T:"@D,"D[_"@DD<&%T:#U^<R]<+V1U;6UY86E<+G!L+R\["@EP<FEN="`B4&%T:"`]("1P871H7&XB.PH)("`@(`H@("`@_;7D@*"1S=&%R='1I;64L)'-T;W!T:6UE+"1H;W5R<RD@/2`H=&EM92PP+#`I.PH@("`@"@EI9BAS8V%L87(@_0$%21U8@(3T@-"E["@D)<')I;G0@(E!L96%S92!S<&5C:69Y("YG=&8@9FEL92P@;W5T<'5T(&YA;64L(&QO_;F<H,BD@;W(@<VAO<G0H,2D@<F5A9"P@86YD(&YU;6)E<B!O9B!S=7!P;W)T:6YG(')E861S+EQN(CL*"0EE_>&ET.PH)?0H*"6UY("1N;W9E;&IU;F-T:6]N8W)I=&5R:6$@/2`Q,#L*"2-M>2`D<W5P<&]R=&EN9U]R96%D_7V-R:71E<FEA(#T@,3`["@EM>2`D:6YT<F]N7V-R:71E<FEA(#T@,SL*"6UY("1T;W1A;'1I;64@/2`P.PH)_"B`@("!M>2`E9W)O=7`["B`);W!E;BA&24Q%+")G<F]U<&$N='AT(BD@?'P@9&EE(")!8F]R=&EN9RXN($-A_;B=T(&]P96X@9W)O=7!A+G1X="`Z("0A7&XB.PH@("`@=VAI;&4H;7D@)&QI;F4]/$9)3$4^*7L*("`@("`@_("!C:&]M<"`D;&EN93L*("`@("`@("!N97AT(&EF*"1L:6YE(&5Q("(B*3L*("`@("`@("`D9W)O=7![)&QI_;F5]*RL["B`@("!]"B`);W!E;BA&24Q%+")G<F]U<&(N='AT(BD@?'P@9&EE(")!8F]R=&EN9RXN($-A;B=T_(&]P96X@9W)O=7!B+G1X="`Z("0A7&XB.PH@("`@=VAI;&4H;7D@)&QI;F4]/$9)3$4^*7L*("`@("`@("!C_:&]M<"`D;&EN93L*("`@("`@("!N97AT(&EF*"1L:6YE(&5Q("(B*3L*("`@("`@("`D9W)O=7![)&QI;F5]_*RL["B`@("!]"@H)<')I;G0@(D=E;F5R871I;F<@;6%P<&EN9R!F:6QE+BXN7&XB.PH@("`@;7D@)&UA<'!I_;F=C;W5N="`](#`["@EM>2`E8VAR.PH@("`@;W!E;BA&24Q%+"(D9W1F(BD@?'P@9&EE(")!8F]R=&EN9RXN_($-A;B=T(&]P96X@)&=T9B`Z("0A7&XB.PH@("`@;W!E;BA/550L(CXB("X@)&=T9B`N("(N;6%P<&EN9RYT_>'0B*2!\?"!D:64@(D%B;W)T:6YG+BX@0V%N)W0@;W!E;B`D9W1F(#H@)"%<;B(["B`@("!W:&EL92AM>2`D_;&EN93T\1DE,13XI>PH@("`@("`@(&-H;VUP("1L:6YE.PH@("`@("`@(&YE>'0@:68H)&QI;F4]?B]>7",O_*3L*("`@("`@("!M>2!`87)R87D@/2!S<&QI="@O7'0O+"1L:6YE*3L*("`@("`@("!N97AT(&EF*"1A<G)A_>5LR72!N92`B=')A;G-C<FEP="(I.PH@("`@("`@(&UY("@D8VAR+"1C870L)'-T87)T+"1E;F0L)'-T<F%N_9"PD;F%M92D@/2`H)&%R<F%Y6S!=+"1A<G)A>5LQ72PD87)R87E;,UTL)&%R<F%Y6S1=+"1A<G)A>5LV72PD_87)R87E;.%TI.PH@("`@("`@("1C:'(@/2`B8VAR(B`N("1C:'(@:68H)&-H<B%^+V-H<B\I.PH@("`@("`@_("1C:')[)&-H<GTK*SL*"0EM>2`D14Y35"`]("1N86UE.PH@"0DD14Y35#U^<R\H+BHI=')A;G-C<FEP=%Q?_:60@7"(O+SL*("`@(`DD14Y35#U^<R]<(EP[("@N*BDO+SL*"0EI9B@D14Y35#U^+UQ?+RE["@D)"21%3E-4_/7YS+UQ?+UPN+V<["@D)?0H@("`@("`@("1N86UE/7YS+R@N*BEG96YE7%]N86UE(%PB+R\["B`@("`))&YA_;64]?G,O7")<.R`H+BHI+R\["B`@("`))&YA;64]?G,O9V5N95Q?:60@7"(O+SL*("`@("`@("!P<FEN="!/_550@)$5.4U0@+B`B7'0B("X@)&YA;64@+B`B7'0B("X@)'-T<F%N9"`N(")<;B(["B`@("`@("`@)&UA<'!I_;F=C;W5N="LK(&EF*"1%3E-4(&YE("(B("8F("1N86UE(&YE("(B("8F("1S=')A;F0@;F4@(B(I.PH@("`@_?0H@("`@8VQO<V4H3U54*3L*("`@(&-L;W-E*$9)3$4I.PH@("`@:68H)&UA<'!I;F=C;W5N="`]/2`P*7L*_("`@(`EP<FEN="`B)&=T9B!I<R!N;W0@:6X@86X@86-C97!T86)L92!G=&8@9F]R;6%T+B!%>&ET:6YG+BXN_7&XB.PH@("`@"65X:70["B`@("!]"B`@("`*("`@(&UY("1N9FEL97,@/2!S8V%L87(@:V5Y<R`E9W)O=7`[_"B`@("!I9B@D;F9I;&5S(#P@,BE["B`@("`)<')I;G0@(DYO="!E;F]U9V@@9FEL97,N($5X:71I;F<N+BY<_;B(["@D)97AI=#L*"7T*"@EP<FEN="`B0VAE8VMI;F<@<W!L:6-E+6IU;F-T:6]N(&9I;&5S+BXN7&XB.PH)_)'-T87)T=&EM92`]('1I;64["@EM>2`D<VIC;W5N="`](#`["@EF;W)E86-H(&UY("1B86TH:V5Y<R`E9W)O_=7`I>PH)"6YE>'0@:68H)&)A;2!E<2`B(BD["@D);7D@)&%C8V5S<VEO;B`]("1B86T["@D))&%C8V5S<VEO_;CU^<R]!;&EG;F5D7"YS;W)T961">4-O;W)D7"YO=71<+F)A;2\O.PH)"21A8V-E<W-I;VX]?G,O<V]R=&5D_7"YO=71<+F)A;2\O.PH)"21A8V-E<W-I;VX]?G,O7"YB86TO+SL*"0DD86-C97-S:6]N/7YS+UPN)"\O.PH)_"6UY("1S:F9N(#T@)&%C8V5S<VEO;B`N("(N4THN;W5T+G1A8B(["@D);7D@)&-O;6UE;F0@/2`B<V%M=&]O_;',@=FEE=R`D8F%M('P@87=K("UF("(@+B`D<&%T:"`N("(O<VI&<F]M4T%-8V]L;&%P<V5586YD35]I;F-L_3W9E<FQA<',N87=K(#X@(B`N("1S:F9N.PH)"6EF*"UE("1S:F9N*7L*"0D):68H+7H@)'-J9FXI>PH)"0D)_<')I;G0@(E)E9V5N97)A=&EN9R`N4THN;W5T(&9O<B`D86-C97-S:6]N7&XB.PH)"0D):68H)&)A;3U^("]!_;&EG;F5D7"YS;W)T961">4-O;W)D7"YO=71<+F)A;2\I>PH)"0D)"7!R:6YT("(D8F%M(&QO;VMS('-O<G1E_9"!B>2!C;V]R9&EA=&5S+EQN(CL*"0D)"0EP<FEN="`B<VI&<F]M4T%-8V]L;&%P<V5586YD35]I;F-L3W9E_<FQA<',N87=K(&UA>2!N;W0@9V5N97)A=&4@86-C=7)A=&4@+E-*+F]U="!F:6QE<RX@4&QE87-E('5S92`N_4THN;W5T(&9R;VT@4U1!4B!A;&EG;F5R(&]R('-O<G0@=&AE(&9I;&4@8GDZ7&XB.PH)"0D)"7!R:6YT(")S_86UT;V]L<R!S;W)T("UN("UO("1A8V-E<W-I;VXN06QI9VYE9"YS;W)T961">4YA;64N;W5T+F)A;2`D8F%M_7&XB.PH)"0D)"7!R:6YT("(]0T%55$E/3CU;+DE2+F]U="!W:6QL(&YE960@82!B86T@9FEL92!S;W)T960@_8GD@8V]O<F1I871E<UU<;B(["@D)"0D)(VYE>'0["@D)"0E]"@D)"0ES>7-T96TH(B1C;VUM96YD(BD["@D)_"7T*"0E]96QS97L*"0D)<')I;G0@(D=E;F5R871I;F<@+E-*+F]U="!F;W(@)&%C8V5S<VEO;EQN(CL*"0D)_:68H)&)A;3U^("]!;&EG;F5D7"YS;W)T961">4-O;W)D7"YO=71<+F)A;2\I>PH)"0D)<')I;G0@(B1B86T@_;&]O:W,@<V]R=&5D(&)Y(&-O;W)D:6%T97,N7&XB.PH)"0D)<')I;G0@(G-J1G)O;5-!36-O;&QA<'-E56%N_9$U?:6YC;$]V97)L87!S+F%W:R!M87D@;F]T(&=E;F5R871E(&%C8W5R871E("Y32BYO=70@9FEL97,N(%!L_96%S92!U<V4@+E-*+F]U="!F<F]M(%-405(@86QI9VYE<B!O<B!S;W)T('1H92!F:6QE(&)Y.EQN(CL*"0D)_"7!R:6YT(")S86UT;V]L<R!S;W)T("UN("UO("1A8V-E<W-I;VXN06QI9VYE9"YS;W)T961">4YA;64N;W5T_+F)A;2`D8F%M7&XB.PH)"0D)<')I;G0@(CU#055424]./5LN25(N;W5T('=I;&P@;F5E9"!A(&)A;2!F:6QE_('-O<G1E9"!B>2!C;V]R9&EA=&5S75QN(CL*"0D)"2-N97AT.PH)"0E]"@D)"7-Y<W1E;2@B)&-O;6UE;F0B_*3L*"0E]"@D))'-J8V]U;G0K*SL*"7T*"21S=&]P=&EM92`]('1I;64["B`@("`D:&]U<G,@/2!S<')I;G1F_*"(E+C1F(BPH*"1S=&]P=&EM92TD<W1A<G1T:6UE*2\S-C`P*2D["B`@("`D=&]T86QT:6UE("L]("1H;W5R_<SL*("`@('!R:6YT("(]/3U3<&QI8V4M:G5N8W1I;VX@9FEL97,@<W!E;G0@)&AO=7)S(&AO=7)S+CT]/5QN_(CL*"6EF*"1S:F-O=6YT(#P@,BE["@D)<')I;G0@(D]N;'D@)'-J8V]U;G0@<V%M<&QE<RX@270@:7,@;F]T_(&5N;W5G:"X@17AI=&EN9RXN+EQN(CL*"0EE>&ET.PH)?0H)"@DD<W1A<G1T:6UE(#T@=&EM93L*"6UY("1D_8FYA;64@/2`D;F%M92`N("(N9&(B.PH);7D@)&)E9&YA;64@/2`D;F%M92`N("(N8F5D(CL*"6UY("1C:')S_.PH)9F]R96%C:"!M>2`D8VAR*'-O<G0@:V5Y<R`E8VAR*7L*"0DD8VAR<R`N/2`B7'0B("X@)&-H<CL*"7T*_"21C:')S/7YS+UQT+R\["@EI9B@M92`D9&)N86UE*7L*"0EI9B@M>B`D9&)N86UE*7L*"0D)<')I;G0@(E)E_9V5N97)A=&EN9R`D9&)N86UE+BXN7&XB.PH)"0ER=6YD8B@D;F]V96QJ=6YC=&EO;F-R:71E<FEA+"1G=&8L_)&-H<G,I.PH)"7T*"7UE;'-E>PH)"7!R:6YT(")'96YE<F%T:6YG("1D8FYA;64N+BY<;B(["@D)<G5N9&(H_)&YO=F5L:G5N8W1I;VYC<FET97)I82PD9W1F+"1C:')S*3L*"7T*"21S=&]P=&EM92`]('1I;64["B`@("`D_:&]U<G,@/2!S<')I;G1F*"(E+C1F(BPH*"1S=&]P=&EM92TD<W1A<G1T:6UE*2\S-C`P*2D["B`@("`D=&]T_86QT:6UE("L]("1H;W5R<SL*("`@('!R:6YT("(]/3U$871A8F%S92!S<&5N="`D:&]U<G,@:&]U<G,N/3T]_7&XB.PH@("`@"B`@("!P<FEN="`B1V5T=&EN9R!I;G1R;VX@<F5A9',N+BXN7&XB.PH@("`@)'-T87)T=&EM_92`]('1I;64["B`@("!M>2`D:7)C;W5N="`](#`["B`@("!F;W)E86-H(&UY("1B86TH:V5Y<R`E9W)O=7`I_>PH@("`@"7!R:6YT(")#:&5C:VEN9R`D8F%M+BXN7&XB.PH)"6UY("1A8V-E<W-I;VX@/2`D8F%M.PH)"21A_8V-E<W-I;VX]?G,O06QI9VYE9%PN<V]R=&5D0GE#;V]R9%PN;W5T7"YB86TO+SL*"0DD86-C97-S:6]N/7YS_+W-O<G1E9%PN;W5T7"YB86TO+SL*"0DD86-C97-S:6]N/7YS+UPN8F%M+R\["@D))&%C8V5S<VEO;CU^<R]<_+B0O+SL*"0EM>2`D:7)F;B`]("1A8V-E<W-I;VX@+B`B+DE2+F]U="YT86(B.PH)"6UY("1C;VUM96YD(#T@_(G!E<FP@(B`N("1P871H("X@(B]04TES:6=M82UI<BUV+C$N,"YP;"`B("X@)&YA;64@+B`B+F1B("(@+B`D_8F%M("X@(B`B("X@)&QO;F=R96%D.PH)"6EF*"UE("1I<F9N*7L*"0D):68H+7H@)&ER9FXI>PH)"0D)<')I_;G0@(E)E9V5N97)A=&EN9R`N25(N;W5T(&9O<B`D86-C97-S:6]N7&XB.PH)"0D)<WES=&5M*"(D8V]M;65N_9"(I.PH)"0E]96QS97L*"0D)"7!R:6YT("(D:7)F;B!E>&ES=&5D+B!087-S+BXN7&XB.PH)"0E]"@D)?65L_<V5["@D)"7!R:6YT(")'96YE<F%T:6YG("Y)4BYO=70@9F]R("1A8V-E<W-I;VY<;B(["@D)"7-Y<W1E;2@B_)&-O;6UE;F0B*3L*"0E]"@D))&ER8V]U;G0K*SL*("`@('T*"21S=&]P=&EM92`]('1I;64["@DD:&]U<G,@_/2!S<')I;G1F*"(E+C1F(BPH*"1S=&]P=&EM92TD<W1A<G1T:6UE*2\S-C`P*2D["@DD=&]T86QT:6UE("L]_("1H;W5R<SL*"7!R:6YT("(]/3U);G1R;VXM<F5A9"!F:6QE('-P96YT("1H;W5R<R!H;W5R<RX]/3U<;B([_"@EI9B@D:7)C;W5N="`\(#(I>PH)"7!R:6YT(")/;FQY("1I<F-O=6YT('-A;7!L97,N($ET(&ES(&YO="!E_;F]U9V@N($5X:71I;F<N+BY<;B(["@D)97AI=#L*"7T*"0H)<')I;G0@(E)E861Y('1O(&1O(%!322!A;F%L_>7-I<RXN+EQN(CL*"21S=&%R='1I;64@/2!T:6UE.PH);7D@)&-O;6UE;F0@/2`B<&5R;"`B("X@)'!A=&@@_+B`B+U!327-I9VUA+5!322UV+C$N,"YP;"`B("X@)&YA;64@+B`B+F1B("(@+B`D;F%M92`N("(@(B`N("1S_=7!P;W)T:6YG7W)E861?8W)I=&5R:6$@+B`B("(@+B`D:6YT<F]N7V-R:71E<FEA("X@(B`B("X@)&QO;F=R_96%D.PH)<WES=&5M*"1C;VUM96YD*3L*"21S=&]P=&EM92`]('1I;64["@DD:&]U<G,@/2!S<')I;G1F*"(E_+C1F(BPH*"1S=&]P=&EM92TD<W1A<G1T:6UE*2\S-C`P*2D["@DD=&]T86QT:6UE("L]("1H;W5R<SL*"7!R_:6YT("(]/3U04TD@86YA;'ES:7,@<W!E;G0@)&AO=7)S(&AO=7)S+CT]/5QN(CL*"0H)<')I;G0@(D9I;'1E_<FEN9R#.E%!322!R97-U;'1S+BXN7&XB.PH))'-T87)T=&EM92`]('1I;64["@EM>2`D;F]F:6QT97(@/2`P_.PH))&YO9FEL=&5R(#T@,2!I9B@D;F9I;&5S(#P@-"D["@DD8V]M;65N9"`](")P97)L("(@+B`D<&%T:"`N_("(O4%-)<VEG;6$M9FEL=&5R+78N,2XP+G!L("(@+B`D;F%M92`N("(N9&(@(B`N("1G=&8@+B`B+FUA<'!I_;F<N='AT("(@+B`D;F%M92`N(")?<B(@+B`D<W5P<&]R=&EN9U]R96%D7V-R:71E<FEA("X@(E]I<B(@+B`D_:6YT<F]N7V-R:71E<FEA("X@(BYT>'0@(B`N("1N;V9I;'1E<CL*"7-Y<W1E;2@D8V]M;65N9"D["@DD<W1O_<'1I;64@/2!T:6UE.PH))&AO=7)S(#T@<W!R:6YT9B@B)2XT9B(L*"@D<W1O<'1I;64M)'-T87)T=&EM92DO_,S8P,"DI.PH))'1O=&%L=&EM92`K/2`D:&]U<G,["@EP<FEN="`B/3T]1FEL=&5R:6YG('-P96YT("1H;W5R_<R!H;W5R<RX]/3U<;B(["@D*"7!R:6YT(")<;BHJ*E1O=&%L.B`D=&]T86QT:6UE(&AO=7)S("AO<B`B("X@_*"1T;W1A;'1I;64J-C`I("X@(FUI;G,I+EQN(CL*"0IS=6(@<G5N9&)["@EM>2`D;F]V96QJ=6YC=&EO;F-R_:71E<FEA(#T@<VAI9G0["@EM>2`D9W1F(#T@<VAI9G0["@EM>2`D8VAR<R`]('-H:69T.PH);7D@0&-H<F]M_;W-O;65S(#T@<W!L:70H+UQT+RPD8VAR<RD["0H)9F]R96%C:"!M>2`D8VAR;VUO<V]M92A`8VAR;VUO<V]M_97,I>PH)"6YE>'0@:68H)&-H<F]M;W-O;64]?B]C:')'3"\I.PH)"6YE>'0@:68H)&-H<F]M;W-O;64]?B]C_:')+22\I.PH)"6UY("1C;VUM96YD(#T@(G!E<FP@(B`N("1P871H("X@(B]04TES:6=M82UD8BUV+C$N,"YP_;"`D9W1F("(@+B`D8VAR;VUO<V]M92`N("(@(B`N("1N;W9E;&IU;F-T:6]N8W)I=&5R:6$["@D)(W!R:6YT_(")$;VEN9RXN+B`D8V]M;65N9%QN(CL*"0EP<FEN="`B1&]I;F<N+BX@)&-H<F]M;W-O;65<;B(["@D)<WES_=&5M*"(D8V]M;65N9"(I.PH)?0H)"@ES>7-T96TH(F-A="!C:'(J+F1B(#X@)&1B;F%M92(I.PH)<WES=&5M_*")C870@8VAR*BYB960@/B`D8F5D;F%M92(I.PH)<WES=&5M*")R;2!C:'(J+F1B(BD["@ES>7-T96TH(G)M.(&-H<BHN8F5D(BD["GT}
+	use strict;
+	use Cwd qw(abs_path);
+	
+	my ($gtf,$name,$longread,$supporting_read_criteria) = @ARGV;
+	
+	my $path = abs_path($0);
+	$path=~s/\/dummyai\.pl//;
+	print "Path = $path\n";
+	    
+    my ($starttime,$stoptime,$hours) = (time,0,0);
+    
+	if(scalar @ARGV != 4){
+		print "Please specify .gtf file, output name, long(2) or short(1) read, and number of supporting reads.\n";
+		exit;
+	}
 
+	my $noveljunctioncriteria = 10;
+	#my $supporting_read_criteria = 10;
+	my $intron_criteria = 3;
+	my $totaltime = 0;
+	
+    my %group;
+ 	open(FILE,"groupa.txt") || die "Aborting.. Can't open groupa.txt : $!\n";
+    while(my $line=<FILE>){
+        chomp $line;
+        next if($line eq "");
+        $group{$line}++;
+    }
+ 	open(FILE,"groupb.txt") || die "Aborting.. Can't open groupb.txt : $!\n";
+    while(my $line=<FILE>){
+        chomp $line;
+        next if($line eq "");
+        $group{$line}++;
+    }
+
+	print "Generating mapping file...\n";
+    my $mappingcount = 0;
+	my %chr;
+    open(FILE,"$gtf") || die "Aborting.. Can't open $gtf : $!\n";
+    open(OUT,">" . $gtf . ".mapping.txt") || die "Aborting.. Can't open $gtf : $!\n";
+    while(my $line=<FILE>){
+        chomp $line;
+        next if($line=~/^\#/);
+        my @array = split(/\t/,$line);
+        next if($array[2] ne "transcript");
+        my ($chr,$cat,$start,$end,$strand,$name) = ($array[0],$array[1],$array[3],$array[4],$array[6],$array[8]);
+        $chr = "chr" . $chr if($chr!~/chr/);
+        $chr{$chr}++;
+		my $ENST = $name;
+ 		$ENST=~s/(.*)transcript\_id \"//;
+    	$ENST=~s/\"\; (.*)//;
+		if($ENST=~/\_/){
+			$ENST=~s/\_/\./g;
+		}
+        $name=~s/(.*)gene\_name \"//;
+    	$name=~s/\"\; (.*)//;
+    	$name=~s/gene\_id \"//;
+        print OUT $ENST . "\t" . $name . "\t" . $strand . "\n";
+        $mappingcount++ if($ENST ne "" && $name ne "" && $strand ne "");
+    }
+    close(OUT);
+    close(FILE);
+    if($mappingcount == 0){
+    	print "$gtf is not in an acceptable gtf format. Exiting...\n";
+    	exit;
+    }
+    
+    my $nfiles = scalar keys %group;
+    if($nfiles < 2){
+    	print "Not enough files. Exiting...\n";
+		exit;
+	}
+
+	print "Checking splice-junction files...\n";
+	$starttime = time;
+	my $sjcount = 0;
+	foreach my $bam(keys %group){
+		next if($bam eq "");
+		my $accession = $bam;
+		$accession=~s/Aligned\.sortedByCoord\.out\.bam//;
+		$accession=~s/sorted\.out\.bam//;
+		$accession=~s/\.bam//;
+		$accession=~s/\.$//;
+		my $sjfn = $accession . ".SJ.out.tab";
+		my $commend = "samtools view $bam | awk -f " . $path . "/sjFromSAMcollapseUandM_inclOverlaps.awk > " . $sjfn;
+		if(-e $sjfn){
+			if(-z $sjfn){
+				print "Regenerating .SJ.out for $accession\n";
+				if($bam=~ /Aligned\.sortedByCoord\.out\.bam/){
+					print "$bam looks sorted by coordiates.\n";
+					print "sjFromSAMcollapseUandM_inclOverlaps.awk may not generate accurate .SJ.out files. Please use .SJ.out from STAR aligner or sort the file by:\n";
+					print "samtools sort -n -o $accession.Aligned.sortedByName.out.bam $bam\n";
+					print "=CAUTION=[.IR.out will need a bam file sorted by coordiates]\n";
+					#next;
+				}
+				system("$commend");
+			}
+		}else{
+			print "Generating .SJ.out for $accession\n";
+			if($bam=~ /Aligned\.sortedByCoord\.out\.bam/){
+				print "$bam looks sorted by coordiates.\n";
+				print "sjFromSAMcollapseUandM_inclOverlaps.awk may not generate accurate .SJ.out files. Please use .SJ.out from STAR aligner or sort the file by:\n";
+				print "samtools sort -n -o $accession.Aligned.sortedByName.out.bam $bam\n";
+				print "=CAUTION=[.IR.out will need a bam file sorted by coordiates]\n";
+				#next;
+			}
+			system("$commend");
+		}
+		$sjcount++;
+	}
+	$stoptime = time;
+    $hours = sprintf("%.4f",(($stoptime-$starttime)/3600));
+    $totaltime += $hours;
+    print "===Splice-junction files spent $hours hours.===\n";
+	if($sjcount < 2){
+		print "Only $sjcount samples. It is not enough. Exiting...\n";
+		exit;
+	}
+	
+	$starttime = time;
+	my $dbname = $name . ".db";
+	my $bedname = $name . ".bed";
+	my $chrs;
+	foreach my $chr(sort keys %chr){
+		$chrs .= "\t" . $chr;
+	}
+	$chrs=~s/\t//;
+	if(-e $dbname){
+		if(-z $dbname){
+			print "Regenerating $dbname...\n";
+			rundb($noveljunctioncriteria,$gtf,$chrs);
+		}
+	}else{
+		print "Generating $dbname...\n";
+		rundb($noveljunctioncriteria,$gtf,$chrs);
+	}
+	$stoptime = time;
+    $hours = sprintf("%.4f",(($stoptime-$starttime)/3600));
+    $totaltime += $hours;
+    print "===Database spent $hours hours.===\n";
+    
+    print "Getting intron reads....\n";
+    $starttime = time;
+    my $ircount = 0;
+    foreach my $bam(keys %group){
+		my $accession = $bam;
+		$accession=~s/Aligned\.sortedByCoord\.out\.bam//;
+		$accession=~s/sorted\.out\.bam//;
+		$accession=~s/\.bam//;
+		$accession=~s/\.$//;
+		my $pname = "";
+		my $checkpname = 0;
+		if($bam!~/\.bam/){
+			$pname = $bam . "\.Aligned\.sortedByCoord\.out\.bam";
+			if(-e $pname){
+				$bam = $pname;
+				$checkpname = 1;
+			}
+			if($checkpname == 0){
+				$pname = $bam . "\.sorted\.out\.bam";
+				if(-e $pname){
+					$bam = $pname;
+					$checkpname = 1;
+				}
+			}
+			if($checkpname == 0){
+				$pname = $bam . "\.bam";
+				if(-e $pname){
+					$bam = $pname;
+					$checkpname = 1;
+				}
+			}
+		}
+		print "Checking $bam...\n";
+		my $irfn = $accession . ".IR.out.tab";
+		my $commend = "perl " . $path . "/PSIsigma-ir-v.1.0.pl " . $name . ".db " . $bam . " " . $longread;
+		#print "commend = $commend\n";
+		if(-e $irfn){
+			if(-z $irfn){
+				print "Regenerating .IR.out for $accession\n";
+				system("$commend");
+			}else{
+				print "$irfn existed. Pass...\n";
+			}
+		}else{
+			print "Generating .IR.out for $accession\n";
+			system("$commend");
+		}
+		$ircount++;
+    }
+	$stoptime = time;
+	$hours = sprintf("%.4f",(($stoptime-$starttime)/3600));
+	$totaltime += $hours;
+	print "===Intron-read file spent $hours hours.===\n";
+	if($ircount < 2){
+		print "Only $ircount samples. It is not enough. Exiting...\n";
+		exit;
+	}
+	
+	print "Ready to do PSI analysis...\n";
+	$starttime = time;
+	my $commend = "perl " . $path . "/PSIsigma-PSI-v.1.0.pl " . $name . ".db " . $name . " " . $supporting_read_criteria . " " . $intron_criteria . " " . $longread;
+	system($commend);
+	$stoptime = time;
+	$hours = sprintf("%.4f",(($stoptime-$starttime)/3600));
+	$totaltime += $hours;
+	print "===PSI analysis spent $hours hours.===\n";
+	
+	print "Filtering ΔPSI results...\n";
+	$starttime = time;
+	my $nofilter = 0;
+	$nofilter = 1 if($nfiles < 4);
+	$commend = "perl " . $path . "/PSIsigma-filter-v.1.0.pl " . $name . ".db " . $gtf . ".mapping.txt " . $name . "_r" . $supporting_read_criteria . "_ir" . $intron_criteria . ".txt " . $nofilter;
+	system($commend);
+	$stoptime = time;
+	$hours = sprintf("%.4f",(($stoptime-$starttime)/3600));
+	$totaltime += $hours;
+	print "===Filtering spent $hours hours.===\n";
+	
+	print "\n***Total: $totaltime hours (or " . ($totaltime*60) . "mins).\n";
+	
+sub rundb{
+	my $noveljunctioncriteria = shift;
+	my $gtf = shift;
+	my $chrs = shift;
+	my @chromosomes = split(/\t/,$chrs);	
+	foreach my $chromosome(@chromosomes){
+		next if($chromosome=~/chrGL/);
+		next if($chromosome=~/chrKI/);
+		my $commend = "perl " . $path . "/PSIsigma-db-v.1.0.pl $gtf " . $chromosome . " " . $noveljunctioncriteria;
+		#print "Doing... $commend\n";
+		print "Doing... $chromosome\n";
+		system("$commend");
+	}
+	
+	system("cat chr*.db > $dbname");
+	system("cat chr*.bed > $bedname");
+	system("rm chr*.db");
+	system("rm chr*.bed");
+}
 	
