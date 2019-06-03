@@ -192,6 +192,7 @@ GNU General Public License for more details.
 		}
 		print "Checking $bam...\n";
 		my $irfn = $accession . ".IR.out.tab";
+		print "Checking $irfn...\n";
 		my $commend = "perl " . $path . "/PSIsigma-ir-v.1.0.pl " . $name . ".db " . $bam . " " . $longread;
 		#print "commend = $commend\n";
 		if(-e $irfn){
