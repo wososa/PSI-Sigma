@@ -132,6 +132,11 @@ CITATION
 https://www.ncbi.nlm.nih.gov/pubmed/31135034
 * Lin, K. T. & Krainer, A. R. PSI-Sigma: a comprehensive splicing-detection method for short-read and long-read RNA-seq analysis. Bioinformatics, doi:10.1093/bioinformatics/btz438 (2019).
 
+PSI-Sigma PRESENTAION
+===========
+Oxford Nanopore London Calling 2019:
+https://vimeo.com/339511487
+
 PUBLICATIONS USING PSI-Sigma
 ===========
 https://www.ncbi.nlm.nih.gov/pubmed/29449409
