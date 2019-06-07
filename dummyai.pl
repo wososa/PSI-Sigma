@@ -192,7 +192,6 @@ GNU General Public License for more details.
 		}
 		print "Checking $bam...\n";
 		my $irfn = $accession . ".IR.out.tab";
-		print "Checking $irfn...\n";
 		my $commend = "perl " . $path . "/PSIsigma-ir-v.1.0.pl " . $name . ".db " . $bam . " " . $longread;
 		#print "commend = $commend\n";
 		if(-e $irfn){
@@ -219,7 +218,7 @@ GNU General Public License for more details.
 	
 	print "Ready to do PSI analysis...\n";
 	$starttime = time;
-	my $commend = "perl " . $path . "/PSIsigma-PSI-v.1.0.pl " . $name . ".db " . $name . " " . $supporting_read_criteria . " " . $intron_criteria . " " . $longread;
+	my $commend = "perl " . $path . "/PSIsigma-PSI-v.1.1.pl " . $name . ".db " . $name . " " . $supporting_read_criteria . " " . $intron_criteria . " " . $longread;
 	system($commend);
 	$stoptime = time;
 	$hours = sprintf("%.4f",(($stoptime-$starttime)/3600));
