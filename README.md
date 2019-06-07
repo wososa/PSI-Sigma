@@ -134,7 +134,7 @@ https://www.ncbi.nlm.nih.gov/pubmed/31135034
 
 PSI-Sigma PRESENTAION
 ===========
-*Oxford Nanopore London Calling 2019:
+* Oxford Nanopore London Calling 2019:
 https://vimeo.com/339511487
 
 PUBLICATIONS USING PSI-Sigma
