@@ -129,7 +129,7 @@ To use the PSIsigma-longread-gene-expression.pl:
 ```
 perl ~/PSIsigma/PSIsigma-longread-gene-expression.pl Homo_sapiens.GRCh38.87.sorted.gtf Experiment.Aligned.sortedByCoord.out.bam
 ```
-The default setting is using 4 CPUs to calculate gene expression levels by matching constitutive exons in the gene annotation.
+The default setting is using 4 CPUs to calculate gene expression levels by matching constitutive exons in the gene annotation. An extra perl extension (threads) is needed.
 
 CITATION
 ===========
