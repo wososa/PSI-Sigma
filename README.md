@@ -78,9 +78,22 @@ The results will be in the PSIsigma_r10_ir3.sorted.txt.
  * GTF File: *.gtf (http://useast.ensembl.org/info/data/ftp/index.html/)
 
 
-PERFORMANCE
+OUTPUT
 ==============
-
+ * Event Region: Genomic coordinates of the splicing event.
+ * Gene Symbol: Gene symbol of the splicing event.
+ * Target Exon: Genomic coordinates of the alternative exon.
+ * Event Type: Category of the splicing event.
+ * N: the number of valid samples in groupa.txt (influenced by the number of supporting reads).
+ * T: the number of valid samples in groupb.txt (influenced by the number of supporting reads).
+ * Exon Type: Whether the exon is a novel exon or an exon related to nonsense mediated decay (NMD).
+ * Reference Transcript: The transcript ID in the gene annotation file.
+ * ΔPSI (%): the average difference of PSI values in groupa.txt and groupb.txt.
+ * T-test p-value: p-value derived from two-sample t-test.
+ * FDR (BH): false discovery rate based on the p-values. 
+ * N Values: It shows all valid PSI values derived from the .SJ.out.tab files based on groupa.txt. (influenced by the number of supporting reads).
+ * T Values: It shows all valid PSI values derived from the .SJ.out.tab files based on groupb.txt. (influenced by the number of supporting reads).
+ * Database ID: It shows the accession number of the splicing event in the database of PSI-Sigma (e.g., PSIsigma.db).
 
 SOFTWARE REQUIREMENTS
 ==============================
