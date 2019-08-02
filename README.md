@@ -8,7 +8,7 @@ However, previous PSI-detection methods are limited to specific types of AS even
 Updates
 =================
 * v1.1: fixed a bug that certain multiple-exon-skipping events were reported without checking the multiple-exon-skipping junction.
-* A page for generating IR.out.tab file in parallel (IRinparallel.md).
+* A page for generating IR.out.tab file in parallel (https://github.com/wososa/PSI-Sigma/blob/master/IRinparallel.md).
 
 AUTHOR/SUPPORT
 ==============
