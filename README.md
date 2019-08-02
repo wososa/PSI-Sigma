@@ -54,6 +54,7 @@ rm Homo_sapiens.GRCh38.87.gtf
 ```
 Create two files: (1) groupa.txt and (2) groupb.txt. Please put suffixes of your .SJ.out.tab files in the groupa.txt or groupb.txt. For example, the suffix of a "Sequins_MixA.SJ.out.tab" file is "Sequins_MixA". Groupa.txt will be compared with groupb.txt. Below is an example of processing .SJ.out.tab files from TCGA (11A means normal and 01A means tumor):
 ```
+#Note: one file name per line in groupa.txt and groupb.txt
 #For TCGA files:
 ls *-11A-*.SJ* | sed s/.SJ.out.tab//g > groupa.txt
 ls *-01A-*.SJ* | sed s/.SJ.out.tab//g > groupb.txt
