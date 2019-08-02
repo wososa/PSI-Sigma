@@ -26,7 +26,8 @@ perl ~/PSIsigma/dummyai-db-alone.pl Homo_sapiens.GRCh38.94.sorted.gtf PSIsigma
 ```
 Next, you can generate IR.out.tab files for each .bam files, respectively:
 ```
-perl ~/PSIsigma/PSIsigma-ir-v.1.0.pl PSIsigma.db 
+perl ~/PSIsigma/PSIsigma-ir-v.1.0.pl PSIsigma.db A1.sortedByCoord.out.bam 1
+perl ~/PSIsigma/PSIsigma-ir-v.1.0.pl PSIsigma.db B1.sortedByCoord.out.bam 1
 ```
 That's it.
 
