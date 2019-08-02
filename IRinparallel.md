@@ -14,22 +14,19 @@ get ftp://ftp.ensembl.org/pub/release-87/gtf/homo_sapiens//Homo_sapiens.GRCh38.8
 gzip -d Homo_sapiens.GRCh38.87.gtf.gz
 (grep "^#" Homo_sapiens.GRCh38.87.gtf; grep -v "^#" Homo_sapiens.GRCh38.87.gtf | sort -k1,1 -k4,4n) > Homo_sapiens.GRCh38.87.sorted.gtf
 rm Homo_sapiens.GRCh38.87.gtf
-#For TCGA files:
-ls *-11A-*.SJ* | sed s/.SJ.out.tab//g > groupa.txt
-ls *-01A-*.SJ* | sed s/.SJ.out.tab//g > groupb.txt
-#Alternatively, you can just put the names of your .bam files:
-echo Sequins_MixA.Aligned.sortedByCoord.out.bam > groupa.txt
-echo Sequins_MixB.Aligned.sortedByCoord.out.bam > groupb.txt
+#one file name per line in groupa.txt and groupb.txt
+echo A1.sortedByCoord.out.bam > groupa.txt
+echo B1.sortedByCoord.out.bam > groupb.txt
 ```
 Ready to go
 ======
 You need to generate PSIsigma.db first:
 ```
-
+perl ~/PSIsigma/dummyai-db-alone.pl Homo_sapiens.GRCh38.94.sorted.gtf PSIsigma
 ```
 Next, you can generate IR.out.tab files for each .bam files, respectively:
 ```
-
+perl ~/PSIsigma/PSIsigma-ir-v.1.0.pl PSIsigma.db 
 ```
 That's it.
 
