@@ -5,9 +5,10 @@ However, previous PSI-detection methods are limited to specific types of AS even
 <br/>
  * PSI-Sigma is now released in obfuscated codes for review purposes.
 
-BUG-FIX
+Updates
 =================
 * v1.1: fixed a bug that certain multiple-exon-skipping events were reported without checking the multiple-exon-skipping junction.
+* A manual page for running PSI-Sigma in a large amoun of RNA-seq samples.
 
 AUTHOR/SUPPORT
 ==============
