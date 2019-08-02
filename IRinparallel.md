@@ -22,7 +22,7 @@ Ready to go
 ======
 You need to generate PSIsigma.db first:
 ```
-perl ~/PSIsigma/dummyai-db-alone.pl Homo_sapiens.GRCh38.94.sorted.gtf PSIsigma
+perl ~/PSIsigma/dummyai-db-alone.pl Homo_sapiens.GRCh38.87.sorted.gtf PSIsigma
 ```
 Next, you can generate IR.out.tab files for each .bam files, respectively:
 ```
