@@ -3,7 +3,7 @@ PSI-Sigma
 Percent Spliced-In (PSI) values are commonly used to report alternative pre-mRNA splicing (AS) changes.
 However, previous PSI-detection methods are limited to specific types of AS events. PSI-Sigma is using a new splicing index (PSI<sub>Σ</sub>) that is more flexible, can incoporate novel junctions, and can compute PSI values of individual exons in complex splicing events.
 <br/>
- * PSI-Sigma is now released in obfuscated codes for review purposes.
+ * PSI-Sigma is now published: https://www.ncbi.nlm.nih.gov/pubmed/31135034
 
 Updates
 =================
