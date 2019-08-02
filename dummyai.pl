@@ -1,19 +1,8 @@
 =begin
-PSI-Sigma
-A splicing-detection method for short-read and long-read RNA-seq data
-© Kuan-Ting Lin, 2018-2022
-
-PSI-Sigma is a free open source software distributed under GPLv3
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+PSI-Sigma: A splicing-detection method for short-read and long-read RNA-seq data
+© Kuan-Ting Lin, 2018-2024
+PSI-Sigma is free for non-commercial purposes by individuals at an academic or non-profit institution.
+For commercial purposes, please contact tech transfer office of CSHL via narayan@cshl.edu
 =end
 =cut
 #!/usr/bin/perl -w
