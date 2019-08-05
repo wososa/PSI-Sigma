@@ -29,5 +29,12 @@ Next, you can generate IR.out.tab files for each .bam files, respectively:
 perl ~/PSIsigma/PSIsigma-ir-v.1.0.pl PSIsigma.db A1.sortedByCoord.out.bam 1
 perl ~/PSIsigma/PSIsigma-ir-v.1.0.pl PSIsigma.db B1.sortedByCoord.out.bam 1
 ```
-That's it.
+After obtaining the .db and .IR.out.tab files, you can run dummyai.pl.
+```
+#For short-read RNA-seq (minimum 10 supporting reads for an AS event)
+perl ~/PSIsigma/dummyai.pl Homo_sapiens.GRCh38.87.sorted.gtf PSIsigma 1 10
+#For long-read RNA-seq (minimum 10 supporting reads for an AS event)
+perl ~/PSIsigma/dummyai.pl Homo_sapiens.GRCh38.87.sorted.gtf PSIsigma 2 10
+```
+That's it. The results will be in the PSIsigma_r10_ir3.sorted.txt.
 
