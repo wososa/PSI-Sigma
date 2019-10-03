@@ -7,6 +7,7 @@ However, previous PSI-detection methods are limited to specific types of AS even
 
 Updates
 =================
+* A new paper using PSI-Sigma is now published on Nature: https://rdcu.be/bSL5W
 * Alignment file for nanopore long-read PCR-cDNA-seq of human U87 cells: https://dropfiles.cshl.edu/link/EaLvsUGHEZxJARQJdTYqrG
 * v1.1: fixed a bug that certain multiple-exon-skipping events were reported without checking the multiple-exon-skipping junction.
 * A page for generating IR.out.tab file in parallel (https://github.com/wososa/PSI-Sigma/blob/master/IRinparallel.md).
@@ -160,7 +161,10 @@ https://vimeo.com/339511487
 PUBLICATIONS USING PSI-Sigma
 ===========
 https://www.ncbi.nlm.nih.gov/pubmed/29449409
-* Lin, K. T., Ma, W. K., Scharner, J., Liu, Y. R. & Krainer, A. R. A human-specific switch of alternatively spliced AFMID isoforms contributes to TP53 mutations and tumor recurrence in hepatocellular carcinoma. Genome Res, doi:10.1101/gr.227181.117 (2018).
+* Lin, K. T., Ma, W. K., Scharner, J., Liu, Y. R. & Krainer, A. R. (2018) A human-specific switch of alternatively spliced AFMID isoforms contributes to TP53 mutations and tumor recurrence in hepatocellular carcinoma. Genome Res.
+
+https://rdcu.be/bSL5W
+* Yoshimi, A.*, Lin, K.T.*, Wiseman, D.*, et al. (2019). Coordinated Alterations in RNA Splicing and Epigenetic Regulation Drive Leukemogenesis. Nature. (*co-first author)
 
 Commercial Use
 ===========
