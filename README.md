@@ -163,7 +163,7 @@ PUBLICATIONS USING PSI-Sigma
 https://www.ncbi.nlm.nih.gov/pubmed/29449409
 * Lin, K. T., Ma, W. K., Scharner, J., Liu, Y. R. & Krainer, A. R. (2018) A human-specific switch of alternatively spliced AFMID isoforms contributes to TP53 mutations and tumor recurrence in hepatocellular carcinoma. Genome Res.
 
-https://rdcu.be/bSL5W
+https://www.ncbi.nlm.nih.gov/pubmed/31578525
 * Yoshimi, A.*, Lin, K.T.*, Wiseman, D.*, et al. (2019). Coordinated Alterations in RNA Splicing and Epigenetic Regulation Drive Leukemogenesis. Nature. (*co-first author)
 
 Commercial Use
