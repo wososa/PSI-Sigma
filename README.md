@@ -7,6 +7,7 @@ However, previous PSI-detection methods are limited to specific types of AS even
 
 Updates
 =================
+* I will present a poster at the Genome Informatics meeting at CSHL next week (2019/11/07). Please stop by if you have questions.
 * A new paper using PSI-Sigma in Nature: https://rdcu.be/bSL5W
 * Alignment file for nanopore long-read PCR-cDNA-seq of human U87 cells: https://dropfiles.cshl.edu/link/EaLvsUGHEZxJARQJdTYqrG
 * v1.1: fixed a bug that certain multiple-exon-skipping events were reported without checking the multiple-exon-skipping junction.
