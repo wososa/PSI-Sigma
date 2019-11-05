@@ -73,7 +73,7 @@ perl ~/PSIsigma/dummyai.pl --gtf Homo_sapiens.GRCh38.87.sorted.gtf --name PSIsig
 #For long-read RNA-seq (minimum 10 supporting reads for an AS event)
 perl ~/PSIsigma/dummyai.pl --gtf Homo_sapiens.GRCh38.87.sorted.gtf --name PSIsigma --type 2 -nread 10
 
-#Alternatively, you can us the old format
+#Alternatively, you can use the old format
 #For short-read RNA-seq (minimum 10 supporting reads for an AS event)
 perl ~/PSIsigma/dummyai.pl Homo_sapiens.GRCh38.87.sorted.gtf PSIsigma 1 10
 #For long-read RNA-seq (minimum 10 supporting reads for an AS event)
