@@ -6,5 +6,257 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 =end
 =cut
 #!/usr/bin/perl -w
-eval unpack u=>q{_=7-E('-T<FEC=#L*("`@(&UY("@D9&(L)&UA<'!I;F<L)&EN<'5T+"1N;V9I;'1E<BD@/2!`05)'5CL*"@DC_)&YO9FEL=&5R(#T@,3L*"6UY("1C<FET97)I82`](#`N-S4["@EM>2`E<WEM8F]L.PH);7D@)7-T<F%N9#L*_"7!R:6YT(")296%D:6YG+BXN("1M87!P:6YG7&XB.PH@"6]P96XH1DE,12PB)&UA<'!I;F<B*2!\?"!D:64@_(D%B;W)T:6YG+BX@0V%N)W0@;W!E;B`D;6%P<&EN9R`Z("0A7&XB.PH@("`@=VAI;&4H;7D@)&QI;F4]/$9)_3$4^*7L*("`@("`@("!C:&]M<"`D;&EN93L*("`@("`@("!M>2`H)$5.4U0L)'-Y;6)O;"PD<W1R86YD*2`]_('-P;&ET*"]<="\L)&QI;F4I.PH@("`@("`@("1S>6UB;VQ[)$5.4U1](#T@)'-Y;6)O;#L*("`@("`@("`D_<W1R86YD>R1%3E-4?2`]("1S=')A;F0["B`@("!]"B`@("!C;&]S92A&24Q%*3L*"@EP<FEN="`B4F5A9&EN_9RXN+B`D9&)<;B(["B`@("!M>2`E150["B`@("!M>2`E=VEN9SL*("`@(&UY("5N86UE<SL*("`@(&]P96XH_1DE,12P@(B1D8B(I('Q\(&1I92`B06)O<G1I;F<N+B!#86XG="!O<&5N("1D8EQN(CL*("`@('=H:6QE*&UY_("1L:6YE/3Q&24Q%/BE["B`@("`)8VAO;7`@)&QI;F4["B`@("`);F5X="!I9B@D;&EN92!E<2`B(BD["B`@_("`);7D@*"1C:'(L)&DQ<RPD:3%E+"1I,G,L)&DR92PD=&5S+"1T964L)&%N;F\L)&%S+"1A92PD;F%M92PD_9VXI(#T@<W!L:70H+UQT+RPD;&EN92D["B`@("`);7D@*"1E="D@/2`B+2(["B`@("`);7D@*"1A8V-E<W-I_;VXL)&YU;2D@/2`H)#$L)#(I(&EF*"1N86UE/7XO*"XJ*5Q?*%QD*RDD+RD["B`@("`)(R1A8V-E<W-I;VX]_?G,O*"XJ*5Q?+R\["B`@("`);7D@)$5.4U0@/2`B(CL*("`@(`DD=VEN9WLD;F%M97T@/2`B)&-H<BPD:3%S_+"1I,64L)&DR<RPD:3)E(CL*("`@(`EI9B@D86-C97-S:6]N/7XO7%]%3E-4*%QD*RDO*7L*("`@(`D))$5._4U0@/2`H)#$I(&EF*"1A8V-E<W-I;VX]?B]<7T5.4U0H7&0K*2\I.PH@("`@"0DD14Y35"`](")%3E-4(B`N_("1%3E-4.PH@("`@"7T*("`@(`EI9B@D86-C97-S:6]N/7XO7%]%3E--55-4*%QD*RDO*7L*("`@(`D))$5._4U0@/2`H)#$I(&EF*"1A8V-E<W-I;VX]?B]<7T5.4TU54U0H7&0K*2\I.PH@("`@"0DD14Y35"`](")%3E--_55-4(B`N("1%3E-4.PH@("`@"7T*("`@(`EI9B@D;F%M93U^+UQ?4C%<+B\@?'P@)&YA;64]?B]<7U(R7"XO_*7L*("`@(`D))&YA;64]?G,O7"XO7%\O9SL*("`@(`D)*"1A8V-E<W-I;VXL)&YU;2D@/2`H)#$L)#(I(&EF_*"1N86UE/7XO*%QW*RE<7RA<9"LI)"\I.PH@("`@"0DD14Y35"`]("1A8V-E<W-I;VX["B`@("`)"21%3E-4_/7YS+R@N*BE<7U(Q+U(Q+SL*("`@(`D))$5.4U0]?G,O*"XJ*5Q?4C(O4C(O.PH@("`@"7T*("`@(`EI9B@D_14Y35"!E<2`B(BE["B`@("`)"2-P<FEN="`B5T%23DY)3D<Z($5.4U0@9F]R;6%T(&ES(&YO="!H=6UA;BA%_3E-4*2!O<B!M;W5S92`H14Y335535"E<;B(["B`@("`)"21%3E-4(#T@)&%C8V5S<VEO;CL*("`@(`D))$5._4U0]?G,O*"XJ*5Q?+R\["B`@("`)"2-E>&ET.PH@("`@"7T*("`@(`D*("`@(`EI9B@D;F%M93U^+UQ?5UQ?_+RE["B`@("`)"6EF*"1I,7,@/3T@)&%S("8F("1I,F4@/3T@)&%E*7L*("`@(`D)"21%5'LD86-C97-S:6]N_?2`](")315,B(&EF*"1N=6T@/3T@,2D["B`@("`)"7UE;'-E>PH@("`@"0D))$54>R1A8V-E<W-I;VY](#T@_(DU%4R(@:68H)&YU;2`^(#$I.PH@("`@"0E]"B`@("`)?0H@("`@"0H@("`@"6EF*"1N86UE/7XO7%]37%\O_*7L*("`@(`D):68H)&DQ<R`]/2`D:3%E*7L*("`@(`D)"21%5'LD86-C97-S:6]N?2`](")!,U-3(B!I9B@D_<W1R86YD>R1%3E-4?2!E<2`B*R(I.PH@("`@"0D))$54>R1A8V-E<W-I;VY](#T@(D$U4U,B(&EF*"1S=')A_;F1[)$5.4U1](&5Q("(M(BD["B`@("`)"7T*("`@(`D):68H)&DR<R`]/2`D:3)E*7L*("`@(`D)"21%5'LD_86-C97-S:6]N?2`](")!-5-3(B!I9B@D<W1R86YD>R1%3E-4?2!E<2`B*R(I.PH@("`@"0D))$54>R1A8V-E_<W-I;VY](#T@(D$S4U,B(&EF*"1S=')A;F1[)$5.4U1](&5Q("(M(BD["B`@("`)"7T*("`@(`D):68H)&DQ_<R`A/2`D:3%E("8F("1I,G,@(3T@)&DR92E["B`@("`)"0EP<FEN="`B6T524D]272!C;V]R9&EN871E<R!A_<F4@;F]T($$U4U,@;W(@03-34R%<;B(["B`@("`)"0EP<FEN="`B)&DQ<RPD:3%E.R`D:3)S+"1I,F4[("1A_8V-E<W-I;VXZ)&YU;5QN(CL*("`@(`D)?0D*("`@(`E]"B`@("`):68H)&YA;64]?B]<7U)<7R\I>PH@("`@_"0DD151[)&%C8V5S<VEO;GT@/2`B25(B.PH@("`@"0DD151[)&%C8V5S<VEO;GT@/2`B25(@*&]V97)L87!P_:6YG(')E9VEO;BDB(&EF*"1G;CU^+UPL+RD["B`@("`)?0H@("`@?0H@("`@8VQO<V4H1DE,12D["B`@("`*_"6UY("5O=71P=70["@EM>2`E87-A93L*"6UY("5E<SL*"6UY("5E93L*"6UY("5E>&]N4CL*"6UY("@D;6%X_;BPD;6%X="D@/2`H,"PP*3L*(`EO<&5N*$9)3$4L(B1I;G!U="(I('Q\(&1I92`B06)O<G1I;F<N+B!#86XG_="!O<&5N("1I;G!U="`Z("0A7&XB.PH@("`@=VAI;&4H;7D@)&QI;F4]/$9)3$4^*7L*("`@("`@("!C:&]M_<"`D;&EN93L*("`@("`@("!N97AT(&EF*"1L:6YE/7XO7D5V96YT($E$+RD["B`@("`@("`@;7D@*"1)1"PD_=&UP9VXL)&5X;VXL)&5V96YT='EP92PD3BPD5"PD97AO;G1Y<&4L)$5.4U0L)&104TDL)'!V86QU92PD1D12_+"1N=F%L=65S+"1T=F%L=65S*2`]('-P;&ET*"]<="\L)&QI;F4I.PH@("`@("`@(&UY($!N=F%L=64@/2!S_<&QI="@O7'PO+"1N=F%L=65S*3L*("`@("`@("!M>2!`='9A;'5E(#T@<W!L:70H+UQ\+RPD='9A;'5E<RD[_"B`@("`@("`@;7D@)'=I;F<@/2`D=VEN9WLD241].PH@("`@("`@(&EF*"$D=VEN9WLD241]*7L*("`@("`@_("`)<')I;G0@(BA%4E)/4BD@)$E$(&-A;B=T(&9I;F0@=VEN9W,@:6X@=&AE(&1A=&%B87-E+EQN(CL*("`@_("`@("`)<')I;G0@(D%B;W)T:6YG+BXN7&XB.PH@("`@("`@(`EE>&ET.PH@("`@("`@('T*("`@("`@("!I_9B@D;F]F:6QT97(@/3T@,"E["B`@("`@("`@"6YE>'0@:68H)'!V86QU92`^/2`P+C`Q('Q\(&%B<R@D9%!3_22D@/#T@,3`I.PH@("`@("`@('T*("`@("`@("!I9B@D;F]F:6QT97(@/3T@,2E["B`@("`@("`@"6YE>'0@_:68H86)S*"1D4%-)*2`\/2`Q,"D["B`@("`@("`@?0H@("`@("`@(&EF*"1N;V9I;'1E<B`]/2`R*7L*("`@_("`@("`);7D@*"1A=F=N+"1A=F=T*2`]("AA=F5R86=E*%Q`;G9A;'5E*2QA=F5R86=E*%Q`='9A;'5E*2D[_"B`@("`@("`@"6YE>'0@:68H86)S*"1D4%-)*2`\/2`U*3L*("`@("`@("`):68H)$X@/B`Q("8F("14(#X@_,2E["B`@("`@("`@"0EN97AT(&EF*"1P=F%L=64@/CT@,"XU*3L*("`@("`@("`)?0H@("`@("`@(`DC;7D@_)&YO(#T@,#L*("`@("`@("`)(VEF*"1A=F=N(#P@,C`@?'P@)&%V9W0@/"`R,"E["B`@("`@("`@"2,);F5X_="!I9B@D879G;B`\(#(P("8F("1A=F=T(#P@,C`I.PH@("`@("`@(`DC?65L<V5["B`@("`@("`@"2,))&YO_*RL["B`@("`@("`@"2-]"B`@("`@("`@"2-I9B@D879G;B`^(#@P('Q\("1A=F=T(#X@.#`I>PH@("`@("`@_(`DC"6YE>'0@:68H)&%V9VX@/B`X,"`F)B`D879G="`^(#@P*3L*("`@("`@("`)(WUE;'-E>PH@("`@("`@_(`DC"21N;RLK.PH@("`@("`@(`DC?0H)"0DC:68H)&YO(#T](#(I>PH)"0DC"6YE>'0@:68H)'!V86QU92`^_/2`P+C`Q('Q\(&%B<R@D9%!322D@/#T@,3`I.PH)"0DC?65L<V5["B`@("`@("`@"2,);F5X="!I9B@D<'9A_;'5E(#X](#`N-2!\?"!A8G,H)&104TDI(#P](#4I.PH@("`@("`@(`DC?0H@("`@("`@('T*("`@("`@("`D_;6%X;B`]("1.(&EF*"1M87AN(#P@)$XI.PH@("`@("`@("1M87AT(#T@)%0@:68H)&UA>'0@/"`D5"D["B`@_("`@("`@)&QI;F4]?G,O7"P@+UQ\+V<["B`@("`@("`@;7D@*"1C:'(L)&%S+"1A92PD="PD=&UP14Y35"PD_;G5M*2`]('-P;&ET*"]<7R\L)$E$*3L*("`@("`@("`D8VAR/7YS+V-H<B\O.PH@("`@("`@(&UY("@D97AO_;F-H<BPD97AO;G-S+"1E>&]N964I(#T@<W!L:70H+UM<.EPM72\L)&5X;VXI.PH@("`@("`@(&EF*"1E=F5N_='1Y<&4@97$@(E(B*7L*("`@("`@("`))&5X;VX@/2`B)&-H<CHD87,M)&%E(CL*"0E]"@D):68H(21O=71P_=71[(B1E>&]N7'0D=VEN9UQT)&5V96YT='EP92)]*7L*("`@("`@("`))&]U='!U='LB)&5X;VY<="1W:6YG_7'0D979E;G1T>7!E(GT@/2`D;&EN93L*("`@("`@("!]96QS97L*("`@("`@("`);7D@0'1M<&%R<F%Y(#T@_<W!L:70H+UQT+RPD;W5T<'5T>R(D97AO;EQT)'=I;F=<="1E=F5N='1Y<&4B?2D["B`@("`@("`@"6UY("1T_;7!P(#T@)'1M<&%R<F%Y6SE=.PH@("`@("`@(`EN97AT(&EF*"1T;7!P(#P]("1P=F%L=64I.PH@("`@("`@_(`DD;W5T<'5T>R(D97AO;EQT)'=I;F=<="1E=F5N='1Y<&4B?2`]("1L:6YE.PH@("`@("`@('T*("`@("`@_("!I9B@D979E;G1T>7!E(&5Q(")7(BE["B`@("`@("`@"21E<WLD97AO;G-S?2LK.PH@("`@("`@(`DD965[_)&5X;VYE97TK*SL*("`@("`@("`))&%S865[(B1C:')<="1A<UQT)&%E(GU[(B1E>&]N<W-<="1E>&]N964B_?2LK.PH@("`@("`@('T*("`@("`@("!I9B@D979E;G1T>7!E(&5Q(")2(BE["B`@("`@("`@"21E>&]N4GLD_97AO;GTK*SL*("`@("`@("!]"B`@("!]"B`@("!C;&]S92A&24Q%*3L*("`@(`H@("`@)&EN<'5T/7YS+UPN_='AT)"\O.PH@("`@;7D@)&]U=&9N(#T@)&EN<'5T("X@(BYS;W)T960N='AT(CL*("`@(&UY("1T;7!F;B`]_("1I;G!U="`N("(N9FEL=&5R960N='AT(CL*("`@("1T;7!F;B`]("1I;G!U="`N("(N,'1O,2YF:6QT97)E_9"YT>'0B(&EF*"1N;V9I;'1E<B`]/2`R*3L*("`@("1O=71F;B`]("1I;G!U="`N("(N,'1O,2YS;W)T960N_='AT(B!I9B@D;F]F:6QT97(@/3T@,BD["B`@("!O<&5N*$]55"PB/B(@+B`D=&UP9FXI('Q\(&1I92`B06)O_<G1I;F<N+B!#86XG="!O<&5N("(@+B`D=&UP9FX@+B`B(#H@)"%<;B(["B`@("!P<FEN="!/550@(D5V96YT_(%)E9VEO;@E'96YE(%-Y;6)O;`E487)G970@17AO;@E%=F5N="!4>7!E"4X)5`E%>&]N(%1Y<&4)4F5F97)E_;F-E(%1R86YS8W)I<'0)SI104TD@*"4I"50M=&5S="!P+79A;'5E"49$4B`H0D@I"4X@5F%L=65S"50@5F%L_=65S7&XB.PH@("`@9F]R96%C:"!M>2`D97AO;FEN9F\H:V5Y<R`E;W5T<'5T*7L*("`@(`EM>2`H)$E$+"1T_;7!G;BPD97AO;BPD979E;G1T>7!E+"1.+"14+"1E>&]N='EP92PD14Y35"PD9%!322PD<'9A;'5E+"1&1%(L_)&YV86QU97,L)'1V86QU97,I(#T@<W!L:70H+UQT+RPD;W5T<'5T>R1E>&]N:6YF;WTI.PH@("`@"6EF*"1E_=F5N='1Y<&4@97$@(E(B*7L*("`@(`D):68H(21E>&]N4GLD97AO;GTI>PH@("`@"0E]96QS97L*("`@(`D)_"2-N97AT(&EF*"1E>&]N4GLD97AO;GT@/B`Q*3L*("`@(`D)?0H@("`@"7T*("`@(`EM>2`H)&-H<BPD87,L_)&%E+"1T;7`L)'1M<$5.4U0L)'1M<&YU;2D@/2!S<&QI="@O7%\O+"1)1"D["B`@("`))&-H<CU^<R]C:'(O_+SL*("`@(`EM>2`H)&%C8V5S<VEO;BPD;G5M*2`]("@D,2PD,BD@:68H)$E$/7XO*"XJ*5Q?*%QD*RDD+RD[_"B`@("`)(R1A8V-E<W-I;VX]?G,O*"XJ*5Q?+R\["@H@("`@"6EF*"1)1#U^+UQ?4C%<+B\@?'P@)$E$/7XO_7%]2,EPN+RE["B`@("`)"21%3E-4/7YS+UPN+UQ?+V<["B`@("`)"21)1#U^<R]<+B]<7R]G.PH@("`@"0DH_)&%C8V5S<VEO;BPD;G5M*2`]("@D,2PD,BD@:68H)$E$/7XO*%QW*RE<7RA<9"LI)"\I.PH@("`@"0DC)&%C_8V5S<VEO;CU^<R\H+BHI7%]2,2]2,2\["B`@("`)"2,D86-C97-S:6]N/7YS+R@N*BE<7U(R+U(R+SL*("`@_(`D)(R1A8V-E<W-I;VX]?G,O7%\O7"XO9SL*("`@(`D)(W!R:6YT(").86UE(#T@)&YA;65<;B(["B`@("`)_"2-P<FEN="`B86-C97-S:6]N(#T@)&%C8V5S<VEO;EQN(CL*("`@(`D)(W!R:6YT(")N=6T@/2`D;G5M7&XB_.PH@("`@"0DC97AI=#L*("`@(`E]"B`@("`):68H)&YO9FEL=&5R(#T](#`I>PH@("`@"0EN97AT(&EF*"1._(#P@*"1M87AN*B1C<FET97)I82D@?'P@)%0@/"`H)&UA>'0J)&-R:71E<FEA*2D["B`@("`)?0H@("`@"6UY_("1S>6UB;VP@/2`B+2(["B`@("`):68H(21S>6UB;VQ[)$5.4U1]*7L*("`@(`D))'-Y;6)O;#TB3B]!(CL*_("`@(`D)<')I;G0@(B1%3E-4(&AA<R!N;R!S>6UB;VPA7&XB.PH@("`@"7UE;'-E>PH@("`@"0DD<WEM8F]L_(#T@)'-Y;6)O;'LD14Y35'T["B`@("`)?0H@("`@"6EF*"$D151[)&%C8V5S<VEO;GTI>PH@("`@"0EP<FEN_="`B0V%N)W0@9FEN9"`D86-C97-S:6]N7&XB.PH@("`@"0EP<FEN="`B240@/2`D241<;B(["B`@("`)"7!R_:6YT(")%3E-4(#T@)$5.4U1<;B(["B`@("`)"7!R:6YT(")S>6UB;VP@/2`D<WEM8F]L7&XB.PH@("`@"0EE_>&ET.PH@("`@"7UE;'-E>PH@("`@"0DD979E;G1T>7!E(#T@)$54>R1A8V-E<W-I;VY].PH@("`@"7T*("`@_(`EI9B@D979E;G1T>7!E(&5Q(")315,B*7L*("`@(`D);7D@)&UX<R`](#`["B`@("`)"6UY("@D97AO;F-H_<BPD97AO;G-S+"1E>&]N964I(#T@<W!L:70H+UM<.EPM72\L)&5X;VXI.PH@("`@"0EF;W)E86-H(&UY("1L_;V,H:V5Y<R`E>R`D87-A97LB)&-H<EQT)&%S7'0D864B?2!]*7L*("`@(`D)"6UY("@D97,L)&5E*2`]('-P_;&ET*"]<="\L)&QO8RD["B`@("`)"0EN97AT(&EF*"1E>&]N<W,@/#T@)&5S("8F("1E>&]N964@/CT@)&5S_*3L*("`@(`D)"6YE>'0@:68H)&5X;VYS<R`\/2`D964@)B8@)&5X;VYE92`^/2`D964I.PH@("`@"0D);F5X_="!I9B@D97,@/"`D97AO;G-S("8F("1E92`^("1E>&]N964I.PH@("`@"0D))&UX<R`](#$["B`@("`)"0EL_87-T.PH@("`@"0E]"B`@("`)"21E=F5N='1Y<&4@/2`B35A3(B!I9B@D;7AS(#T](#$I.PH@("`@"7T*("`@_(`EI9B@D979E;G1T>7!E(&5Q(")!-5-3(B!\?"`D979E;G1T>7!E(&5Q(")!,U-3(BE["B`@("`)"6UY("@D_97AO;F-H<BPD97AO;G-S+"1E>&]N964I(#T@<W!L:70H+UM<.EPM72\L)&5X;VXI.PH@("`@"0EI9B@A)&5S_>R1E>&]N<W-]("8F("$D965[)&5X;VYE97TI>PH@("`@"0E]96QS97L*("`@(`D)"6YE>'0["B`@("`)"7T*_("`@(`E]"B`@("`);7D@)&5V96YT<F5G:6]N(#T@(B1C:'(Z)&%S+21A92(["B`@("`);7D@*"1E>&]N8VAR_+"1E>&]N<W,L)&5X;VYE92D@/2!S<&QI="@O6UPZ7"U=+RPD97AO;BD["B`@("`):68H)&5V96YT='EP93U^_+TE2+RE["B`@("`)"21E=F5N=')E9VEO;B`]("1E>&]N.PH@("`@"0DD97AO;B`]("(D8VAR.B1A<RTD864B_.PH@("`@"7T*("`@(`EP<FEN="!/550@(B1E=F5N=')E9VEO;EQT)'-Y;6)O;%QT)&5X;VY<="1E=F5N='1Y_<&5<="1.7'0D5%QT)&5X;VYT>7!E7'0D14Y35%QT)&104TE<="1P=F%L=65<="1&1%)<="1N=F%L=65S7'0D_='9A;'5E<UQN(CL*("`@('T*("`@(&-L;W-E*$]55"D["@D*"6UY("1S;W)T8V]M;6%N9"`](")<*&AE860@_7"UN(#$@(B`N("1T;7!F;B`N("(@7"9<)B!T86EL(%PM;B!<*S(@(B`N("1T;7!F;B`N("(@7'P@<V]R="!<_+6=R(%PM="`G7'0G(%PM:R`Y7"D@7#X@(B`N("1O=71F;B`N(")<;B(["B`@("!S>7-T96TH)'-O<G1C;VUM_86YD*3L*("`@('-Y<W1E;2@B<FT@(B`N("1T;7!F;BD["@IS=6(@879E<F%G97L*("`@("`@("!M>2@D9&%T_82D@/2!`7SL*("`@("`@("!I9B`H;F]T($`D9&%T82D@>PH@("`@("`@("`@("`@("`@9&EE*")%;7!T>2!A_<G)A>5QN(BD["B`@("`@("`@?0H@("`@("`@(&UY("1T;W1A;"`](#`["B`@("`@("`@9F]R96%C:"`H0"1D_871A*2!["B`@("`@("`@("`@("`@("`D=&]T86P@*ST@)%\["B`@("`@("`@?0H@("`@("`@(&UY("1A=F5RQ86=E(#T@)'1O=&%L("\@0"1D871A.PH@("`@("`@(')E='5R;B`D879E<F%G93L*?0}
+	use strict;
+    my ($db,$mapping,$input,$fmode) = @ARGV;
 
+	print "Filtering mode = $fmode\n";
+	#$fmode = 1;
+	my $criteria = 0.75;
+	my %symbol;
+	my %strand;
+	print "Reading... $mapping\n";
+ 	open(FILE,"$mapping") || die "Aborting.. Can't open $mapping : $!\n";
+    while(my $line=<FILE>){
+        chomp $line;
+        my ($ENST,$symbol,$strand) = split(/\t/,$line);
+        $symbol{$ENST} = $symbol;
+        $strand{$ENST} = $strand;
+    }
+    close(FILE);
+
+	print "Reading... $db\n";
+    my %ET;
+    my %wing;
+    my %names;
+    open(FILE, "$db") || die "Aborting.. Can't open $db\n";
+    while(my $line=<FILE>){
+    	chomp $line;
+    	next if($line eq "");
+    	my ($chr,$i1s,$i1e,$i2s,$i2e,$tes,$tee,$anno,$as,$ae,$name,$gn) = split(/\t/,$line);
+    	my ($et) = "-";
+    	my ($accession,$num) = ($1,$2) if($name=~/(.*)\_(\d+)$/);
+    	my @array = split(/\_/,$accession);
+    	#$accession=~s/(.*)\_//;
+    	my $ENST = $array[4];
+    	if($ENST eq ""){
+    		print "WARNNING: ENST format in the .db file is not correct\n";
+    		print "accession = $accession\n";
+    		$ENST = $accession;
+    		$ENST=~s/(.*)\_//;
+    		exit;
+    	}
+    	$wing{$name} = "$chr,$i1s,$i1e,$i2s,$i2e";
+    	
+    	if($name=~/\_W\_/){
+    		if($i1s == $as && $i2e == $ae){
+    			$ET{$accession} = "SES" if($num == 1);
+    		}else{
+    			$ET{$accession} = "MES" if($num > 1);
+    		}
+    	}
+    	
+    	if($name=~/\_S\_/){
+    		if($i1s == $i1e){
+    			$ET{$accession} = "A3SS" if($strand{$ENST} eq "+");
+    			$ET{$accession} = "A5SS" if($strand{$ENST} eq "-");
+    		}
+    		if($i2s == $i2e){
+    			$ET{$accession} = "A5SS" if($strand{$ENST} eq "+");
+    			$ET{$accession} = "A3SS" if($strand{$ENST} eq "-");
+    		}
+    		if($i1s != $i1e && $i2s != $i2e){
+    			print "[ERROR] coordinates are not A5SS or A3SS!\n";
+    			print "$i1s,$i1e; $i2s,$i2e; $accession:$num\n";
+    		}	
+    	}
+    	if($name=~/\_R\_/){
+    		$ET{$accession} = "IR";
+    		$ET{$accession} = "IR (overlapping region)" if($gn=~/\,/);
+    	}
+    }
+    close(FILE);
+    
+	my %output;
+	my %asae;
+	my %es;
+	my %ee;
+	my %exonR;
+	my ($maxn,$maxt) = (0,0);
+ 	open(FILE,"$input") || die "Aborting.. Can't open $input : $!\n";
+    while(my $line=<FILE>){
+        chomp $line;
+        next if($line=~/^Event ID/);
+        my ($ID,$tmpgn,$exon,$eventtype,$N,$T,$exontype,$ENST,$dPSI,$pvalue,$FDR,$nvalues,$tvalues) = split(/\t/,$line);
+        my @nvalue = split(/\|/,$nvalues);
+        my @tvalue = split(/\|/,$tvalues);
+        my $wing = $wing{$ID};
+        if(!$wing{$ID}){
+        	print "(ERROR) $ID can't find wings in the database.\n";
+        	print "Aborting...\n";
+        	exit;
+        }
+        if($fmode == 0){
+        	next if($pvalue >= 0.01 || abs($dPSI) <= 10);
+        }
+        if($fmode == 1){
+        	next if(abs($dPSI) <= 10);
+        }
+        if($fmode == 2){
+        	next if($pvalue >= 0.05);
+        }
+        if($fmode == 3){
+        	my ($avgn,$avgt) = (average(\@nvalue),average(\@tvalue));
+        	#next if(abs($dPSI) < 5);
+        	#next if($avgn < 10 && $avgt < 10);
+        	#next if($avgn < 5 || $avgt < 5);
+        	if($N > 1 && $T > 1){
+        		#next if($pvalue > 0.05);
+        	}
+        	#my $no = 0;
+        	#if($avgn < 20 || $avgt < 20){
+        	#	next if($avgn < 20 && $avgt < 20);
+        	#}else{
+        	#	$no++;
+        	#}
+        	#if($avgn > 80 || $avgt > 80){
+        	#	next if($avgn > 80 && $avgt > 80);
+        	#}else{
+        	#	$no++;
+        	#}
+			#if($no == 2){
+			#	next if($pvalue >= 0.01 || abs($dPSI) <= 10);
+			#}else{
+        	#	next if($pvalue >= 0.5 || abs($dPSI) <= 5);
+        	#}
+        }
+        $maxn = $N if($maxn < $N);
+        $maxt = $T if($maxt < $T);
+        $line=~s/\, /\|/g;
+        my ($chr,$as,$ae,$t,$tmpENST,$num) = split(/\_/,$ID);
+        $chr=~s/chr//;
+        my ($exonchr,$exonss,$exonee) = split(/[\:\-]/,$exon);
+        if($eventtype eq "R"){
+        	$exon = "$chr:$as-$ae";
+		}
+		if(!$output{"$exon\t$wing\t$eventtype"}){
+        	$output{"$exon\t$wing\t$eventtype"} = $line;
+        }else{
+        	my @tmparray = split(/\t/,$output{"$exon\t$wing\t$eventtype"});
+        	my $tmpp = $tmparray[9];
+        	next if($tmpp <= $pvalue);
+        	$output{"$exon\t$wing\t$eventtype"} = $line;
+        }
+        if($eventtype eq "W"){
+        	$es{$exonss}++;
+        	$ee{$exonee}++;
+        	$asae{"$chr\t$as\t$ae"}{"$exonss\t$exonee"}++;
+        }
+        if($eventtype eq "R"){
+        	$exonR{$exon}++;
+        }
+    }
+    close(FILE);
+    
+    $input=~s/\.txt$//;
+    my $outfn = $input . ".sorted.txt";
+    my $tmpfn = $input . ".filtered.txt";
+    #$tmpfn = $input . ".0to1.filtered.txt" if($fmode == 2);
+    #$outfn = $input . ".0to1.sorted.txt" if($fmode == 2);
+    open(OUT,">" . $tmpfn) || die "Aborting.. Can't open " . $tmpfn . " : $!\n";
+    print OUT "Event Region	Gene Symbol	Target Exon	Event Type	N	T	Exon Type	Reference Transcript	ΔPSI (%)	T-test p-value	FDR (BH)	N Values	T Values	Database ID\n";
+    foreach my $exoninfo(keys %output){
+    	my ($ID,$tmpgn,$exon,$eventtype,$N,$T,$exontype,$ENST,$dPSI,$pvalue,$FDR,$nvalues,$tvalues) = split(/\t/,$output{$exoninfo});
+    	if($eventtype eq "R"){
+    		if(!$exonR{$exon}){
+    		}else{
+    			#next if($exonR{$exon} > 1);
+    		}
+    	}
+    	my ($chr,$as,$ae,$tmp,$tmpENST,$tmpnum) = split(/\_/,$ID);
+    	$chr=~s/chr//;
+    	my ($accession,$num) = ($1,$2) if($ID=~/(.*)\_(\d+)$/);
+    	#$accession=~s/(.*)\_//;
+
+=begin		
+    	if($ID=~/\_R1\./ || $ID=~/\_R2\./){
+    		$ENST=~s/\./\_/g;
+    		$ID=~s/\./\_/g;
+    		($accession,$num) = ($1,$2) if($ID=~/(\w+)\_(\d+)$/);
+    		#$accession=~s/\_/\./g;
+    		$ENST=~s/\_/\./g;
+    		#$accession=~s/(.*)\_R1/R1/;
+    		#$accession=~s/(.*)\_R2/R2/;
+    		#$accession=~s/\_/\./g;
+    		#print "Name = $name\n";
+    		#print "accession = $accession\n";
+    		#print "num = $num\n";
+    		#exit;
+    	}
+=end
+=cut
+    	if($fmode == 0){
+    		next if($N < ($maxn*$criteria) || $T < ($maxt*$criteria));
+    	}
+    	my $symbol = "-";
+    	if(!$symbol{$ENST}){
+    		$symbol="N/A";
+    		print "$ENST has no symbol!\n";
+    	}else{
+    		$symbol = $symbol{$ENST};
+    	}
+    	if(!$ET{$accession}){
+    		print "Can't find $accession\n";
+    		print "ID = $ID\n";
+    		print "ENST = $ENST\n";
+    		print "symbol = $symbol\n";
+    		exit;
+    	}else{
+    		$eventtype = $ET{$accession};
+    	}
+    	if($eventtype eq "SES"){
+    		my $mxs = 0;
+    		my ($exonchr,$exonss,$exonee) = split(/[\:\-]/,$exon);
+    		foreach my $loc(keys %{ $asae{"$chr\t$as\t$ae"} }){
+    			my ($es,$ee) = split(/\t/,$loc);
+    			next if($exonss <= $es && $exonee >= $es);
+    			next if($exonss <= $ee && $exonee >= $ee);
+    			next if($es < $exonss && $ee > $exonee);
+    			$mxs = 1;
+    			last;
+    		}
+    		$eventtype = "MXS" if($mxs == 1);
+    	}
+    	if($eventtype eq "A5SS" || $eventtype eq "A3SS"){
+    		my ($exonchr,$exonss,$exonee) = split(/[\:\-]/,$exon);
+    		if(!$es{$exonss} && !$ee{$exonee}){
+    		}else{
+    			next;
+    		}
+    	}
+    	my $eventregion = "$chr:$as-$ae";
+    	my ($exonchr,$exonss,$exonee) = split(/[\:\-]/,$exon);
+    	if($eventtype=~/IR/){
+    		$eventregion = $exon;
+    		$exon = "$chr:$as-$ae";
+    	}
+    	#print OUT "$eventregion\t$symbol\t$exon\t$eventtype\t$N\t$T\t$exontype\t$ENST\t$dPSI\t$pvalue\t$FDR\t$nvalues\t$tvalues\n";
+    	print OUT "$eventregion\t$symbol\t$exon\t$eventtype\t$N\t$T\t$exontype\t$ENST\t$dPSI\t$pvalue\t$FDR\t$nvalues\t$tvalues\t$ID\n";
+    }
+    close(OUT);
+	
+	my $sortcommand = "\(head \-n 1 " . $tmpfn . " \&\& tail \-n \+2 " . $tmpfn . " \| sort \-gr \-t '\t' \-k 9\) \> " . $outfn . "\n";
+    system($sortcommand);
+    system("rm " . $tmpfn);
+
+sub average{
+        my($data) = @_;
+        if (not @$data) {
+                die("Empty array\n");
+        }
+        my $total = 0;
+        foreach (@$data) {
+                $total += $_;
+        }
+        my $average = $total / @$data;
+        return $average;
+}

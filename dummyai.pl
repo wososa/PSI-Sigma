@@ -17,26 +17,33 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		print "\n";
 		print "Usage: perl dummyai.pl [parameters]\n";
 		print "Parameters:\n";
-		print "  --gtf [text]		specify the gene annotation file for building PSI-Sigma database.\n";
-		print "  --name [text]		specify the prefix of PSI-Sigma database and output files.\n";
-		print "  --type [number]	specify 1 for short-read or 2 for long-read RNA-seq data.\n";
-		print "  --nread [number]	specify the minimal number of supporting reads for a splicing event.\n";
+		print "  --gtf [text]		the gene annotation file for building PSI-Sigma database.\n";
+		print "  --name [text]		the prefix of PSI-Sigma database and output files.\n";
+		print "  --type [number]	1: short-read RNA-seq data\n";
+		print "			2: long-read RNA-seq data\n";
+		print "  --nread [number]	the minimal number of supporting reads for a splicing event.\n";
+		print "  --fmode [number]	0: delta-PSI > 10% and p-value < 0.01 (default/recommended)\n";
+		print "			1: only delta-PSI > 10%\n";
+		print "			2: only p-value > 0.05\n";
+		print "			3: report all events\n";
 		print "\n";
 		exit;
 	}
 	
-	if(scalar @param != 4){
+	if(scalar @param < 4){
 		print "[Error Message]: $status.\n";
 		print "Please specify --gtf for .gtf file, --name for database name, --type for long(2) or short(1) read, and --nread for number of supporting reads.\n";
 		exit;
 	}
 	
-	my ($gtf,$name,$longread,$supporting_read_criteria) = split(/\t/,$status);
+	my ($gtf,$name,$longread,$supporting_read_criteria,$fmode) = split(/\t/,$status);
+	$fmode = 0 if($fmode ne "0" && $fmode ne "1" && $fmode ne "2" && $fmode ne "3");
 	
 	print "gtf = $gtf\n";
 	print "name = $name\n";
 	print "type = $longread\n";
 	print "nread = $supporting_read_criteria\n";
+	print "fmode = $fmode\n";
 	
 	
 	#my ($gtf,$name,$longread,$supporting_read_criteria) = @ARGV;
@@ -45,10 +52,6 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 	$path=~s/\/dummyai\.pl//;
 	print "Path = $path\n";
 	
-	#filtering mode
-	my $fmode = 1;
-	print "Filtering mode = $fmode\n";
-	    
     my ($starttime,$stoptime,$hours) = (time,0,0);
 
 	my $noveljunctioncriteria = 10;
@@ -143,6 +146,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		$accession=~s/\.bam//;
 		$accession=~s/\.$//;
 		my $sjfn = $accession . ".SJ.out.tab";
+		#my $commend = "samtools view $bam | awk -f " . $path . "/sjFromSAMcollapseUandM_inclOverlaps.awk > " . $sjfn;
 		if(-e $sjfn){
 			if(-z $sjfn){
 				generateSJ($bam,$accession);
@@ -253,7 +257,14 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 	
 	print "Filtering ΔPSI results...\n";
 	$starttime = time;
-	$fmode = 1 if($nfiles < 4);
+	if($nfiles < 4 && $fmode == 0){
+		print "Not enough samples for p-value calculation, so switch to fmode = 1.\n";
+		$fmode = 1;
+	}
+	if($nfiles < 4 && $fmode == 2){
+		print "Not enough samples for p-value calculation, so switch to fmode = 1.\n";
+		$fmode = 1;
+	}
 	$commend = "perl " . $path . "/PSIsigma-filter-v.1.0.pl " . $name . ".db " . $gtf . ".mapping.txt " . $name . "_r" . $supporting_read_criteria . "_ir" . $intron_criteria . ".txt " . $fmode;
 	system($commend);
 	$stoptime = time;
@@ -296,6 +307,7 @@ sub param{
 	$parameters{"name"} = "-";
 	$parameters{"type"} = "-";
 	$parameters{"nread"} = "-";
+	$parameters{"fmode"} = "-";
 	my $oldformat = 1;
 	for(my $i = 0;$i < scalar @array;$i++){
 		if($array[$i]=~/^\-/){
@@ -318,9 +330,10 @@ sub param{
 		if($array[0]!~/\.gtf/){
 			return "Not recognized parameter: $gtf";
 		}
-		return $array[0] . "\t" . $array[1] . "\t" . $array[2] . "\t" . $array[3];
+		return $array[0] . "\t" . $array[1] . "\t" . $array[2] . "\t" . $array[3] . "\t" . "0";
 	}
 	foreach my $key(keys %parameters){
+		next if($key eq "fmode");
 		if($parameters{$key} eq "-"){
 			return "Parameter $key has no input value";
 		}
@@ -331,7 +344,7 @@ sub param{
 	if($parameters{"type"} != 1 && $parameters{"type"} != 2){
 		return "--type parameter didn't find a correct number (1 or 2)";
 	}
-	return $parameters{"gtf"} . "\t" . $parameters{"name"} . "\t" . $parameters{"type"} . "\t" . $parameters{"nread"};
+	return $parameters{"gtf"} . "\t" . $parameters{"name"} . "\t" . $parameters{"type"} . "\t" . $parameters{"nread"} . "\t" . $parameters{"fmode"};
 }
 
 sub generateSJ{
