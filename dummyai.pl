@@ -9,18 +9,47 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 	use strict;
 	use Cwd qw(abs_path);
 	
-	my ($gtf,$name,$longread,$supporting_read_criteria) = @ARGV;
+	my $status = param(\@ARGV);
+	
+	my @param = split(/\t/,$status);
+	
+	if($param[0] eq "Help"){
+		print "\n";
+		print "Usage: perl dummyai.pl [parameters]\n";
+		print "Parameters:\n";
+		print "  --gtf [text]		specify the gene annotation file for building PSI-Sigma database.\n";
+		print "  --name [text]		specify the prefix of PSI-Sigma database and output files.\n";
+		print "  --type [number]	specify 1 for short-read or 2 for long-read RNA-seq data.\n";
+		print "  --nread [number]	specify the minimal number of supporting reads for a splicing event.\n";
+		print "\n";
+		exit;
+	}
+	
+	if(scalar @param != 4){
+		print "[Error Message]: $status.\n";
+		print "Please specify --gtf for .gtf file, --name for database name, --type for long(2) or short(1) read, and --nread for number of supporting reads.\n";
+		exit;
+	}
+	
+	my ($gtf,$name,$longread,$supporting_read_criteria) = split(/\t/,$status);
+	
+	print "gtf = $gtf\n";
+	print "name = $name\n";
+	print "type = $longread\n";
+	print "nread = $supporting_read_criteria\n";
+	
+	
+	#my ($gtf,$name,$longread,$supporting_read_criteria) = @ARGV;
 	
 	my $path = abs_path($0);
 	$path=~s/\/dummyai\.pl//;
 	print "Path = $path\n";
+	
+	#filtering mode
+	my $fmode = 1;
+	print "Filtering mode = $fmode\n";
 	    
     my ($starttime,$stoptime,$hours) = (time,0,0);
-    
-	if(scalar @ARGV != 4){
-		print "Please specify .gtf file, output name, long(2) or short(1) read, and number of supporting reads.\n";
-		exit;
-	}
 
 	my $noveljunctioncriteria = 10;
 	#my $supporting_read_criteria = 10;
@@ -32,13 +61,33 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
     while(my $line=<FILE>){
         chomp $line;
         next if($line eq "");
-        $group{$line}++;
+        my $bam = $line;
+        my $tmp = "-";
+        if($bam!~/\.bam/){
+        	$tmp = $bam . ".Aligned.sortedByCoord.out.bam";
+        	$bam = $tmp if(-e $tmp);
+        	$tmp = $bam . ".sorted.bam";
+        	$bam = $tmp if(-e $tmp);
+        	$tmp = $bam . ".bam";
+        	$bam = $tmp if(-e $tmp);
+        }
+        $group{$bam}++;
     }
  	open(FILE,"groupb.txt") || die "Aborting.. Can't open groupb.txt : $!\n";
     while(my $line=<FILE>){
         chomp $line;
         next if($line eq "");
-        $group{$line}++;
+        my $bam = $line;
+        my $tmp = "-";
+        if($bam!~/\.bam/){
+        	$tmp = $bam . ".Aligned.sortedByCoord.out.bam";
+        	$bam = $tmp if(-e $tmp);
+        	$tmp = $bam . ".sorted.bam";
+        	$bam = $tmp if(-e $tmp);
+        	$tmp = $bam . ".bam";
+        	$bam = $tmp if(-e $tmp);
+        }
+        $group{$bam}++;
     }
 
 	print "Generating mapping file...\n";
@@ -60,9 +109,13 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		if($ENST=~/\_/){
 			$ENST=~s/\_/\./g;
 		}
-        $name=~s/(.*)gene\_name \"//;
-    	$name=~s/\"\; (.*)//;
-    	$name=~s/gene\_id \"//;
+		$name=~s/(.*)gene\_name \"//;
+        $name=~s/\"\; (.*)//;
+        $name=~s/\"\;//;
+        $name=~s/gene\_id \"//;
+        if($name=~/\_/){
+			$name=~s/\_/\./g;
+		}
         print OUT $ENST . "\t" . $name . "\t" . $strand . "\n";
         $mappingcount++ if($ENST ne "" && $name ne "" && $strand ne "");
     }
@@ -90,29 +143,31 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		$accession=~s/\.bam//;
 		$accession=~s/\.$//;
 		my $sjfn = $accession . ".SJ.out.tab";
-		my $commend = "samtools view $bam | awk -f " . $path . "/sjFromSAMcollapseUandM_inclOverlaps.awk > " . $sjfn;
+		#my $commend = "samtools view $bam | awk -f " . $path . "/sjFromSAMcollapseUandM_inclOverlaps.awk > " . $sjfn;
 		if(-e $sjfn){
 			if(-z $sjfn){
-				print "Regenerating .SJ.out for $accession\n";
-				if($bam=~ /Aligned\.sortedByCoord\.out\.bam/){
-					print "$bam looks sorted by coordiates.\n";
-					print "sjFromSAMcollapseUandM_inclOverlaps.awk may not generate accurate .SJ.out files. Please use .SJ.out from STAR aligner or sort the file by:\n";
-					print "samtools sort -n -o $accession.Aligned.sortedByName.out.bam $bam\n";
-					print "=CAUTION=[.IR.out will need a bam file sorted by coordiates]\n";
-					#next;
-				}
-				system("$commend");
+				#print "Regenerating .SJ.out for $accession\n";
+				#if($bam=~ /Aligned\.sortedByCoord\.out\.bam/){
+				#	print "$bam looks sorted by coordiates.\n";
+				#	print "sjFromSAMcollapseUandM_inclOverlaps.awk may not generate accurate .SJ.out files. Please use .SJ.out from STAR aligner or sort the file by:\n";
+				#	print "samtools sort -n -o $accession.Aligned.sortedByName.out.bam $bam\n";
+				#	print "=CAUTION=[.IR.out will need a bam file sorted by coordiates]\n";
+				#	#next;
+				#}
+				generateSJ($bam,$accession);
+				#system("$commend");
 			}
 		}else{
-			print "Generating .SJ.out for $accession\n";
-			if($bam=~ /Aligned\.sortedByCoord\.out\.bam/){
-				print "$bam looks sorted by coordiates.\n";
-				print "sjFromSAMcollapseUandM_inclOverlaps.awk may not generate accurate .SJ.out files. Please use .SJ.out from STAR aligner or sort the file by:\n";
-				print "samtools sort -n -o $accession.Aligned.sortedByName.out.bam $bam\n";
-				print "=CAUTION=[.IR.out will need a bam file sorted by coordiates]\n";
-				#next;
-			}
-			system("$commend");
+			#print "Generating .SJ.out for $accession\n";
+			#if($bam=~ /Aligned\.sortedByCoord\.out\.bam/){
+			#	print "$bam looks sorted by coordiates.\n";
+			#	print "sjFromSAMcollapseUandM_inclOverlaps.awk may not generate accurate .SJ.out files. Please use .SJ.out from STAR aligner or sort the file by:\n";
+			#	print "samtools sort -n -o $accession.Aligned.sortedByName.out.bam $bam\n";
+			#	print "=CAUTION=[.IR.out will need a bam file sorted by coordiates]\n";
+			#	#next;
+			#}
+			generateSJ($bam,$accession);
+			#system("$commend");
 		}
 		$sjcount++;
 	}
@@ -181,6 +236,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		}
 		print "Checking $bam...\n";
 		my $irfn = $accession . ".IR.out.tab";
+		print "Checking $irfn...\n";
 		my $commend = "perl " . $path . "/PSIsigma-ir-v.1.0.pl " . $name . ".db " . $bam . " " . $longread;
 		#print "commend = $commend\n";
 		if(-e $irfn){
@@ -216,9 +272,8 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 	
 	print "Filtering ΔPSI results...\n";
 	$starttime = time;
-	my $nofilter = 0;
-	$nofilter = 1 if($nfiles < 4);
-	$commend = "perl " . $path . "/PSIsigma-filter-v.1.0.pl " . $name . ".db " . $gtf . ".mapping.txt " . $name . "_r" . $supporting_read_criteria . "_ir" . $intron_criteria . ".txt " . $nofilter;
+	$fmode = 1 if($nfiles < 4);
+	$commend = "perl " . $path . "/PSIsigma-filter-v.1.0.pl " . $name . ".db " . $gtf . ".mapping.txt " . $name . "_r" . $supporting_read_criteria . "_ir" . $intron_criteria . ".txt " . $fmode;
 	system($commend);
 	$stoptime = time;
 	$hours = sprintf("%.4f",(($stoptime-$starttime)/3600));
@@ -246,4 +301,92 @@ sub rundb{
 	system("rm chr*.db");
 	system("rm chr*.bed");
 }
+
+sub param{
+	my $a = $_[0];
+	my @array = @$a;
 	
+	if($array[0] eq "--help" || $array[0] eq "-h"){
+		return "Help";
+	}
+	
+	my %parameters;
+	$parameters{"gtf"} = "-";
+	$parameters{"name"} = "-";
+	$parameters{"type"} = "-";
+	$parameters{"nread"} = "-";
+	my $oldformat = 1;
+	for(my $i = 0;$i < scalar @array;$i++){
+		if($array[$i]=~/^\-/){
+			my $pam = $array[$i];
+			$pam=~s/^\-\-//;
+			$pam=~s/^\-//;
+			if(!$parameters{$pam}){
+				return "Not recognized parameter: $pam";
+			}else{
+				if(!$array[($i+1)] && $array[($i+1)] != 0){
+					return "Parameter $pam has no input value";
+				}else{
+					$oldformat = 0;
+					$parameters{$pam} = $array[($i+1)];
+				}
+			}
+		}
+	}
+	if($oldformat == 1){
+		if($array[0]!~/\.gtf/){
+			return "Not recognized parameter: $gtf";
+		}
+		return $array[0] . "\t" . $array[1] . "\t" . $array[2] . "\t" . $array[3];
+	}
+	foreach my $key(keys %parameters){
+		if($parameters{$key} eq "-"){
+			return "Parameter $key has no input value";
+		}
+	}
+	if($parameters{"gtf"}!~/\.gtf/){
+		return "--gtf parameter didn't find a files with .gtf extension";
+	}
+	if($parameters{"type"} != 1 && $parameters{"type"} != 2){
+		return "--type parameter didn't find a correct number (1 or 2)";
+	}
+	return $parameters{"gtf"} . "\t" . $parameters{"name"} . "\t" . $parameters{"type"} . "\t" . $parameters{"nread"};
+}
+
+sub generateSJ{
+	my $bam = shift;
+	my $accession = shift;
+	print "Generating .SJ.out.tab will need to re-sort $bam file by read names.\n";
+	print "It will consume a lot of time, do you want to proceed? (Y/N)";
+	my $input = <STDIN>;
+	chomp $input;
+	my $newbam = "$accession.SortedbyName.bam";
+	if($input ne "Y" && $input ne "N"){
+		print "Bye.\n";
+		exit;
+	}else{
+		my $accession = "-";
+		my $dupcount = 0;
+		open(INPUT, '-|',"samtools view " . $bam . " | head -n 100") or die $!;
+		while (my $input = <INPUT>) {
+			chomp $input;
+			my @array = split(/\t/,$input);
+			my ($name,$chr,$flag,$ss,$cigar) = ($array[0],$array[2],$array[1],$array[3],$array[5]);
+			$accession = $name if($accession eq "-");
+			$dupcount++ if($accession eq $name);
+		}
+		close(INPUT);
+		if($dupcount > 90){
+			print "[ERROR]: The .bam contains too many duplicated read names (over 90% in the first 100 lines).\n";
+			exit;
+		}
+		print "Starting to sort $bam by read names...\n";
+		#print "chromosome format = " . $chrformat . "\n";
+		system("samtools sort -n $bam -o $newbam");
+	}
+	
+	my $sjfn = $accession . ".SJ.out.tab";
+	my $commend = "samtools view $newbam | awk -f " . $path . "/sjFromSAMcollapseUandM_inclOverlaps.awk > " . $sjfn;
+	system($commend);
+	#system("rm $newbam");
+}
