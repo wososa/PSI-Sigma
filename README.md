@@ -69,14 +69,21 @@ echo Sequins_MixB.Aligned.sortedByCoord.out.bam > groupb.txt
 Run dummyai.pl. After the .gtf file, please specify 1 for short-read RNA-seq and 2 for long-read RNA-seq. The last column is used to specify the minimum number of supporting reads for an AS event (10 is specified in the example below).
 ```
 #For short-read RNA-seq (minimum 10 supporting reads for an AS event)
+perl ~/PSIsigma/dummyai.pl --gtf Homo_sapiens.GRCh38.87.sorted.gtf --name PSIsigma --type 1 -nread 10
+#For long-read RNA-seq (minimum 10 supporting reads for an AS event)
+perl ~/PSIsigma/dummyai.pl --gtf Homo_sapiens.GRCh38.87.sorted.gtf --name PSIsigma --type 2 -nread 10
+
+#Alternatively, you can us the old format
+#For short-read RNA-seq (minimum 10 supporting reads for an AS event)
 perl ~/PSIsigma/dummyai.pl Homo_sapiens.GRCh38.87.sorted.gtf PSIsigma 1 10
 #For long-read RNA-seq (minimum 10 supporting reads for an AS event)
 perl ~/PSIsigma/dummyai.pl Homo_sapiens.GRCh38.87.sorted.gtf PSIsigma 2 10
 ```
 That's it.
 Filtered results (p<0.01) will be listed in the PSIsigma_r10_ir3.sorted.txt.
-Unfiltered results will be listed in the PSIsigma_r10_ir3.txt.
 
+ * Filtered Results (p<0.01): PSIsigma_r10_ir3.sorted.txt
+ * Unfiltered Results: PSIsigma_r10_ir3.txt
  * Junction Read File: *.SJ.out.tab
  * Intronic Read File: *.IR.out.tab
  * Database File: *.db
