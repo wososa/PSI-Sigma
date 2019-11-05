@@ -143,31 +143,12 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		$accession=~s/\.bam//;
 		$accession=~s/\.$//;
 		my $sjfn = $accession . ".SJ.out.tab";
-		#my $commend = "samtools view $bam | awk -f " . $path . "/sjFromSAMcollapseUandM_inclOverlaps.awk > " . $sjfn;
 		if(-e $sjfn){
 			if(-z $sjfn){
-				#print "Regenerating .SJ.out for $accession\n";
-				#if($bam=~ /Aligned\.sortedByCoord\.out\.bam/){
-				#	print "$bam looks sorted by coordiates.\n";
-				#	print "sjFromSAMcollapseUandM_inclOverlaps.awk may not generate accurate .SJ.out files. Please use .SJ.out from STAR aligner or sort the file by:\n";
-				#	print "samtools sort -n -o $accession.Aligned.sortedByName.out.bam $bam\n";
-				#	print "=CAUTION=[.IR.out will need a bam file sorted by coordiates]\n";
-				#	#next;
-				#}
 				generateSJ($bam,$accession);
-				#system("$commend");
 			}
 		}else{
-			#print "Generating .SJ.out for $accession\n";
-			#if($bam=~ /Aligned\.sortedByCoord\.out\.bam/){
-			#	print "$bam looks sorted by coordiates.\n";
-			#	print "sjFromSAMcollapseUandM_inclOverlaps.awk may not generate accurate .SJ.out files. Please use .SJ.out from STAR aligner or sort the file by:\n";
-			#	print "samtools sort -n -o $accession.Aligned.sortedByName.out.bam $bam\n";
-			#	print "=CAUTION=[.IR.out will need a bam file sorted by coordiates]\n";
-			#	#next;
-			#}
 			generateSJ($bam,$accession);
-			#system("$commend");
 		}
 		$sjcount++;
 	}
