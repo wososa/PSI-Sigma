@@ -7,11 +7,11 @@ However, previous PSI-detection methods are limited to specific types of AS even
 
 Updates
 =================
-* v1.2: More friendly fortmat for input parameters (see --help). Added reporting error messages when doing IR.out.tab. Fixed bugs when generating SJ.out.tab files. https://github.com/wososa/PSI-Sigma/releases/tag/v1.2
-* I will present a poster at the Genome Informatics meeting at CSHL next week (2019/11/07). Please stop by if you have questions.
+* v1.2 is now release: https://github.com/wososa/PSI-Sigma/releases/tag/v1.2
+* Poster presentation at the Genome Informatics meeting at CSHL next week (2019/11/07).
 * A new paper using PSI-Sigma in Nature: https://rdcu.be/bSL5W
 * Alignment file for nanopore long-read PCR-cDNA-seq of human U87 cells: https://dropfiles.cshl.edu/link/EaLvsUGHEZxJARQJdTYqrG
-* v1.1: fixed a bug that certain multiple-exon-skipping events were reported without checking the multiple-exon-skipping junction.
+* v1.1 is now released.
 * A page for generating IR.out.tab file in parallel (https://github.com/wososa/PSI-Sigma/blob/master/IRinparallel.md).
 
 AUTHOR/SUPPORT
