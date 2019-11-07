@@ -23,8 +23,8 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		print "			2: long-read RNA-seq data\n";
 		print "  --nread [number]	the minimal number of supporting reads for a splicing event.\n";
 		print "  --fmode [number]	0: delta-PSI > 10% and p-value < 0.01 (default/recommended)\n";
-		print "			1: only delta-PSI > 10%\n";
-		print "			2: only p-value > 0.05\n";
+		print "			1: delta-PSI > 10%\n";
+		print "			2: p-value < 0.05\n";
 		print "			3: report all events\n";
 		print "\n";
 		exit;
