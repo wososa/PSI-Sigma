@@ -7,11 +7,9 @@ However, previous PSI-detection methods are limited to specific types of AS even
 
 Updates
 =================
-* v1.2 is now release: https://github.com/wososa/PSI-Sigma/releases/tag/v1.2a
-* Poster presentation at the Genome Informatics meeting at CSHL next week (2019/11/07).
+* v1.2b is now release: https://github.com/wososa/PSI-Sigma/releases/tag/v1.2b
 * A new paper using PSI-Sigma in Nature: https://rdcu.be/bSL5W
 * Alignment file for nanopore long-read PCR-cDNA-seq of human U87 cells: https://dropfiles.cshl.edu/link/EaLvsUGHEZxJARQJdTYqrG
-* v1.1 is now released.
 * A page for generating IR.out.tab file in parallel (https://github.com/wososa/PSI-Sigma/blob/master/IRinparallel.md).
 
 AUTHOR/SUPPORT
