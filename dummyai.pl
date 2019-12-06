@@ -36,12 +36,12 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		exit;
 	}
 	
-	my ($gtf,$name,$longread,$supporting_read_criteria,$fmode) = split(/\t/,$status);
+	my ($gtf,$name,$type,$supporting_read_criteria,$fmode) = split(/\t/,$status);
 	$fmode = 0 if($fmode ne "0" && $fmode ne "1" && $fmode ne "2" && $fmode ne "3");
 	
 	print "gtf = $gtf\n";
 	print "name = $name\n";
-	print "type = $longread\n";
+	print "type = $type\n";
 	print "nread = $supporting_read_criteria\n";
 	print "fmode = $fmode\n";
 	
@@ -146,13 +146,26 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		$accession=~s/\.bam//;
 		$accession=~s/\.$//;
 		my $sjfn = $accession . ".SJ.out.tab";
-		#my $commend = "samtools view $bam | awk -f " . $path . "/sjFromSAMcollapseUandM_inclOverlaps.awk > " . $sjfn;
+		
+		my $commend = "samtools view $bam | awk -f " . $path . "/sjFromSAMcollapseUandM_inclOverlaps.awk > " . $sjfn;
 		if(-e $sjfn){
 			if(-z $sjfn){
-				generateSJ($bam,$accession);
+				if($type == 1){
+					generateSJ($bam,$accession);
+				}
+				if($type == 2){
+					print "Generating... $sjfn\n";
+					system($commend);
+				}
 			}
 		}else{
-			generateSJ($bam,$accession);
+			if($type == 1){
+				generateSJ($bam,$accession);
+			}
+			if($type == 2){
+				print "Generating... $sjfn\n";
+				system($commend);
+			}
 		}
 		$sjcount++;
 	}
@@ -222,7 +235,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		print "Checking $bam...\n";
 		my $irfn = $accession . ".IR.out.tab";
 		print "Checking $irfn...\n";
-		my $commend = "perl " . $path . "/PSIsigma-ir-v.1.0.pl " . $name . ".db " . $bam . " " . $longread;
+		my $commend = "perl " . $path . "/PSIsigma-ir-v.1.0.pl " . $name . ".db " . $bam . " " . $type;
 		#print "commend = $commend\n";
 		if(-e $irfn){
 			if(-z $irfn){
@@ -248,7 +261,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 	
 	print "Ready to do PSI analysis...\n";
 	$starttime = time;
-	my $commend = "perl " . $path . "/PSIsigma-PSI-v.1.1.pl " . $name . ".db " . $name . " " . $supporting_read_criteria . " " . $intron_criteria . " " . $longread;
+	my $commend = "perl " . $path . "/PSIsigma-PSI-v.1.1.pl " . $name . ".db " . $name . " " . $supporting_read_criteria . " " . $intron_criteria . " " . $type;
 	system($commend);
 	$stoptime = time;
 	$hours = sprintf("%.4f",(($stoptime-$starttime)/3600));
