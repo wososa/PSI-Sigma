@@ -1,0 +1,2 @@
+testsample_WT.sorted.bam
+
