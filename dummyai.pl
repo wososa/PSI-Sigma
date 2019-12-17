@@ -78,7 +78,13 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
         	my $bamfn = $bam;
         	$bamfn=~s/(.*)\///;
         	system("ln -s $bam $bamfn");
-        	system("ln -s $bam\.bai $bamfn\.bai");
+        	my $bai = "$bam\.bai";
+        	if(-e $bai){
+        		system("ln -s $bam\.bai $bamfn\.bai");
+        	}else{
+        		print "$bai doesn't exist. Creating a new index...\n";
+        		system("samtools index $bamfn");
+        	}
         	$bam = $bamfn;
         }
         $group{$bam}++;
@@ -102,7 +108,13 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
         	my $bamfn = $bam;
         	$bamfn=~s/(.*)\///;
         	system("ln -s $bam $bamfn");
-        	system("ln -s $bam\.bai $bamfn\.bai");
+        	my $bai = "$bam\.bai";
+        	if(-e $bai){
+        		system("ln -s $bam\.bai $bamfn\.bai");
+        	}else{
+        		print "$bai doesn't exist. Creating a new index...\n";
+        		system("samtools index $bamfn");
+        	}
         	$bam = $bamfn;
         }
         $group{$bam}++;
