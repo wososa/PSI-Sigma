@@ -80,7 +80,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
         	system("ln -s $bam $bamfn");
         	$bam = $bamfn;
         }
-        $group{$bamfn}++;
+        $group{$bam}++;
     }
  	open(FILE,"groupb.txt") || die "Aborting.. Can't open groupb.txt : $!\n";
     while(my $line=<FILE>){
@@ -102,7 +102,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
         	system("ln -s $bam $bamfn");
         	$bam = $bamfn;
         }
-        $group{$bamfn}++;
+        $group{$bam}++;
     }
 
 	print "Generating mapping file...\n";
