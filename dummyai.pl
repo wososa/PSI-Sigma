@@ -74,7 +74,12 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
         	$tmp = $bam . ".bam";
         	$bam = $tmp if(-e $tmp);
         }
-        $group{$bam}++;
+        if($bam=~/\//){
+        	my $bamfn = $bam;
+        	$bamfn=~s/(.*)\///;
+        	system("ln -s $bam $bamfn");
+        }
+        $group{$bamfn}++;
     }
  	open(FILE,"groupb.txt") || die "Aborting.. Can't open groupb.txt : $!\n";
     while(my $line=<FILE>){
@@ -90,7 +95,12 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
         	$tmp = $bam . ".bam";
         	$bam = $tmp if(-e $tmp);
         }
-        $group{$bam}++;
+        if($bam=~/\//){
+        	my $bamfn = $bam;
+        	$bamfn=~s/(.*)\///;
+        	system("ln -s $bam $bamfn");
+        }
+        $group{$bamfn}++;
     }
 
 	print "Generating mapping file...\n";
