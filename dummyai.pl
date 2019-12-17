@@ -78,6 +78,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
         	my $bamfn = $bam;
         	$bamfn=~s/(.*)\///;
         	system("ln -s $bam $bamfn");
+        	$bam = $bamfn;
         }
         $group{$bamfn}++;
     }
@@ -99,6 +100,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
         	my $bamfn = $bam;
         	$bamfn=~s/(.*)\///;
         	system("ln -s $bam $bamfn");
+        	$bam = $bamfn;
         }
         $group{$bamfn}++;
     }
