@@ -78,10 +78,12 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
         	my $bamfn = $bam;
         	$bamfn=~s/(.*)\///;
         	system("ln -s $bam $bamfn");
+        	system("ln -s $bam\.bai $bamfn\.bai");
         	$bam = $bamfn;
         }
         $group{$bam}++;
     }
+    
  	open(FILE,"groupb.txt") || die "Aborting.. Can't open groupb.txt : $!\n";
     while(my $line=<FILE>){
         chomp $line;
@@ -100,6 +102,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
         	my $bamfn = $bam;
         	$bamfn=~s/(.*)\///;
         	system("ln -s $bam $bamfn");
+        	system("ln -s $bam\.bai $bamfn\.bai");
         	$bam = $bamfn;
         }
         $group{$bam}++;
