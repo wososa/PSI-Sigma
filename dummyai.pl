@@ -81,6 +81,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
         	$patha = 1;
         	$bamfn=~s/(.*)\///;
         	system("ln -s $bam $bamfn");
+        	system("ln -s $bam\.bai $bamfn\.bai");
         	$bam = $bamfn;
         }
         if($bam=~/\.bam$/){
@@ -115,6 +116,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
         	$patha = 1;
         	$bamfn=~s/(.*)\///;
         	system("ln -s $bam $bamfn");
+        	system("ln -s $bam\.bai $bamfn\.bai");
         	$bam = $bamfn;
         }
         if($bam=~/\.bam$/){
