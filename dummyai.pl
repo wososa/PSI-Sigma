@@ -66,6 +66,8 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
         chomp $line;
         next if($line eq "");
         my $bam = $line;
+        my $bamfn = $bam;
+        my $bai = "$bam\.bai";
         my $tmp = "-";
         if($bam!~/\.bam/){
         	$tmp = $bam . ".Aligned.sortedByCoord.out.bam";
@@ -77,17 +79,18 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
         }
         if($bam=~/\//){
         	$patha = 1;
-        	my $bamfn = $bam;
         	$bamfn=~s/(.*)\///;
         	system("ln -s $bam $bamfn");
-        	my $bai = "$bam\.bai";
+        	$bam = $bamfn;
+        }
+        if($bam=~/\.bam$/){
+        	$bai = "$bam\.bai";
         	if(-e $bai){
         		system("ln -s $bam\.bai $bamfn\.bai");
         	}else{
         		print "$bai doesn't exist. Creating a new index...\n";
         		system("samtools index $bamfn");
         	}
-        	$bam = $bamfn;
         }
         $group{$bam}++;
     }
@@ -97,6 +100,8 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
         chomp $line;
         next if($line eq "");
         my $bam = $line;
+        my $bamfn = $bam;
+        my $bai = "$bam\.bai";
         my $tmp = "-";
         if($bam!~/\.bam/){
         	$tmp = $bam . ".Aligned.sortedByCoord.out.bam";
@@ -108,17 +113,18 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
         }
         if($bam=~/\//){
         	$patha = 1;
-        	my $bamfn = $bam;
         	$bamfn=~s/(.*)\///;
         	system("ln -s $bam $bamfn");
-        	my $bai = "$bam\.bai";
+        	$bam = $bamfn;
+        }
+        if($bam=~/\.bam$/){
+        	$bai = "$bam\.bai";
         	if(-e $bai){
         		system("ln -s $bam\.bai $bamfn\.bai");
         	}else{
         		print "$bai doesn't exist. Creating a new index...\n";
         		system("samtools index $bamfn");
         	}
-        	$bam = $bamfn;
         }
         $group{$bam}++;
     }
