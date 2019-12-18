@@ -60,6 +60,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 	my $totaltime = 0;
 	
     my %group;
+    my $patha = 0;
  	open(FILE,"groupa.txt") || die "Aborting.. Can't open groupa.txt : $!\n";
     while(my $line=<FILE>){
         chomp $line;
@@ -75,6 +76,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
         	$bam = $tmp if(-e $tmp);
         }
         if($bam=~/\//){
+        	$patha = 1;
         	my $bamfn = $bam;
         	$bamfn=~s/(.*)\///;
         	system("ln -s $bam $bamfn");
@@ -105,6 +107,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
         	$bam = $tmp if(-e $tmp);
         }
         if($bam=~/\//){
+        	$patha = 1;
         	my $bamfn = $bam;
         	$bamfn=~s/(.*)\///;
         	system("ln -s $bam $bamfn");
@@ -118,6 +121,38 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
         	$bam = $bamfn;
         }
         $group{$bam}++;
+    }
+    
+    if($patha == 1){
+    	print "Formatting groupa.txt and groupb.txt...\n";
+    	system("cp groupa.txt groupa.txt.orig");
+    	system("cp groupb.txt groupb.txt.orig");
+    	open(FILE,"groupa.txt.orig") || die "Aborting.. Can't open groupa.txt.orig : $!\n";
+    	open(OUT,">groupa.txt") || die "Aborting.. Can't open groupa.txt : $!\n";
+    	while(my $line=<FILE>){
+        	chomp $line;
+        	next if($line eq "");
+        	$line=~s/(.*)\///;
+        	$line=~s/\.Aligned\.sortedByCoord\.out\.bam//;
+        	$line=~s/\.sorted\.bam//;
+        	$line=~s/\.bam//;
+        	print OUT "$line\n";
+        }
+        close(OUT);
+        close(FILE);
+    	open(FILE,"groupb.txt.orig") || die "Aborting.. Can't open groupb.txt.orig : $!\n";
+    	open(OUT,">groupb.txt") || die "Aborting.. Can't open groupb.txt : $!\n";
+    	while(my $line=<FILE>){
+        	chomp $line;
+        	next if($line eq "");
+        	$line=~s/(.*)\///;
+        	$line=~s/\.Aligned\.sortedByCoord\.out\.bam//;
+        	$line=~s/\.sorted\.bam//;
+        	$line=~s/\.bam//;
+        	print OUT "$line\n";
+        }
+        close(OUT);
+        close(FILE);
     }
 
 	print "Generating mapping file...\n";
