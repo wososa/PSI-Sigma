@@ -87,7 +87,8 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
         if($bam=~/\.bam$/){
         	$bai = "$bam\.bai";
         	if(-e $bai){
-        		system("ln -s $bam\.bai $bamfn\.bai");
+        		print "$bai is ready.\n";
+        		#system("ln -s $bam\.bai $bamfn\.bai");
         	}else{
         		print "$bai doesn't exist. Creating a new index...\n";
         		system("samtools index $bamfn");
@@ -122,7 +123,8 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
         if($bam=~/\.bam$/){
         	$bai = "$bam\.bai";
         	if(-e $bai){
-        		system("ln -s $bam\.bai $bamfn\.bai");
+        		print "$bai is ready.\n";
+        		#system("ln -s $bam\.bai $bamfn\.bai");
         	}else{
         		print "$bai doesn't exist. Creating a new index...\n";
         		system("samtools index $bamfn");
