@@ -261,11 +261,11 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 	if(-e $dbname){
 		if(-z $dbname){
 			print "Regenerating $dbname...\n";
-			rundb($noveljunctioncriteria,$gtf,$chrs);
+			rundb($noveljunctioncriteria,$gtf,$chrs,$type);
 		}
 	}else{
 		print "Generating $dbname...\n";
-		rundb($noveljunctioncriteria,$gtf,$chrs);
+		rundb($noveljunctioncriteria,$gtf,$chrs,$type);
 	}
 	$stoptime = time;
     $hours = sprintf("%.4f",(($stoptime-$starttime)/3600));
@@ -363,11 +363,12 @@ sub rundb{
 	my $noveljunctioncriteria = shift;
 	my $gtf = shift;
 	my $chrs = shift;
+	my $type = shift;
 	my @chromosomes = split(/\t/,$chrs);	
 	foreach my $chromosome(@chromosomes){
 		next if($chromosome=~/chrGL/);
 		next if($chromosome=~/chrKI/);
-		my $commend = "perl " . $path . "/PSIsigma-db-v.1.0.pl $gtf " . $chromosome . " " . $noveljunctioncriteria;
+		my $commend = "perl " . $path . "/PSIsigma-db-v.1.0.pl $gtf " . $chromosome . " " . $noveljunctioncriteria . " " . $type;
 		#print "Doing... $commend\n";
 		print "Doing... $chromosome\n";
 		system("$commend");
