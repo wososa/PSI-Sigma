@@ -144,6 +144,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
         	next if($line eq "");
         	$line=~s/(.*)\///;
         	$line=~s/\.Aligned\.sortedByCoord\.out\.bam//;
+        	$line=~s/\.sorted\.out\.bam//;
         	$line=~s/\.sorted\.bam//;
         	$line=~s/\.bam//;
         	print OUT "$line\n";
@@ -157,6 +158,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
         	next if($line eq "");
         	$line=~s/(.*)\///;
         	$line=~s/\.Aligned\.sortedByCoord\.out\.bam//;
+        	$line=~s/\.sorted\.out\.bam//;
         	$line=~s/\.sorted\.bam//;
         	$line=~s/\.bam//;
         	print OUT "$line\n";
@@ -213,9 +215,9 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 	foreach my $bam(keys %group){
 		next if($bam eq "");
 		my $accession = $bam;
-		$accession=~s/Aligned\.sortedByCoord\.out\.bam//;
-		$accession=~s/sorted\.out\.bam//;
-		$accession=~s/sorted\.bam//;
+        $accession=~s/\.Aligned\.sortedByCoord\.out\.bam//;
+        $accession=~s/\.sorted\.out\.bam//;
+        $accession=~s/\.sorted\.bam//;
 		$accession=~s/\.bam//;
 		$accession=~s/\.$//;
 		my $sjfn = $accession . ".SJ.out.tab";
@@ -278,8 +280,9 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
     my $ircount = 0;
     foreach my $bam(keys %group){
 		my $accession = $bam;
-		$accession=~s/Aligned\.sortedByCoord\.out\.bam//;
-		$accession=~s/sorted\.out\.bam//;
+        $accession=~s/\.Aligned\.sortedByCoord\.out\.bam//;
+        $accession=~s/\.sorted\.out\.bam//;
+        $accession=~s/\.sorted\.bam//;
 		$accession=~s/\.bam//;
 		$accession=~s/\.$//;
 		my $pname = "";
