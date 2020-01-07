@@ -215,6 +215,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		my $accession = $bam;
 		$accession=~s/Aligned\.sortedByCoord\.out\.bam//;
 		$accession=~s/sorted\.out\.bam//;
+		$accession=~s/sorted\.bam//;
 		$accession=~s/\.bam//;
 		$accession=~s/\.$//;
 		my $sjfn = $accession . ".SJ.out.tab";
