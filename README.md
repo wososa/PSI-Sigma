@@ -7,7 +7,7 @@ However, previous PSI-detection methods are limited to specific types of AS even
 
 Updates
 =================
-* Try the "--help" function and "testsample" folder in the latest release: https://github.com/wososa/PSI-Sigma/releases/tag/v1.4e
+* Try the "--help" function and "testsample" folder in the latest release: https://github.com/wososa/PSI-Sigma/releases/tag/v1.6a
 * A new paper using PSI-Sigma in Nature: https://rdcu.be/bSL5W
 * Alignment file for nanopore long-read PCR-cDNA-seq of human U87 cells: https://dropfiles.cshl.edu/link/FGfn7mF2toGqglJUh9kNhE
 * A page for generating IR.out.tab file in parallel (https://github.com/wososa/PSI-Sigma/blob/master/IRinparallel.md).
@@ -30,7 +30,7 @@ STAR --runThreadN 6 \
 	--outFileNamePrefix <NAME>.
 samtools index <NAME>.Aligned.sortedByCoord.out.bam
 ```
-For long-read RNA-seq data, please use GMAP (http://research-pub.gene.com/gmap/src/gmap-gsnap-2017-11-15.tar.gz).
+For long-read RNA-seq data, please use GMAP (http://research-pub.gene.com/gmap/src/gmap-gsnap-2017-11-15.tar.gz) or minimap2 (https://github.com/lh3/minimap2).
 ```
 ###This is an example for long-read RNA-seq###
 ~/gmap-2017-11-15/bin/gmap -d GRCh38 -f samse --min-trimmed-coverage=0.5 --no-chimeras -B 5 -t 6 ~/MinION_long_read.fastq > <NAME>.sam
