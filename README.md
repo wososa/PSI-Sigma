@@ -33,9 +33,9 @@ samtools index <NAME>.Aligned.sortedByCoord.out.bam
 For long-read RNA-seq data, please use GMAP (http://research-pub.gene.com/gmap/src/gmap-gsnap-2017-11-15.tar.gz) or minimap2 (https://github.com/lh3/minimap2).
 ```
 ###This is an example for long-read RNA-seq###
-###GMAP###
+#Example of using GMAP#
 ~/gmap-2017-11-15/bin/gmap -d GRCh38 -f samse --min-trimmed-coverage=0.5 --no-chimeras -B 5 -t 6 MinION_long_read.fastq > <NAME>.sam
-###minimap###
+#Example of using minimap2#
 ~/minimap2-2.17/minimap2 -ax splice:hq -uf H38.fa MinION_long_read.fastq > <NAME>.sam
 
 samtools view -bS <NAME>.sam > <NAME>.bam
