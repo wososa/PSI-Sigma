@@ -26,8 +26,8 @@ perl ~/PSIsigma/dummyai-db-alone.pl Homo_sapiens.GRCh38.87.sorted.gtf PSIsigma
 ```
 Next, you can generate IR.out.tab files for each .bam files, respectively:
 ```
-perl ~/PSIsigma/PSIsigma-ir-v.1.0.pl PSIsigma.db A1.sortedByCoord.out.bam 1
-perl ~/PSIsigma/PSIsigma-ir-v.1.0.pl PSIsigma.db B1.sortedByCoord.out.bam 1
+perl ~/PSIsigma/PSIsigma-ir-v.1.1.pl PSIsigma.db A1.sortedByCoord.out.bam 1
+perl ~/PSIsigma/PSIsigma-ir-v.1.1.pl PSIsigma.db B1.sortedByCoord.out.bam 1
 ---<repeat for all .bam files in groupa.txt and groupb.txt>---
 ```
 After obtaining the .db and .IR.out.tab files, you can run dummyai.pl.
