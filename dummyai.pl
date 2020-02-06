@@ -311,7 +311,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		print "Checking $bam...\n";
 		my $irfn = $accession . ".IR.out.tab";
 		print "Checking $irfn...\n";
-		my $commend = "perl " . $path . "/PSIsigma-ir-v.1.0.pl " . $name . ".db " . $bam . " " . $type;
+		my $commend = "perl " . $path . "/PSIsigma-ir-v.1.1.pl " . $name . ".db " . $bam . " " . $type;
 		#print "commend = $commend\n";
 		if(-e $irfn){
 			if(-z $irfn){
