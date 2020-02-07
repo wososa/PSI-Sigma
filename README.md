@@ -59,16 +59,16 @@ gzip -d Homo_sapiens.GRCh38.87.gtf.gz
 (grep "^#" Homo_sapiens.GRCh38.87.gtf; grep -v "^#" Homo_sapiens.GRCh38.87.gtf | sort -k1,1 -k4,4n) > Homo_sapiens.GRCh38.87.sorted.gtf
 rm Homo_sapiens.GRCh38.87.gtf
 ```
-Create two files: (1) groupa.txt and (2) groupb.txt. Please put suffixes of your .SJ.out.tab files in the groupa.txt or groupb.txt. For example, the suffix of a "Sequins_MixA.SJ.out.tab" file is "Sequins_MixA". Groupa.txt will be compared with groupb.txt. Below is an example of processing .SJ.out.tab files from TCGA (11A means normal and 01A means tumor):
+Create two files: (1) groupa.txt and (2) groupb.txt. Please put the full name or the suffix of your .bam files in the groupa.txt or groupb.txt. For example, the suffix of a "Sequins_MixA.Aligned.sortedByCoord.out.bam" file is "Sequins_MixA". Groupa.txt will be compared with groupb.txt. Below is an example:
 ```
 #Note: one file name per line in groupa.txt and groupb.txt
-#For TCGA files:
-ls *-11A-*.SJ* | sed s/.SJ.out.tab//g > groupa.txt
-ls *-01A-*.SJ* | sed s/.SJ.out.tab//g > groupb.txt
-
-#Alternatively, you can just put the names of your .bam files:
 echo Sequins_MixA.Aligned.sortedByCoord.out.bam > groupa.txt
 echo Sequins_MixB.Aligned.sortedByCoord.out.bam > groupb.txt
+
+#Alternatively, you can put only the suffix
+echo Sequins_MixA > groupa.txt
+echo Sequins_MixB > groupb.txt
+
 ```
 Run dummyai.pl. After the .gtf file, please specify 1 for short-read RNA-seq and 2 for long-read RNA-seq. The last column is used to specify the minimum number of supporting reads for an AS event (10 is specified in the example below).
 ```
