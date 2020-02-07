@@ -62,8 +62,8 @@ rm Homo_sapiens.GRCh38.87.gtf
 Create two files: (1) groupa.txt and (2) groupb.txt. Please put the full name or the suffix of your .bam files in the groupa.txt or groupb.txt. For example, the suffix of a "Sequins_MixA.Aligned.sortedByCoord.out.bam" file is "Sequins_MixA". Groupa.txt will be compared with groupb.txt. Below is an example:
 ```
 #Note: one file name per line in groupa.txt and groupb.txt
-echo Sequins_MixA.Aligned.sortedByCoord.out.bam > groupa.txt
-echo Sequins_MixB.Aligned.sortedByCoord.out.bam > groupb.txt
+echo Sequins_MixA.Aligned.sortedByCoord.out.bam >> groupa.txt
+echo Sequins_MixB.Aligned.sortedByCoord.out.bam >> groupb.txt
 
 #Alternatively, you can put only the suffix (WARNNING: only works when the .bam files are linked to the working directory)
 echo Sequins_MixA > groupa.txt
