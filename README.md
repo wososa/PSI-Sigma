@@ -65,7 +65,7 @@ Create two files: (1) groupa.txt and (2) groupb.txt. Please put the full name or
 echo Sequins_MixA.Aligned.sortedByCoord.out.bam > groupa.txt
 echo Sequins_MixB.Aligned.sortedByCoord.out.bam > groupb.txt
 
-#Alternatively, you can put only the suffix
+#Alternatively, you can put only the suffix (WARNNING: only works when the .bam files are linked to the working directory)
 echo Sequins_MixA > groupa.txt
 echo Sequins_MixB > groupb.txt
 
