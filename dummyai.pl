@@ -22,6 +22,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		print "  --type [number]	1: short-read RNA-seq data\n";
 		print "			2: long-read RNA-seq data\n";
 		print "  --nread [number]	the minimal number of supporting reads for a splicing event.\n";
+		print "  --skipratio [number]	the ratio (0~1) of skipping reads in a exon-skipping event [default: 0.05].\n";
 		print "  --fmode [number]	0: delta-PSI > 10% and p-value < 0.01 (default/recommended)\n";
 		print "			1: delta-PSI > 10%\n";
 		print "			2: p-value < 0.05\n";
@@ -33,16 +34,19 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 	if(scalar @param < 4){
 		print "[Error Message]: $status.\n";
 		print "Please specify --gtf for .gtf file, --name for database name, --type for long(2) or short(1) read, and --nread for number of supporting reads.\n";
+		print "Please try --help to read required parameters.\n";
 		exit;
 	}
 	
-	my ($gtf,$name,$type,$supporting_read_criteria,$fmode) = split(/\t/,$status);
+	my ($gtf,$name,$type,$supporting_read_criteria,$fmode,$skipratio) = split(/\t/,$status);
 	$fmode = 0 if($fmode ne "0" && $fmode ne "1" && $fmode ne "2" && $fmode ne "3");
+	$skipratio = 0.05 if($skipratio eq "-" || $skipratio > 1 || $skiprato < 0);
 	
 	print "gtf = $gtf\n";
 	print "name = $name\n";
 	print "type = $type\n";
 	print "nread = $supporting_read_criteria\n";
+	print "skipratio = $skipratio\n";
 	print "fmode = $fmode\n";
 	
 	
@@ -337,7 +341,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 	
 	print "Ready to do PSI analysis...\n";
 	$starttime = time;
-	my $commend = "perl " . $path . "/PSIsigma-PSI-v.1.1.pl " . $name . ".db " . $name . " " . $supporting_read_criteria . " " . $intron_criteria . " " . $type;
+	my $commend = "perl " . $path . "/PSIsigma-PSI-v.1.1.pl " . $name . ".db " . $name . " " . $supporting_read_criteria . " " . $skipratio . " " . $intron_criteria . " " . $type;
 	system($commend);
 	$stoptime = time;
 	$hours = sprintf("%.4f",(($stoptime-$starttime)/3600));
@@ -398,6 +402,7 @@ sub param{
 	$parameters{"type"} = "-";
 	$parameters{"nread"} = "-";
 	$parameters{"fmode"} = "-";
+	$parameters{"skipratio"} = "-";
 	my $oldformat = 1;
 	for(my $i = 0;$i < scalar @array;$i++){
 		if($array[$i]=~/^\-/){
@@ -434,7 +439,7 @@ sub param{
 	if($parameters{"type"} != 1 && $parameters{"type"} != 2){
 		return "--type parameter didn't find a correct number (1 or 2)";
 	}
-	return $parameters{"gtf"} . "\t" . $parameters{"name"} . "\t" . $parameters{"type"} . "\t" . $parameters{"nread"} . "\t" . $parameters{"fmode"};
+	return $parameters{"gtf"} . "\t" . $parameters{"name"} . "\t" . $parameters{"type"} . "\t" . $parameters{"nread"} . "\t" . $parameters{"fmode"} . "\t" . $parameters{"skipratio"};
 }
 
 sub generateSJ{
