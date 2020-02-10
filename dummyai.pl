@@ -40,7 +40,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 	
 	my ($gtf,$name,$type,$supporting_read_criteria,$fmode,$skipratio) = split(/\t/,$status);
 	$fmode = 0 if($fmode ne "0" && $fmode ne "1" && $fmode ne "2" && $fmode ne "3");
-	$skipratio = 0.05 if($skipratio eq "-" || $skipratio > 1 || $skiprato < 0);
+	$skipratio = 0.05 if($skipratio eq "-" || $skipratio > 1 || $skipratio < 0);
 	
 	print "gtf = $gtf\n";
 	print "name = $name\n";
