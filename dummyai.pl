@@ -428,7 +428,7 @@ sub param{
 		return $array[0] . "\t" . $array[1] . "\t" . $array[2] . "\t" . $array[3] . "\t" . "0";
 	}
 	foreach my $key(keys %parameters){
-		next if($key eq "fmode");
+		next if($key eq "fmode" || $key eq "skipratio");
 		if($parameters{$key} eq "-"){
 			return "Parameter $key has no input value";
 		}
