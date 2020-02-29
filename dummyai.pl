@@ -182,7 +182,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
         my @array = split(/\t/,$line);
         next if($array[2] ne "transcript");
         my ($chr,$cat,$start,$end,$strand,$name) = ($array[0],$array[1],$array[3],$array[4],$array[6],$array[8]);
-        $chr = "chr" . $chr if($chr!~/chr/);
+        #$chr = "chr" . $chr if($chr!~/chr/);
         $chr{$chr}++;
 		my $ENST = $name;
  		$ENST=~s/(.*)transcript\_id \"//;
