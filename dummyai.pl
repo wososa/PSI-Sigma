@@ -382,10 +382,10 @@ sub rundb{
 		system("$commend");
 	}
 	
-	system("cat chr*.db > $dbname");
-	system("cat chr*.bed > $bedname");
-	system("rm chr*.db");
-	system("rm chr*.bed");
+	system("cat *.db.tmp > $dbname");
+	system("cat *.bed.tmp > $bedname");
+	system("rm *.db.tmp");
+	system("rm *.bed.tmp");
 }
 
 sub param{
