@@ -13,7 +13,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 	
 	my @param = split(/\t/,$status);
 	
-	if($param[0] eq "Help"){
+	if($param[0] eq "Help" || scalar @param < 4){
 		print "\n";
 		print "Usage: perl dummyai.pl [parameters]\n";
 		print "Parameters:\n";
@@ -27,19 +27,15 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		print "			1: delta-PSI > 10%\n";
 		print "			2: p-value < 0.05\n";
 		print "			3: report all events\n";
+		print "  --irmode [number]	0: default\n";
+		print "			1: aggressively search for all introns\n";
 		print "\n";
 		exit;
 	}
 	
-	if(scalar @param < 4){
-		print "[Error Message]: $status.\n";
-		print "Please specify --gtf for .gtf file, --name for database name, --type for long(2) or short(1) read, and --nread for number of supporting reads.\n";
-		print "Please try --help to read required parameters.\n";
-		exit;
-	}
-	
-	my ($gtf,$name,$type,$supporting_read_criteria,$fmode,$skipratio) = split(/\t/,$status);
+	my ($gtf,$name,$type,$supporting_read_criteria,$fmode,$skipratio,$irmode) = split(/\t/,$status);
 	$fmode = 0 if($fmode ne "0" && $fmode ne "1" && $fmode ne "2" && $fmode ne "3");
+	$irmode = 0 if($irmode ne "0" && $irmode ne "1");
 	$skipratio = 0.05 if($skipratio eq "-" || $skipratio > 1 || $skipratio < 0);
 	
 	print "gtf = $gtf\n";
@@ -48,6 +44,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 	print "nread = $supporting_read_criteria\n";
 	print "skipratio = $skipratio\n";
 	print "fmode = $fmode\n";
+	print "irmode = $irmode\n";
 	
 	
 	#my ($gtf,$name,$longread,$supporting_read_criteria) = @ARGV;
@@ -372,11 +369,14 @@ sub rundb{
 	my $gtf = shift;
 	my $chrs = shift;
 	my $type = shift;
-	my @chromosomes = split(/\t/,$chrs);	
+	my @chromosomes = split(/\t/,$chrs);
 	foreach my $chromosome(@chromosomes){
-		next if($chromosome=~/chrGL/);
-		next if($chromosome=~/chrKI/);
-		my $commend = "perl " . $path . "/PSIsigma-db-v.1.0.pl $gtf " . $chromosome . " " . $noveljunctioncriteria . " " . $type;
+		next if($chromosome=~/^chrGL/);
+		next if($chromosome=~/^chrKI/);
+		next if($chromosome=~/^GL/);
+		next if($chromosome=~/^KI/);
+		
+		my $commend = "perl " . $path . "/PSIsigma-db-v.1.0.pl $gtf " . $chromosome . " " . $noveljunctioncriteria . " " . $type . " " . $irmode;
 		#print "Doing... $commend\n";
 		print "Doing... $chromosome\n";
 		system("$commend");
@@ -403,6 +403,7 @@ sub param{
 	$parameters{"nread"} = "-";
 	$parameters{"fmode"} = "-";
 	$parameters{"skipratio"} = "-";
+	$parameters{"irmode"} = "-";
 	my $oldformat = 1;
 	for(my $i = 0;$i < scalar @array;$i++){
 		if($array[$i]=~/^\-/){
@@ -428,8 +429,9 @@ sub param{
 		return $array[0] . "\t" . $array[1] . "\t" . $array[2] . "\t" . $array[3] . "\t" . "0";
 	}
 	foreach my $key(keys %parameters){
-		next if($key eq "fmode" || $key eq "skipratio");
+		next if($key eq "fmode" || $key eq "skipratio" || $key eq "irmode");
 		if($parameters{$key} eq "-"){
+			print "Parameter $key has no input value";
 			return "Parameter $key has no input value";
 		}
 	}
@@ -439,7 +441,7 @@ sub param{
 	if($parameters{"type"} != 1 && $parameters{"type"} != 2){
 		return "--type parameter didn't find a correct number (1 or 2)";
 	}
-	return $parameters{"gtf"} . "\t" . $parameters{"name"} . "\t" . $parameters{"type"} . "\t" . $parameters{"nread"} . "\t" . $parameters{"fmode"} . "\t" . $parameters{"skipratio"};
+	return $parameters{"gtf"} . "\t" . $parameters{"name"} . "\t" . $parameters{"type"} . "\t" . $parameters{"nread"} . "\t" . $parameters{"fmode"} . "\t" . $parameters{"skipratio"} . "\t" . $parameters{"irmode"};
 }
 
 sub generateSJ{
@@ -455,6 +457,7 @@ sub generateSJ{
 		print "Bye.\n";
 		exit;
 	}else{
+		print "\nYes, proceed.\n";
 		my $accession = "-";
 		my $dupcount = 0;
 		open(INPUT, '-|',"samtools view " . $bam . " | head -n 100") or die $!;

@@ -35,6 +35,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
     	my ($chr,$i1s,$i1e,$i2s,$i2e,$tes,$tee,$anno,$as,$ae,$name,$gn) = split(/\t/,$line);
     	my ($et) = "-";
     	my ($accession,$num) = ($1,$2) if($name=~/(.*)\_(\d+)$/);
+
     	my @array = split(/\_/,$accession);
     	#$accession=~s/(.*)\_//;
     	my $ENST = $array[4];
@@ -46,6 +47,8 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
     		exit;
     	}
     	$wing{$name} = "$chr,$i1s,$i1e,$i2s,$i2e";
+    	$ENST=~s/^Ex\.//;
+    	$ENST=~s/^TSS\.//;
     	
     	if($name=~/\_W\_/){
     		if($i1s == $as && $i2e == $ae){
@@ -173,7 +176,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
     		}
     	}
     	my ($chr,$as,$ae,$tmp,$tmpENST,$tmpnum) = split(/\_/,$ID);
-    	$chr=~s/chr//;
+    	#$chr=~s/chr//;
     	my ($accession,$num) = ($1,$2) if($ID=~/(.*)\_(\d+)$/);
     	#$accession=~s/(.*)\_//;
 
@@ -198,12 +201,15 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
     		next if($N < ($maxn*$criteria) || $T < ($maxt*$criteria));
     	}
     	my $symbol = "-";
-    	if(!$symbol{$ENST}){
+    	$tmpENST=~s/^Ex\.//;
+    	$tmpENST=~s/^TSS\.//;
+    	if(!$symbol{$tmpENST}){
     		$symbol="N/A";
-    		print "$ENST has no symbol!\n";
+    		print "$tmpENST has no symbol!\n";
     	}else{
-    		$symbol = $symbol{$ENST};
+    		$symbol = $symbol{$tmpENST};
     	}
+    	
     	if(!$ET{$accession}){
     		print "Can't find $accession\n";
     		print "ID = $ID\n";
@@ -227,17 +233,20 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
     		$eventtype = "MXS" if($mxs == 1);
     	}
     	if($eventtype eq "A5SS" || $eventtype eq "A3SS"){
-    		my ($exonchr,$exonss,$exonee) = split(/[\:\-]/,$exon);
-    		if(!$es{$exonss} && !$ee{$exonee}){
-    		}else{
-    			next;
-    		}
+    		#my ($exonchr,$exonss,$exonee) = split(/[\:\-]/,$exon);
+    		#if(!$es{$exonss} && !$ee{$exonee}){
+    		#}else{
+    		#	next if($fmode != 0);
+    		#}
     	}
     	my $eventregion = "$chr:$as-$ae";
     	my ($exonchr,$exonss,$exonee) = split(/[\:\-]/,$exon);
     	if($eventtype=~/IR/){
     		$eventregion = $exon;
     		$exon = "$chr:$as-$ae";
+    	}
+    	if($ENST=~/^TSS/){
+    		$eventtype = "TSS" . "|" . $eventtype;
     	}
     	#print OUT "$eventregion\t$symbol\t$exon\t$eventtype\t$N\t$T\t$exontype\t$ENST\t$dPSI\t$pvalue\t$FDR\t$nvalues\t$tvalues\n";
     	print OUT "$eventregion\t$symbol\t$exon\t$eventtype\t$N\t$T\t$exontype\t$ENST\t$dPSI\t$pvalue\t$FDR\t$nvalues\t$tvalues\t$ID\n";
