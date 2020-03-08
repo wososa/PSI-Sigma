@@ -22,7 +22,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		print "  --type [number]	1: short-read RNA-seq data\n";
 		print "			2: long-read RNA-seq data\n";
 		print "  --nread [number]	the minimal number of supporting reads for a splicing event.\n";
-		print "  --skipratio [number]	the ratio (0~1) of skipping reads in a exon-skipping event [default: 0.05].\n";
+		print "  --skipratio [number]	the ratio (0~1) of skipping reads in a exon-skipping event [default: 0.05]. A splicing event has to have at least one input sample passing this criteria to be included in the analysis. \n";
 		print "  --fmode [number]	0: delta-PSI > 10% and p-value < 0.01 (default/recommended)\n";
 		print "			1: delta-PSI > 10%\n";
 		print "			2: p-value < 0.05\n";
@@ -312,7 +312,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		print "Checking $bam...\n";
 		my $irfn = $accession . ".IR.out.tab";
 		print "Checking $irfn...\n";
-		my $commend = "perl " . $path . "/PSIsigma-ir-v.1.1.pl " . $name . ".db " . $bam . " " . $type;
+		my $commend = "perl " . $path . "/PSIsigma-ir-v.1.2.pl " . $name . ".db " . $bam . " " . $type;
 		#print "commend = $commend\n";
 		if(-e $irfn){
 			if(-z $irfn){
