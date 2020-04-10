@@ -10,7 +10,7 @@ Updates
 * The latest release: https://github.com/wososa/PSI-Sigma/releases/tag/v1.9c
 * Try the "--help" function.
 * A new paper using PSI-Sigma in Nature: https://rdcu.be/bSL5W
-* Alignment file for nanopore long-read PCR-cDNA-seq of human U87 cells: https://dropfiles.cshl.edu/link/FGfn7mF2toGqglJUh9kNhE
+* Alignment file for nanopore long-read PCR-cDNA-seq of human U87 cells: https://dropfiles.cshl.edu/link/FGfn7mF2toGqglJUh9kNhE (expired)
 
 AUTHOR/SUPPORT
 ==============
