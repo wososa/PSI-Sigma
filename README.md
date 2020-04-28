@@ -75,12 +75,6 @@ Run dummyai.pl. After the .gtf file, please specify 1 for short-read RNA-seq and
 perl ~/PSIsigma/dummyai.pl --gtf Homo_sapiens.GRCh38.87.sorted.gtf --name PSIsigma --type 1 -nread 10
 #For long-read RNA-seq (minimum 10 supporting reads for an AS event)
 perl ~/PSIsigma/dummyai.pl --gtf Homo_sapiens.GRCh38.87.sorted.gtf --name PSIsigma --type 2 -nread 10
-
-#Alternatively, you can use the old format
-#For short-read RNA-seq (minimum 10 supporting reads for an AS event)
-perl ~/PSIsigma/dummyai.pl Homo_sapiens.GRCh38.87.sorted.gtf PSIsigma 1 10
-#For long-read RNA-seq (minimum 10 supporting reads for an AS event)
-perl ~/PSIsigma/dummyai.pl Homo_sapiens.GRCh38.87.sorted.gtf PSIsigma 2 10
 ```
 That's it.
 Filtered results (p<0.01) will be listed in the PSIsigma_r10_ir3.sorted.txt.
