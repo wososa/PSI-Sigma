@@ -60,12 +60,12 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
     	
     	if($name=~/\_S\_/){
     		if($i1s == $i1e){
-    			$ET{$accession} = "A3SS" if($strand{$ENST} eq "+");
-    			$ET{$accession} = "A5SS" if($strand{$ENST} eq "-");
+    			$ET{$name} = "A3SS" if($strand{$ENST} eq "+");
+    			$ET{$name} = "A5SS" if($strand{$ENST} eq "-");
     		}
     		if($i2s == $i2e){
-    			$ET{$accession} = "A5SS" if($strand{$ENST} eq "+");
-    			$ET{$accession} = "A3SS" if($strand{$ENST} eq "-");
+    			$ET{$name} = "A5SS" if($strand{$ENST} eq "+");
+    			$ET{$name} = "A3SS" if($strand{$ENST} eq "-");
     		}
     		if($i1s != $i1e && $i2s != $i2e){
     			print "[ERROR] coordinates are not A5SS or A3SS!\n";
@@ -73,8 +73,8 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
     		}	
     	}
     	if($name=~/\_R\_/){
-    		$ET{$accession} = "IR";
-    		$ET{$accession} = "IR (overlapping region)" if($gn=~/\,/);
+    		$ET{$name} = "IR";
+    		$ET{$name} = "IR (overlapping region)" if($gn=~/\,/);
     	}
     }
     close(FILE);
@@ -210,14 +210,17 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
     		$symbol = $symbol{$tmpENST};
     	}
     	
-    	if(!$ET{$accession}){
+    	my $ETID = $ID;
+    	$ETID = $accession if($ID=~/\_W\_/);
+    	
+    	if(!$ET{$ETID}){
     		print "Can't find $accession\n";
     		print "ID = $ID\n";
     		print "ENST = $ENST\n";
     		print "symbol = $symbol\n";
     		exit;
     	}else{
-    		$eventtype = $ET{$accession};
+    		$eventtype = $ET{$ETID};
     	}
     	if($eventtype eq "SES"){
     		my $mxs = 0;
