@@ -27,15 +27,25 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		print "			1: delta-PSI > 10%\n";
 		print "			2: p-value < 0.05\n";
 		print "			3: report all events\n";
-		print "  --irmode [number]	0: default\n";
+		print "  --irmode [number]	0: only introns in the .gtf. (default)\n";
 		print "			1: aggressively search for all introns\n";
+		print "			2: Skip intron-retention events.\n";
+		print "  --adjp [number]	0: Skip p-value adjustment.\n";
+		print "			1: Benjamini-Hochberg (default)\n";
+		print "  --denominator [number]	0: Don't report denominators. (default)\n";
+		print "			1: Report the table of denominators.\n";
+		print "  --irrange [number]	0: IR event is using reference points of the target exon region. (default)\n";
+		print "			n: Use +-n bases around target intron region and +-n bases around event region.\n";
 		print "\n";
 		exit;
 	}
 	
-	my ($gtf,$name,$type,$supporting_read_criteria,$fmode,$skipratio,$irmode) = split(/\t/,$status);
+	my ($gtf,$name,$type,$supporting_read_criteria,$fmode,$skipratio,$irmode,$adjp,$denominator,$irrange) = split(/\t/,$status);
 	$fmode = 0 if($fmode ne "0" && $fmode ne "1" && $fmode ne "2" && $fmode ne "3");
-	$irmode = 0 if($irmode ne "0" && $irmode ne "1");
+	$irmode = 0 if($irmode ne "0" && $irmode ne "1" && $irmode ne "2");
+	$irrange = 0 if(!$irrange || $irrange!~/\d/);
+	$adjp = 1 if($adjp ne "0" && $adjp ne "1");
+	$denominator = 0 if($denominator ne "0" && $denominator ne "1");
 	$skipratio = 0.05 if($skipratio eq "-" || $skipratio > 1 || $skipratio < 0);
 	
 	print "gtf = $gtf\n";
@@ -45,6 +55,9 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 	print "skipratio = $skipratio\n";
 	print "fmode = $fmode\n";
 	print "irmode = $irmode\n";
+	print "adjp = $adjp\n";
+	print "denominator = $denominator\n";
+	print "irrange = $irrange\n";
 	
 	
 	#my ($gtf,$name,$longread,$supporting_read_criteria) = @ARGV;
@@ -276,69 +289,73 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
     $totaltime += $hours;
     print "===Database spent $hours hours.===\n";
     
-    print "Getting intron reads....\n";
-    $starttime = time;
-    my $ircount = 0;
-    foreach my $bam(keys %group){
-		my $accession = $bam;
-        $accession=~s/\.Aligned\.sortedByCoord\.out\.bam//;
-        $accession=~s/\.sorted\.out\.bam//;
-        $accession=~s/\.sorted\.bam//;
-		$accession=~s/\.bam//;
-		$accession=~s/\.$//;
-		my $pname = "";
-		my $checkpname = 0;
-		if($bam!~/\.bam/){
-			$pname = $bam . "\.Aligned\.sortedByCoord\.out\.bam";
-			if(-e $pname){
-				$bam = $pname;
-				$checkpname = 1;
-			}
-			if($checkpname == 0){
-				$pname = $bam . "\.sorted\.out\.bam";
+    my $ircheck = 1;
+    $ircheck = 0 if($irmode == 2);
+    if($ircheck == 1){
+		print "Getting intron reads....\n";
+		$starttime = time;
+		my $ircount = 0;
+		foreach my $bam(keys %group){
+			my $accession = $bam;
+			$accession=~s/\.Aligned\.sortedByCoord\.out\.bam//;
+			$accession=~s/\.sorted\.out\.bam//;
+			$accession=~s/\.sorted\.bam//;
+			$accession=~s/\.bam//;
+			$accession=~s/\.$//;
+			my $pname = "";
+			my $checkpname = 0;
+			if($bam!~/\.bam/){
+				$pname = $bam . "\.Aligned\.sortedByCoord\.out\.bam";
 				if(-e $pname){
 					$bam = $pname;
 					$checkpname = 1;
 				}
-			}
-			if($checkpname == 0){
-				$pname = $bam . "\.bam";
-				if(-e $pname){
-					$bam = $pname;
-					$checkpname = 1;
+				if($checkpname == 0){
+					$pname = $bam . "\.sorted\.out\.bam";
+					if(-e $pname){
+						$bam = $pname;
+						$checkpname = 1;
+					}
+				}
+				if($checkpname == 0){
+					$pname = $bam . "\.bam";
+					if(-e $pname){
+						$bam = $pname;
+						$checkpname = 1;
+					}
 				}
 			}
-		}
-		print "Checking $bam...\n";
-		my $irfn = $accession . ".IR.out.tab";
-		print "Checking $irfn...\n";
-		my $commend = "perl " . $path . "/PSIsigma-ir-v.1.2.pl " . $name . ".db " . $bam . " " . $type;
-		#print "commend = $commend\n";
-		if(-e $irfn){
-			if(-z $irfn){
-				print "Regenerating .IR.out for $accession\n";
-				system("$commend");
+			print "Checking $bam...\n";
+			my $irfn = $accession . ".IR.out.tab";
+			print "Checking $irfn...\n";
+			my $commend = "perl " . $path . "/PSIsigma-ir-v.1.2.pl " . $name . ".db " . $bam . " " . $type;
+			#print "commend = $commend\n";
+			if(-e $irfn){
+				if(-z $irfn){
+					print "Regenerating .IR.out for $accession\n";
+					system("$commend");
+				}else{
+					print "$irfn existed. Pass...\n";
+				}
 			}else{
-				print "$irfn existed. Pass...\n";
+				print "Generating .IR.out for $accession\n";
+				system("$commend");
 			}
-		}else{
-			print "Generating .IR.out for $accession\n";
-			system("$commend");
+			$ircount++;
 		}
-		$ircount++;
-    }
-	$stoptime = time;
-	$hours = sprintf("%.4f",(($stoptime-$starttime)/3600));
-	$totaltime += $hours;
-	print "===Intron-read file spent $hours hours.===\n";
-	if($ircount < 2){
-		print "Only $ircount samples. It is not enough. Exiting...\n";
-		exit;
+		$stoptime = time;
+		$hours = sprintf("%.4f",(($stoptime-$starttime)/3600));
+		$totaltime += $hours;
+		print "===Intron-read file spent $hours hours.===\n";
+		if($ircount < 2){
+			print "Only $ircount samples. It is not enough. Exiting...\n";
+			exit;
+		}
 	}
 	
 	print "Ready to do PSI analysis...\n";
 	$starttime = time;
-	my $commend = "perl " . $path . "/PSIsigma-PSI-v.1.1.pl " . $name . ".db " . $name . " " . $supporting_read_criteria . " " . $skipratio . " " . $intron_criteria . " " . $type;
+	my $commend = "perl " . $path . "/PSIsigma-PSI-v.1.1.pl " . $name . ".db " . $name . " " . $supporting_read_criteria . " " . $skipratio . " " . $intron_criteria . " " . $type . " " . $adjp . " " . $denominator . " " . $ircheck . " " . $irrange;
 	system($commend);
 	$stoptime = time;
 	$hours = sprintf("%.4f",(($stoptime-$starttime)/3600));
@@ -404,6 +421,10 @@ sub param{
 	$parameters{"fmode"} = "-";
 	$parameters{"skipratio"} = "-";
 	$parameters{"irmode"} = "-";
+	$parameters{"adjp"} = "-";
+	$parameters{"denominator"} = "-";
+	$parameters{"irrange"} = "-";
+	
 	my $oldformat = 1;
 	for(my $i = 0;$i < scalar @array;$i++){
 		if($array[$i]=~/^\-/){
@@ -411,7 +432,7 @@ sub param{
 			$pam=~s/^\-\-//;
 			$pam=~s/^\-//;
 			if(!$parameters{$pam}){
-				return "Not recognized parameter: $pam";
+				return "Can't recognize the parameter name: $pam";
 			}else{
 				if(!$array[($i+1)] && $array[($i+1)] != 0){
 					return "Parameter $pam has no input value";
@@ -429,7 +450,7 @@ sub param{
 		return $array[0] . "\t" . $array[1] . "\t" . $array[2] . "\t" . $array[3] . "\t" . "0";
 	}
 	foreach my $key(keys %parameters){
-		next if($key eq "fmode" || $key eq "skipratio" || $key eq "irmode");
+		next if($key eq "fmode" || $key eq "skipratio" || $key eq "irmode" || $key eq "adjp" || $key eq "denominator" || $key eq "irrange");
 		if($parameters{$key} eq "-"){
 			print "Parameter $key has no input value";
 			return "Parameter $key has no input value";
@@ -441,7 +462,7 @@ sub param{
 	if($parameters{"type"} != 1 && $parameters{"type"} != 2){
 		return "--type parameter didn't find a correct number (1 or 2)";
 	}
-	return $parameters{"gtf"} . "\t" . $parameters{"name"} . "\t" . $parameters{"type"} . "\t" . $parameters{"nread"} . "\t" . $parameters{"fmode"} . "\t" . $parameters{"skipratio"} . "\t" . $parameters{"irmode"};
+	return $parameters{"gtf"} . "\t" . $parameters{"name"} . "\t" . $parameters{"type"} . "\t" . $parameters{"nread"} . "\t" . $parameters{"fmode"} . "\t" . $parameters{"skipratio"} . "\t" . $parameters{"irmode"} . "\t" . $parameters{"adjp"} . "\t" . $parameters{"denominator"} . "\t" . $parameters{"irrange"};
 }
 
 sub generateSJ{
