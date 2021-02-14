@@ -7,7 +7,7 @@ However, previous PSI-detection methods are limited to specific types of AS even
 
 Updates
 =================
-* The latest release: https://github.com/wososa/PSI-Sigma/releases/tag/v1.9j
+* The latest release: https://github.com/wososa/PSI-Sigma/releases/tag/v1.9k
 * Try the "--help" function.
 * A new paper using PSI-Sigma in Nature: https://rdcu.be/bSL5W
 * Alignment file for nanopore long-read PCR-cDNA-seq of human U87 cells: https://dropfiles.cshl.edu/link/FGfn7mF2toGqglJUh9kNhE (expired)
@@ -122,6 +122,12 @@ EXAMPLE of INSTALLING Perl EXTENTIONS
 ```
 # 0. Set up working directory for Perl library (Using Perl version 5.18 as an example)
 export PERL5LIB=/usr/local/lib/perl/5.18
+
+# 0. To install as a local user, you can do like this (https://stackoverflow.com/questions/2980297/how-can-i-use-cpan-as-a-non-root-user)
+wget -O- http://cpanmin.us | perl - -l ~/perl5 App::cpanminus local::lib
+eval `perl -I ~/perl5/lib/perl5 -Mlocal::lib`
+echo 'eval `perl -I ~/perl5/lib/perl5 -Mlocal::lib`' >> ~/.bashrc
+echo 'export MANPATH=$HOME/perl5/man:$MANPATH' >> ~/.bashrc
 
 # 1. Install cpanm
 cpan App::cpanminus
