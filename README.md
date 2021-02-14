@@ -109,7 +109,7 @@ SOFTWARE REQUIREMENTS
 ==============================
  * Perl (https://www.perl.org/get.html)
  * Samtools (http://www.htslib.org)
- * R (https://www.r-project.org) (For version 1.9k when --adjp 2 is used)
+ * R (https://www.r-project.org) (For version 1.9k and when --adjp 2 is used)
 
 Perl EXTENTIONS
 ==============================
@@ -117,7 +117,7 @@ Perl EXTENTIONS
  * PDL::Stats
  * PDL::GSL::CDF
  * Statistics::Multtest
- * Statistics::R (For version 1.9k when --adjp 2 is used)
+ * Statistics::R (For version 1.9k and when --adjp 2 is used)
 
 EXAMPLE of INSTALLING Perl EXTENTIONS
 ============================== 
