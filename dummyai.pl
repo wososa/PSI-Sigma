@@ -30,12 +30,13 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		print "  --irmode [number]	0: only introns in the .gtf. (default)\n";
 		print "			1: aggressively search for all introns\n";
 		print "			2: Skip intron-retention events.\n";
-		print "  --adjp [number]	0: Skip p-value adjustment.\n";
-		print "			1: Benjamini-Hochberg (default)\n";
+		print "  --adjp [number]	0: Skip p-value adjustment. (default)\n";
+		print "			1: Benjamini-Hochberg (Statistics::Multtest Perl module)\n";
+		print "			2: Benjamini-Hochberg (qvalue or p.adjust() R package)\n";
 		print "  --denominator [number]	0: Don't report denominators. (default)\n";
 		print "			1: Report the table of denominators.\n";
-		print "  --irrange [number]	0: IR event is using reference points of the target exon region. (default)\n";
-		print "			n: Use +-n bases around target intron region and +-n bases around event region.\n";
+		print "  --irrange [number]	0: IR event is using reference points of the target exon region.\n";
+		print "			n: Use +-n bases around target intron region and +-n bases around event region. (default)\n";
 		print "\n";
 		exit;
 	}
@@ -43,8 +44,9 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 	my ($gtf,$name,$type,$supporting_read_criteria,$fmode,$skipratio,$irmode,$adjp,$denominator,$irrange) = split(/\t/,$status);
 	$fmode = 0 if($fmode ne "0" && $fmode ne "1" && $fmode ne "2" && $fmode ne "3");
 	$irmode = 0 if($irmode ne "0" && $irmode ne "1" && $irmode ne "2");
-	$irrange = 0 if(!$irrange || $irrange!~/\d/);
-	$adjp = 1 if($adjp ne "0" && $adjp ne "1");
+	$irrange = 5 if(!$irrange || $irrange!~/\d/);
+	$adjp = 0 if(!$adjp);
+	$adjp = 0 if($adjp ne "0" && $adjp ne "1" && $adjp ne "2");
 	$denominator = 0 if($denominator ne "0" && $denominator ne "1");
 	$skipratio = 0.05 if($skipratio eq "-" || $skipratio > 1 || $skipratio < 0);
 	
@@ -59,7 +61,10 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 	print "denominator = $denominator\n";
 	print "irrange = $irrange\n";
 	
-	
+	if($adjp == 2){
+		print "### NOTE: Staitistics::R and R are required.\n";
+		use Statistics::R;
+	}
 	#my ($gtf,$name,$longread,$supporting_read_criteria) = @ARGV;
 	
 	my $path = abs_path($0);
@@ -355,7 +360,9 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 	
 	print "Ready to do PSI analysis...\n";
 	$starttime = time;
-	my $commend = "perl " . $path . "/PSIsigma-PSI-v.1.1.pl " . $name . ".db " . $name . " " . $supporting_read_criteria . " " . $skipratio . " " . $intron_criteria . " " . $type . " " . $adjp . " " . $denominator . " " . $ircheck . " " . $irrange;
+	my $adjpdefault = 0;
+	$adjpdefault = 1 if($adjp == 1);
+	my $commend = "perl " . $path . "/PSIsigma-PSI-v.1.1.pl " . $name . ".db " . $name . " " . $supporting_read_criteria . " " . $skipratio . " " . $intron_criteria . " " . $type . " " . $adjpdefault . " " . $denominator . " " . $ircheck . " " . $irrange;
 	system($commend);
 	$stoptime = time;
 	$hours = sprintf("%.4f",(($stoptime-$starttime)/3600));
@@ -372,12 +379,34 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		print "Not enough samples for p-value calculation, so switch to fmode = 1.\n";
 		$fmode = 1;
 	}
+	if($adjp == 2 && $fmode != 3){
+		print "## Note: --fmode has been changed to 3 for p-value adjustment.\n";
+		$fmode = 3;
+	}
 	$commend = "perl " . $path . "/PSIsigma-filter-v.1.0.pl " . $name . ".db " . $gtf . ".mapping.txt " . $name . "_r" . $supporting_read_criteria . "_ir" . $intron_criteria . ".txt " . $fmode;
 	system($commend);
 	$stoptime = time;
 	$hours = sprintf("%.4f",(($stoptime-$starttime)/3600));
 	$totaltime += $hours;
 	print "===Filtering spent $hours hours.===\n";
+	
+	if(-e $name . "_r" . $supporting_read_criteria . "_ir" . $intron_criteria . ".txt"){
+    	print "Archiving... " . $name . "_r" . $supporting_read_criteria . "_ir" . $intron_criteria . ".txt \n";
+    	system("tar zcvf " . $name . "_r" . $supporting_read_criteria . "_ir" . $intron_criteria . ".txt.tar.gz " . $name . "_r" . $supporting_read_criteria . "_ir" . $intron_criteria . ".txt");
+		system("rm " . $name . "_r" . $supporting_read_criteria . "_ir" . $intron_criteria . ".txt");
+    }else{
+    }
+	
+	if($adjp == 2){
+		print "Adjusting p-value distribution...\n";
+		$commend = "perl " . $path . "/PSIsigma-FDR-v.1.0.pl " . $name . "_r" . $supporting_read_criteria . "_ir" . $intron_criteria . ".sorted.txt 2";
+		system($commend);
+		$stoptime = time;
+		$hours = sprintf("%.4f",(($stoptime-$starttime)/3600));
+		$totaltime += $hours;
+		print "===P-value adjustment spent $hours hours.===\n";
+	}
+
 	
 	print "\n***Total: $totaltime hours (or " . ($totaltime*60) . "mins).\n";
 	
