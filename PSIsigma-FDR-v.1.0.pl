@@ -54,8 +54,10 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		}
 		if($ncount > 1 || $tcount > 1){
 		}else{
-			push(@removedp,$pvalue);
-			next;
+			if($n > 2 && $t > 2){
+				push(@removedp,$pvalue);
+				next;
+			}
 		}
 		$p = $pvalue;
 		$q = $fdr;
