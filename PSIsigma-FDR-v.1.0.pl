@@ -37,27 +37,26 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		my $q = 1;
 		my $deltaPSI = 0;
 		my $symbol = "-";
-		my ($region,$gn,$exon,$event,$n,$t,$exontype,$ENST,$dPSI,$pvalue,$fdr,$nvalues,$tvalues,$dbid) = split(/\t/,$line);
+		my ($region,$gn,$exon,$event,$num_n,$num_t,$exontype,$ENST,$dPSI,$pvalue,$fdr,$nvalues,$tvalues,$dbid) = split(/\t/,$line);
 		push(@rawp,$p);
-		next if($n < $min || $t < $min);
+		next if($num_n < $min || $num_t < $min);
 		next if($pvalue eq "NaN");
-		my %nvalues = split(/\|/,$nvalues);
-		my %tvalues = split(/\|/,$tvalues);
+		my @nvalues = split(/\|/,$nvalues);
+		my @tvalues = split(/\|/,$tvalues);
 		my ($ncount,$tcount) = (0,0);
-		foreach my $n(keys %nvalues){
+		foreach my $n(@nvalues){
 			next if($n eq "na");
 			$ncount++ if($n > 0 && $n < 100);
 		}
-		foreach my $t(keys %tvalues){
+		foreach my $t(@tvalues){
 			next if($t eq "na");
 			$tcount++ if($t > 0 && $t < 100);
 		}
+
 		if($ncount > 1 || $tcount > 1){
 		}else{
-			if($n > 2 && $t > 2){
-				push(@removedp,$pvalue);
-				next;
-			}
+			push(@removedp,$pvalue);
+			next;
 		}
 		$p = $pvalue;
 		$q = $fdr;
