@@ -55,13 +55,15 @@ rm *.bed.tmp
 ```
 Generating IR.out.tab in parallel
 ============
-In the same `afolder`, run `PSIsigma-ir-v.1.2.pl` for each .bam file. The parameter for `PSIsigma-ir-v.1.2.pl` is `--type`.
+After .db is generated, in the same `afolder`, run `PSIsigma-ir-v.1.2.pl` for each .bam file. The parameter for `PSIsigma-ir-v.1.2.pl` is `--type`.
 ```
 perl ~/tools/PSI-Sigma-1.9j/PSIsigma-ir-v.1.2.pl PSIsigma1d9j.db Sample1.Aligned.sortedByCoord.out.bam 1 &
 perl ~/tools/PSI-Sigma-1.9j/PSIsigma-ir-v.1.2.pl PSIsigma1d9j.db Sample2.Aligned.sortedByCoord.out.bam 1 &
 perl ~/tools/PSI-Sigma-1.9j/PSIsigma-ir-v.1.2.pl PSIsigma1d9j.db Sample3.Aligned.sortedByCoord.out.bam 1 &
-wait
-echo "All processes done!"
 ```
-
-
+Alternatively, if you are confident..
+```
+for fn in `ls *.Aligned.sortedByCoord.out.bam`; do
+	perl ~/tools/PSI-Sigma-1.9j/PSIsigma-ir-v.1.2.pl PSIsigma1d9j.db $bam 1 &
+done
+```
