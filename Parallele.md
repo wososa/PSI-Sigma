@@ -63,7 +63,7 @@ perl ~/tools/PSI-Sigma-1.9j/PSIsigma-ir-v.1.2.pl PSIsigma1d9j.db Sample3.Aligned
 ```
 Alternatively, if you are confident..
 ```
-for fn in `ls *.Aligned.sortedByCoord.out.bam`; do
+for bam in `ls *.Aligned.sortedByCoord.out.bam`; do
 	perl ~/tools/PSI-Sigma-1.9j/PSIsigma-ir-v.1.2.pl PSIsigma1d9j.db $bam 1 &
 done
 ```
