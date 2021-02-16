@@ -44,19 +44,27 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		my @nvalues = split(/\|/,$nvalues);
 		my @tvalues = split(/\|/,$tvalues);
 		my ($ncount,$tcount) = (0,0);
+		my ($nmax,$tmax) = (0,0);
 		foreach my $n(@nvalues){
 			next if($n eq "na");
 			$ncount++ if($n > 0 && $n < 100);
+			$nmax = $n if($n > $nmax);
 		}
 		foreach my $t(@tvalues){
 			next if($t eq "na");
 			$tcount++ if($t > 0 && $t < 100);
+			$tmax = $t if($t > $tmax);
 		}
 
 		if($ncount > 1 || $tcount > 1){
 		}else{
-			push(@removedp,$pvalue);
-			next;
+			my $pass = 0;
+			$pass = 1 if($nmax == 0 && $tmax == 100);
+			$pass = 1 if($nmax == 100 && $tmax == 0);
+			if($pass == 0){
+				push(@removedp,$pvalue);
+				next;
+			}
 		}
 		$p = $pvalue;
 		$q = $fdr;
