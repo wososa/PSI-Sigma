@@ -2,6 +2,8 @@ Generating .db and .IR.out.tab in parallel
 ============
 PSI-Sigma is currently a single-thread software. The majority of the computing time was for creating .db and IR.out.tab files.
 
+Generating .db in parallel
+============
 To generating a universe .db in parallel, you first link all the .SJ.out.tab and .bam files in the `afolder` and run the `PSIsigma-db-v.1.0.pl` script as below. The first parameter of `PSIsigma-db-v.1.0.pl` is the name of Chromosome. `5` is the minimum number of novel junctions to construct an event in .db. The third and fourth parameter of `PSIsigma-db-v.1.0.pl` are `--type` and `--irmode`, respectively.
 ```
 mkdir afolder
