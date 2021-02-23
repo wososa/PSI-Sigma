@@ -7,6 +7,7 @@ However, previous PSI-detection methods are limited to specific types of AS even
 
 Updates
 =================
+* Docker version: https://github.com/onuryukselen/PSI_Sigma_pipeline/tree/2.0
 * The latest release: https://github.com/wososa/PSI-Sigma/releases/tag/v1.9k
 * Try the "--help" function.
 * A new paper using PSI-Sigma in Nature: https://rdcu.be/bSL5W
