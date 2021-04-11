@@ -21,7 +21,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		print "  --name [text]		the prefix of PSI-Sigma database and output files.\n";
 		print "  --type [number]	1: short-read RNA-seq data\n";
 		print "			2: long-read RNA-seq data\n";
-		print "  --nread [number]	the minimal number of supporting reads for a splicing event.\n";
+		print "  --nread [number]	the minimum number of supporting reads for a splicing event.\n";
 		print "  --skipratio [number]	the ratio (0~1) of skipping reads in a exon-skipping event [default: 0.05]. A splicing event has to have at least one input sample passing this criteria to be included in the analysis. \n";
 		print "  --fmode [number]	0: delta-PSI > 10% and p-value < 0.01 (default/recommended)\n";
 		print "			1: delta-PSI > 10%\n";
@@ -33,6 +33,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		print "  --adjp [number]	0: Skip p-value adjustment. (default)\n";
 		print "			1: Benjamini-Hochberg (Statistics::Multtest Perl module)\n";
 		print "			2: Benjamini-Hochberg (qvalue or p.adjust() R package)\n";
+		print "  --trimp [number]	Set FDR to 'na' for events whose maximum PSI values are below [number]% or whose minimum PSI values are above [100-number]% in all groupa.txt and groupb.txt during p-value adjustment. [default:5]\n";
 		print "  --denominator [number]	0: Don't report denominators. (default)\n";
 		print "			1: Report the table of denominators.\n";
 		print "  --irrange [number]	0: IR event is using reference points of the target exon region.\n";
@@ -41,14 +42,15 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		exit;
 	}
 	
-	my ($gtf,$name,$type,$supporting_read_criteria,$fmode,$skipratio,$irmode,$adjp,$denominator,$irrange) = split(/\t/,$status);
+	my ($gtf,$name,$type,$supporting_read_criteria,$fmode,$skipratio,$irmode,$adjp,$trimp,$qcutoff,$denominator,$irrange) = split(/\t/,$status);
 	$fmode = 0 if($fmode ne "0" && $fmode ne "1" && $fmode ne "2" && $fmode ne "3");
 	$irmode = 0 if($irmode ne "0" && $irmode ne "1" && $irmode ne "2");
-	$irrange = 5 if(!$irrange || $irrange!~/\d/);
+	$irrange = 5 if(!$irrange || $irrange!~/\d/ || $irrange eq "-");
 	$adjp = 0 if(!$adjp);
 	$adjp = 0 if($adjp ne "0" && $adjp ne "1" && $adjp ne "2");
 	$denominator = 0 if($denominator ne "0" && $denominator ne "1");
 	$skipratio = 0.05 if($skipratio eq "-" || $skipratio > 1 || $skipratio < 0);
+	$trimp = 5 if($trimp eq "-");
 	
 	print "gtf = $gtf\n";
 	print "name = $name\n";
@@ -58,6 +60,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 	print "fmode = $fmode\n";
 	print "irmode = $irmode\n";
 	print "adjp = $adjp\n";
+	print "trimp = $trimp\n";
 	print "denominator = $denominator\n";
 	print "irrange = $irrange\n";
 	
@@ -399,7 +402,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 	
 	if($adjp == 2){
 		print "Adjusting p-value distribution...\n";
-		$commend = "perl " . $path . "/PSIsigma-FDR-v.1.0.pl " . $name . "_r" . $supporting_read_criteria . "_ir" . $intron_criteria . ".sorted.txt 2";
+		$commend = "perl " . $path . "/PSIsigma-FDR-v.1.0.pl " . $name . "_r" . $supporting_read_criteria . "_ir" . $intron_criteria . ".sorted.txt 2 $trimp";
 		system($commend);
 		$stoptime = time;
 		$hours = sprintf("%.4f",(($stoptime-$starttime)/3600));
@@ -453,6 +456,7 @@ sub param{
 	$parameters{"adjp"} = "-";
 	$parameters{"denominator"} = "-";
 	$parameters{"irrange"} = "-";
+	$parameters{"trimp"} = "-";
 	
 	my $oldformat = 1;
 	for(my $i = 0;$i < scalar @array;$i++){
@@ -479,7 +483,7 @@ sub param{
 		return $array[0] . "\t" . $array[1] . "\t" . $array[2] . "\t" . $array[3] . "\t" . "0";
 	}
 	foreach my $key(keys %parameters){
-		next if($key eq "fmode" || $key eq "skipratio" || $key eq "irmode" || $key eq "adjp" || $key eq "denominator" || $key eq "irrange");
+		next if($key eq "fmode" || $key eq "skipratio" || $key eq "irmode" || $key eq "adjp" || $key eq "denominator" || $key eq "irrange" || $key eq "trimp");
 		if($parameters{$key} eq "-"){
 			print "Parameter $key has no input value";
 			return "Parameter $key has no input value";
@@ -491,7 +495,7 @@ sub param{
 	if($parameters{"type"} != 1 && $parameters{"type"} != 2){
 		return "--type parameter didn't find a correct number (1 or 2)";
 	}
-	return $parameters{"gtf"} . "\t" . $parameters{"name"} . "\t" . $parameters{"type"} . "\t" . $parameters{"nread"} . "\t" . $parameters{"fmode"} . "\t" . $parameters{"skipratio"} . "\t" . $parameters{"irmode"} . "\t" . $parameters{"adjp"} . "\t" . $parameters{"denominator"} . "\t" . $parameters{"irrange"};
+	return $parameters{"gtf"} . "\t" . $parameters{"name"} . "\t" . $parameters{"type"} . "\t" . $parameters{"nread"} . "\t" . $parameters{"fmode"} . "\t" . $parameters{"skipratio"} . "\t" . $parameters{"irmode"} . "\t" . $parameters{"adjp"} . "\t" . $parameters{"trimp"} . "\t" . $parameters{"denominator"} . "\t" . $parameters{"irrange"};
 }
 
 sub generateSJ{
