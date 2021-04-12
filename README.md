@@ -9,7 +9,7 @@ Updates
 =================
 * Docker version:
 ```
-docker pull woodydon/psi_sigma_pipeline:3.0
+docker pull docker.io/woodydon/psi_sigma_pipeline:3.0
 ```
 * The latest release: https://github.com/wososa/PSI-Sigma/releases/tag/v1.9k
 * Try the "--help" function.
