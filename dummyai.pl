@@ -42,7 +42,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		exit;
 	}
 	
-	my ($gtf,$name,$type,$supporting_read_criteria,$fmode,$skipratio,$irmode,$adjp,$trimp,$qcutoff,$denominator,$irrange) = split(/\t/,$status);
+	my ($gtf,$name,$type,$supporting_read_criteria,$fmode,$skipratio,$irmode,$adjp,$trimp,$denominator,$irrange) = split(/\t/,$status);
 	$fmode = 0 if($fmode ne "0" && $fmode ne "1" && $fmode ne "2" && $fmode ne "3");
 	$irmode = 0 if($irmode ne "0" && $irmode ne "1" && $irmode ne "2");
 	$irrange = 5 if(!$irrange || $irrange!~/\d/ || $irrange eq "-");
