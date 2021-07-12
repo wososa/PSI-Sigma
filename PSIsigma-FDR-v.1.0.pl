@@ -64,7 +64,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 			next if($t eq "na");
 			$tcount++ if($t > 0 && $t < 100);
 			$tmax = $t if($t > $tmax);
-			$tmin = $n if($t < $tmin);
+			$tmin = $t if($t < $tmin);
 			$nZt++ if($t > $trimp);
 			$n100t++ if($t < (100-$trimp));
 		}
