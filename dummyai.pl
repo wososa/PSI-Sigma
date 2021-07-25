@@ -38,11 +38,13 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 		print "			1: Report the table of denominators.\n";
 		print "  --irrange [number]	0: IR event is using reference points of the target exon region.\n";
 		print "			n: Use +-n bases around target intron region and +-n bases around event region. (default)\n";
+		print "  --variance [number]	0: Assuming equal variance and use Student's t-test. (default)\n";
+		print "			1: Assuming unequal variance and use Welch's t-test. \n";
 		print "\n";
 		exit;
 	}
 	
-	my ($gtf,$name,$type,$supporting_read_criteria,$fmode,$skipratio,$irmode,$adjp,$trimp,$denominator,$irrange) = split(/\t/,$status);
+	my ($gtf,$name,$type,$supporting_read_criteria,$fmode,$skipratio,$irmode,$adjp,$trimp,$denominator,$irrange,$variance) = split(/\t/,$status);
 	$fmode = 0 if($fmode ne "0" && $fmode ne "1" && $fmode ne "2" && $fmode ne "3");
 	$irmode = 0 if($irmode ne "0" && $irmode ne "1" && $irmode ne "2");
 	$irrange = 5 if(!$irrange || $irrange!~/\d/ || $irrange eq "-");
@@ -51,6 +53,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 	$denominator = 0 if($denominator ne "0" && $denominator ne "1");
 	$skipratio = 0.05 if($skipratio eq "-" || $skipratio > 1 || $skipratio < 0);
 	$trimp = 5 if($trimp eq "-");
+	$variance = 0 if(!$variance);
 	
 	print "gtf = $gtf\n";
 	print "name = $name\n";
@@ -63,9 +66,15 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 	print "trimp = $trimp\n";
 	print "denominator = $denominator\n";
 	print "irrange = $irrange\n";
+	if($variance == 0){
+		print "variance assumption = equal (Student's t-test)\n";
+	}
+	if($variance == 1){
+		print "variance assumption = unequal (Welch's t-test)\n";
+	}
 	
 	if($adjp == 2){
-		print "### NOTE: Staitistics::R and R are required.\n";
+		print "### NOTE: Staitistics::R and R are required for p-value adjustment.\n";
 		use Statistics::R;
 	}
 	#my ($gtf,$name,$longread,$supporting_read_criteria) = @ARGV;
@@ -365,7 +374,7 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 	$starttime = time;
 	my $adjpdefault = 0;
 	$adjpdefault = 1 if($adjp == 1);
-	my $commend = "perl " . $path . "/PSIsigma-PSI-v.1.1.pl " . $name . ".db " . $name . " " . $supporting_read_criteria . " " . $skipratio . " " . $intron_criteria . " " . $type . " " . $adjpdefault . " " . $denominator . " " . $ircheck . " " . $irrange;
+	my $commend = "perl " . $path . "/PSIsigma-PSI-v.1.1.pl " . $name . ".db " . $name . " " . $supporting_read_criteria . " " . $skipratio . " " . $intron_criteria . " " . $type . " " . $adjpdefault . " " . $denominator . " " . $ircheck . " " . $irrange . " " . $variance;
 	system($commend);
 	$stoptime = time;
 	$hours = sprintf("%.4f",(($stoptime-$starttime)/3600));
@@ -457,6 +466,7 @@ sub param{
 	$parameters{"denominator"} = "-";
 	$parameters{"irrange"} = "-";
 	$parameters{"trimp"} = "-";
+	$parameters{"variance"} = "-";
 	
 	my $oldformat = 1;
 	for(my $i = 0;$i < scalar @array;$i++){
@@ -483,19 +493,19 @@ sub param{
 		return $array[0] . "\t" . $array[1] . "\t" . $array[2] . "\t" . $array[3] . "\t" . "0";
 	}
 	foreach my $key(keys %parameters){
-		next if($key eq "fmode" || $key eq "skipratio" || $key eq "irmode" || $key eq "adjp" || $key eq "denominator" || $key eq "irrange" || $key eq "trimp");
+		next if($key eq "fmode" || $key eq "skipratio" || $key eq "irmode" || $key eq "adjp" || $key eq "denominator" || $key eq "irrange" || $key eq "trimp" || $key eq "variance");
 		if($parameters{$key} eq "-"){
 			print "Parameter $key has no input value";
 			return "Parameter $key has no input value";
 		}
 	}
 	if($parameters{"gtf"}!~/\.gtf/){
-		return "--gtf parameter didn't find a files with .gtf extension";
+		return "--gtf parameter didn't find a files with .gtf extension.";
 	}
 	if($parameters{"type"} != 1 && $parameters{"type"} != 2){
-		return "--type parameter didn't find a correct number (1 or 2)";
+		return "--type parameter should use 1 for short-read or 2 for long-read.";
 	}
-	return $parameters{"gtf"} . "\t" . $parameters{"name"} . "\t" . $parameters{"type"} . "\t" . $parameters{"nread"} . "\t" . $parameters{"fmode"} . "\t" . $parameters{"skipratio"} . "\t" . $parameters{"irmode"} . "\t" . $parameters{"adjp"} . "\t" . $parameters{"trimp"} . "\t" . $parameters{"denominator"} . "\t" . $parameters{"irrange"};
+	return $parameters{"gtf"} . "\t" . $parameters{"name"} . "\t" . $parameters{"type"} . "\t" . $parameters{"nread"} . "\t" . $parameters{"fmode"} . "\t" . $parameters{"skipratio"} . "\t" . $parameters{"irmode"} . "\t" . $parameters{"adjp"} . "\t" . $parameters{"trimp"} . "\t" . $parameters{"denominator"} . "\t" . $parameters{"irrange"} . "\t" . $parameters{"variance"};
 }
 
 sub generateSJ{
