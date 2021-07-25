@@ -11,6 +11,9 @@ Updates
 ```
 docker pull docker.io/woodydon/psi_sigma_pipeline:3.4
 ```
+```
+singularity pull docker.io/woodydon/psi_sigma_pipeline:3.4
+```
 * The latest release: https://github.com/wososa/PSI-Sigma/releases/tag/v1.9p
 * Try the "--help" function.
 * A new paper using PSI-Sigma in Nature: https://rdcu.be/bSL5W
