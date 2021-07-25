@@ -7,7 +7,7 @@ However, previous PSI-detection methods are limited to specific types of AS even
 
 Updates
 =================
-* Docker version:
+* Docker/Singularity version:
 ```
 docker pull docker.io/woodydon/psi_sigma_pipeline:3.4
 ```
