@@ -1,7 +1,7 @@
 PSI-Sigma
 =================
 Percent Spliced-In (PSI) values are commonly used to report alternative pre-mRNA splicing (AS) changes.
-However, previous PSI-detection methods are limited to specific types of AS events. PSI-Sigma is using a new splicing index (PSI<sub>Σ</sub>) that is more flexible, can incoporate novel junctions, and can compute PSI values of individual exons in complex splicing events.
+However, previous PSI-detection methods are limited to specific types of AS events. PSI-Sigma is using a new splicing index (PSI<sub>Σ</sub>) that is more flexible, can incorporate novel junctions, and can compute PSI values of individual exons in complex splicing events.
 <br/>
  * PSI-Sigma is now published: https://www.ncbi.nlm.nih.gov/pubmed/31135034
 
@@ -118,7 +118,7 @@ SOFTWARE REQUIREMENTS
  * Samtools (http://www.htslib.org)
  * R (https://www.r-project.org) (For version 1.9k and when --adjp 2 is used)
 
-Perl EXTENTIONS
+Perl EXTENSIONS
 ==============================
  * PDL::LiteF
  * PDL::Stats
@@ -126,7 +126,7 @@ Perl EXTENTIONS
  * Statistics::Multtest
  * Statistics::R (For version 1.9k and when --adjp 2 is used)
 
-EXAMPLE of INSTALLING Perl EXTENTIONS
+EXAMPLE of INSTALLING Perl EXTENSIONS
 ============================== 
 ```
 # 1-a. If you are a sudo user. Set up working directory for Perl library (Using Perl version 5.18 as an example)
@@ -167,7 +167,7 @@ CITATION
 https://www.ncbi.nlm.nih.gov/pubmed/31135034
 * Lin, K. T. & Krainer, A. R. PSI-Sigma: a comprehensive splicing-detection method for short-read and long-read RNA-seq analysis. Bioinformatics, doi:10.1093/bioinformatics/btz438 (2019).
 
-PSI-Sigma PRESENTAION
+PSI-Sigma PRESENTATION
 ===========
 * Oxford Nanopore London Calling 2019:
 https://vimeo.com/339511487
