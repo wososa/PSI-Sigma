@@ -9,10 +9,10 @@ Updates
 =================
 * Docker/Singularity version:
 ```
-docker pull docker.io/woodydon/psi_sigma_pipeline:3.4
+docker pull docker.io/woodydon/psi_sigma_pipeline:3.5
 ```
 ```
-singularity pull docker.io/woodydon/psi_sigma_pipeline:3.4
+singularity pull docker.io/woodydon/psi_sigma_pipeline:3.5
 ```
 * The latest release: https://github.com/wososa/PSI-Sigma/releases/tag/v1.9q
 * Try the "--help" function.
