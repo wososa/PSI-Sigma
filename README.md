@@ -14,7 +14,7 @@ docker pull docker.io/woodydon/psi_sigma_pipeline:3.6
 ```
 singularity pull docker.io/woodydon/psi_sigma_pipeline:3.6
 ```
-* Run PSI-Sigma with docker:
+* Run PSI-Sigma with singularity:
 ```
 singularity exec psi_sigma_pipeline_3.6.sif perl /usr/local/bin/PSI-Sigma-1.9r/dummyai.pl 
 ```
