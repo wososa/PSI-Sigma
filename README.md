@@ -16,7 +16,7 @@ singularity pull docker.io/woodydon/psi_sigma_pipeline:3.6
 ```
 * Run PSI-Sigma with docker:
 ```
-singularity exec -B /home /home/share/app/psi_sigma_pipeline_3.6.sif perl /usr/local/bin/PSI-Sigma-1.9r/dummyai.pl 
+singularity exec psi_sigma_pipeline_3.6.sif perl /usr/local/bin/PSI-Sigma-1.9r/dummyai.pl 
 ```
 * The latest release: https://github.com/wososa/PSI-Sigma/releases/tag/v1.9r
 * Try the "--help" function.
