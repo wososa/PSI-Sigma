@@ -178,11 +178,18 @@ https://vimeo.com/339511487
 
 PUBLICATIONS USING PSI-Sigma
 ===========
-https://www.ncbi.nlm.nih.gov/pubmed/29449409
-* Lin, K. T., Ma, W. K., Scharner, J., Liu, Y. R. & Krainer, A. R. (2018) A human-specific switch of alternatively spliced AFMID isoforms contributes to TP53 mutations and tumor recurrence in hepatocellular carcinoma. Genome Res.
+https://pubmed.ncbi.nlm.nih.gov/29449409
+* K. T. Lin, W. K. Ma, J. Scharner et al., A human-specific switch of alternatively spliced AFMID isoforms contributes to TP53 mutations and tumor recurrence in hepatocellular carcinoma. Genome Res,  (2018).
 
-https://www.ncbi.nlm.nih.gov/pubmed/31578525
-* Yoshimi, A., Lin, K.T., Wiseman, D., et al. (2019). Coordinated Alterations in RNA Splicing and Epigenetic Regulation Drive Leukemogenesis. Nature. (*co-first author)
+https://pubmed.ncbi.nlm.nih.gov/31578525
+* A. Yoshimi, K. T. Lin, D. H. Wiseman et al., Coordinated alterations in RNA splicing and epigenetic regulation drive leukaemogenesis. Nature 574, 273-277 (2019).
+
+https://pubmed.ncbi.nlm.nih.gov/32001512/
+* M. A. Rahman, K. T. Lin, R. K. Bradley et al., Recurrent SRSF2 mutations in MDS affect both splicing and NMD. Genes Dev 34, 413-427 (2020).
+
+https://pubmed.ncbi.nlm.nih.gov/34921016/
+* W. K. Ma, D. M. Voss, J. Scharner et al., ASO-based PKM splice-switching therapy inhibits hepatocellular carcinoma growth. Cancer Res,  (2021).
+
 
 Commercial Use
 ===========
