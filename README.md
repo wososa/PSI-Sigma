@@ -62,7 +62,7 @@ cd afolder
 ln -s bamfolder/*.bam* .
 ln -s bamfolder/*.SJ.* .
 ```
-Download a .gtf file and sort the coordinates.
+Download a .gtf file and sort the coordinates. **(NOTE: sorting .gtf file is necessary!)**
 ```
 get ftp://ftp.ensembl.org/pub/release-87/gtf/homo_sapiens//Homo_sapiens.GRCh38.87.gtf.gz
 gzip -d Homo_sapiens.GRCh38.87.gtf.gz
