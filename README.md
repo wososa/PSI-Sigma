@@ -14,9 +14,9 @@ docker pull docker.io/woodydon/psi_sigma_pipeline:3.6
 ```
 singularity pull docker.io/woodydon/psi_sigma_pipeline:3.6
 ```
-* Run PSI-Sigma with singularity:
+* Run PSI-Sigma with singularity (example):
 ```
-singularity exec psi_sigma_pipeline_3.6.sif perl /usr/local/bin/PSI-Sigma-1.9r/dummyai.pl 
+singularity exec --bind /home:/home docker://woodydon/psi_sigma_pipeline:3.6 perl /usr/local/bin/PSI-Sigma-1.9r/dummyai.pl --gtf Homo_sapiens.GRCh38.100.sorted.gtf --nread 10 --name PSIsigma1d9r --type 1 --fmode 3
 ```
 * The latest release: https://github.com/wososa/PSI-Sigma/releases/tag/v1.9r
 * Try the "--help" function.
