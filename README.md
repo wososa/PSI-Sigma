@@ -130,7 +130,22 @@ Perl EXTENSIONS
  * Statistics::Multtest
  * Statistics::R (For version 1.9k and when --adjp 2 is used)
 
-EXAMPLE of INSTALLING Perl EXTENSIONS
+
+EXAMPLE of INSTALLING Perl EXTENSIONS (Anaconda)
+=================
+```
+conda create -n PSIsigma r-essentials r-base perl-app-cpanminus
+conda activate PSIsigma
+conda install python=3.9
+conda install -c conda-forge gcc gsl
+cpanm PDL::LiteF
+cpanm PDL::GSL::CDF
+cpanm PDL::Stats
+cpanm Statistics::Multtest
+cpanm Statistics::R
+```
+
+EXAMPLE of INSTALLING Perl EXTENSIONS (without Anaconda)
 ============================== 
 ```
 # 1-a. If you are a sudo user. Set up working directory for Perl library (Using Perl version 5.18 as an example)
