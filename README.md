@@ -116,6 +116,10 @@ OUTPUT
  * T Values: It shows all valid PSI values derived from the .SJ.out.tab files based on groupb.txt. (influenced by the number of supporting reads).
  * Database ID: It shows the accession number of the splicing event in the database of PSI-Sigma (e.g., PSIsigma.db).
 
+DATABASE CREATION (for advanced users)
+==============================
+* Wikipage: https://github.com/wososa/PSI-Sigma/wiki/Database-creation-manual
+
 SOFTWARE REQUIREMENTS
 ==============================
  * Perl (https://www.perl.org/get.html)
