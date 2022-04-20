@@ -9,14 +9,14 @@ Updates
 =================
 * Docker/Singularity version:
 ```
-docker pull docker.io/woodydon/psi_sigma_pipeline:3.6
+docker pull docker.io/woodydon/psi_sigma_pipeline:3.7
 ```
 ```
-singularity pull docker.io/woodydon/psi_sigma_pipeline:3.6
+singularity pull docker.io/woodydon/psi_sigma_pipeline:3.7
 ```
 * Run PSI-Sigma with singularity (example):
 ```
-singularity exec --bind /home:/home docker://woodydon/psi_sigma_pipeline:3.6 perl /usr/local/bin/PSI-Sigma-1.9r/dummyai.pl --gtf Homo_sapiens.GRCh38.100.sorted.gtf --nread 10 --name PSIsigma1d9r --type 1 --fmode 3
+singularity exec --bind /home:/home docker://woodydon/psi_sigma_pipeline:3.7 perl /usr/local/bin/PSI-Sigma-1.9r/dummyai.pl --gtf Homo_sapiens.GRCh38.100.sorted.gtf --nread 10 --name PSIsigma1d9r --type 1 --fmode 3
 ```
 * The latest release: https://github.com/wososa/PSI-Sigma/releases/tag/v1.9r
 * Try the "--help" function.
