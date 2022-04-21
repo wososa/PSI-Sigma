@@ -12,6 +12,9 @@ Updates
 docker pull docker.io/woodydon/psi_sigma_pipeline:3.7
 ```
 ```
+singularity pull docker://woodydon/psi_sigma_pipeline:3.7
+```
+```
 singularity pull docker.io/woodydon/psi_sigma_pipeline:3.7
 ```
 * Run PSI-Sigma with singularity (example):
