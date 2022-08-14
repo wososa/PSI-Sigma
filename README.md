@@ -9,20 +9,20 @@ Updates
 =================
 * Docker/Singularity version:
 ```
-docker pull docker.io/woodydon/psi_sigma_pipeline:3.7
+docker pull docker.io/woodydon/psi_sigma_pipeline:3.8
 ```
 ```
-singularity pull docker://woodydon/psi_sigma_pipeline:3.7
+singularity pull docker://woodydon/psi_sigma_pipeline:3.8
 ```
 ```
-singularity pull docker.io/woodydon/psi_sigma_pipeline:3.7
+singularity pull docker.io/woodydon/psi_sigma_pipeline:3.8
 ```
 * Run PSI-Sigma with singularity (example):
 ```
-singularity exec --bind /home:/home docker://woodydon/psi_sigma_pipeline:3.7 perl /usr/local/bin/PSI-Sigma-1.9r/dummyai.pl --gtf Homo_sapiens.GRCh38.100.sorted.gtf --nread 10 --name PSIsigma1d9r --type 1 --fmode 3
+singularity exec --bind /home:/home docker://woodydon/psi_sigma_pipeline:3.8 perl /usr/local/bin/PSI-Sigma-1.9r/dummyai.pl --gtf Homo_sapiens.GRCh38.100.sorted.gtf --nread 10 --name PSIsigma1d9r --type 1 --fmode 3 --threads 6
 ```
-* The latest release: https://github.com/wososa/PSI-Sigma/releases/tag/v1.9r
-* Try the "--help" function.
+* The latest release: https://github.com/wososa/PSI-Sigma/releases/tag/v2.0
+* Try the "--help" and "--threads" function.
 * A new paper using PSI-Sigma in Nature: https://rdcu.be/bSL5W
 * Alignment file for nanopore long-read PCR-cDNA-seq of human U87 cells: https://dropfiles.cshl.edu/link/mpkT92runIvNJ3QeBvZPzC
 
