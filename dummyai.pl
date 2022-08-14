@@ -562,10 +562,10 @@ sub rundb{
 	$commend .= "wait\n";
 	system($commend);
 	
-	system("cat *.db.tmp > $dbname");
-	system("cat *.bed.tmp > $bedname");
-	system("rm *.db.tmp");
-	system("rm *.bed.tmp");
+	system("cat $name.*.db.tmp > $dbname");
+	system("cat $name.*.bed.tmp > $bedname");
+	system("rm $name.*.db.tmp");
+	system("rm $name.*.bed.tmp");
 }
 
 sub param{
