@@ -65,12 +65,12 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 	$denominator = 0 if($denominator ne "0" && $denominator ne "1");
 	$skipratio = 0.05 if($skipratio eq "-" || $skipratio > 1 || $skipratio < 0);
 	$trimp = 5 if($trimp eq "-");
-	$variance = 0 if(!$variance);
-	$threads = 1 if(!$threads);
-	$groupa = "groupa.txt" if(!$groupa);
-	$groupb = "groupb.txt" if(!$groupb);
-	$output = "." if(!$output);
-	$irclean = 0 if(!$irclean);
+	$variance = 0 if(!$variance || $variance eq "-");
+	$threads = 1 if(!$threads || $threads eq "-");
+	$groupa = "groupa.txt" if(!$groupa || $groupa eq "-");
+	$groupb = "groupb.txt" if(!$groupb || $groupb eq "-");
+	$output = "." if(!$output || $output eq "-");
+	$irclean = 0 if(!$irclean || $irclean eq "-");
 	
 	if(!-e $groupa){
 		print "$groupa is not found. exit.\n";
@@ -122,6 +122,8 @@ For commercial purposes, please contact tech transfer office of CSHL via narayan
 	print "irrange = $irrange\n";
 	print "groupa = $groupa\n";
 	print "groupb = $groupb\n";
+	print "threads = $threads\n";
+	print "output = $output\n";
 	
 	if($variance == 0){
 		print "variance assumption = equal (Student's t-test)\n";
