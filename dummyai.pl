@@ -641,7 +641,7 @@ sub generateSJ{
 	my $accession = shift;
 	print "Generating .SJ.out.tab will need to re-sort $bam file by read names.\n";
 	print "It will consume a lot of time, do you want to proceed? (Y/N)";
-	#my $input = <STDIN>;
+	my $input = <STDIN>;
 	my $input = "Y";
 	chomp $input;
 	my $newbam = "$accession.SortedbyName.bam";
