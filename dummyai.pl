@@ -645,7 +645,7 @@ sub generateSJ{
 	my $input = "Y";
 	chomp $input;
 	my $newbam = "$accession.SortedbyName.bam";
-	if($input ne "Y" && $input ne "N"){
+	if($input eq "N" || $input ne "Y"){
 		print "Bye.\n";
 		exit;
 	}else{
