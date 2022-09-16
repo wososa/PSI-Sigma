@@ -67,7 +67,7 @@ ln -s bamfolder/*.SJ.* .
 ```
 Download a .gtf file and sort the coordinates. **(NOTE: sorting .gtf file is necessary!)**
 ```
-get ftp://ftp.ensembl.org/pub/release-87/gtf/homo_sapiens//Homo_sapiens.GRCh38.87.gtf.gz
+wget ftp://ftp.ensembl.org/pub/release-87/gtf/homo_sapiens//Homo_sapiens.GRCh38.87.gtf.gz
 gzip -d Homo_sapiens.GRCh38.87.gtf.gz
 (grep "^#" Homo_sapiens.GRCh38.87.gtf; grep -v "^#" Homo_sapiens.GRCh38.87.gtf | sort -k1,1 -k4,4n) > Homo_sapiens.GRCh38.87.sorted.gtf
 rm Homo_sapiens.GRCh38.87.gtf
