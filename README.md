@@ -7,6 +7,11 @@ However, previous PSI-detection methods are limited to specific types of AS even
 
 Updates
 =================
+* PSI-Sigma workshop:
+
+1. [Day 1 .ppt](https://drive.google.com/file/d/1l7ie9yND67Pa5N4R2Fy6X8efXDk8maR-/view?usp=share_link)
+2. [Day 2 .ppt](https://drive.google.com/file/d/1VvCcRb44gsLPzJwgjDYEYD5hbBrqSNe7/view?usp=share_link)
+
 * Docker/Singularity version:
 ```
 docker pull docker.io/woodydon/psi_sigma_pipeline:3.9
