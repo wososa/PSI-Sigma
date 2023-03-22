@@ -212,6 +212,9 @@ https://pubmed.ncbi.nlm.nih.gov/32001512/
 https://pubmed.ncbi.nlm.nih.gov/34921016/
 * W. K. Ma, D. M. Voss, J. Scharner et al., ASO-based PKM splice-switching therapy inhibits hepatocellular carcinoma growth. Cancer Res,  (2021).
 
+https://www.nature.com/articles/s41586-023-05820-3
+* A. Jbara, K. T. Lin, C. Stossel et al., RBFOX2 modulates a metastatic signature of alternative splicing in pancreatic cancer. Nature,  (2023).
+
 
 Commercial Use
 ===========
