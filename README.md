@@ -28,7 +28,7 @@ singularity exec --bind /mnt:/mnt docker://woodydon/psi_sigma_pipeline:3.9 perl 
 ```
 * The latest release: https://github.com/wososa/PSI-Sigma/releases/tag/v2.1
 * Try the "--help" and "--threads" function.
-* A new paper using PSI-Sigma in Nature: https://rdcu.be/bSL5W
+* Papers using PSI-Sigma published on Nature: [Nature 2019](https://rdcu.be/bSL5W) [Nature 2023](https://www.nature.com/articles/s41586-023-05820-3)
 * Alignment file for nanopore long-read PCR-cDNA-seq of human U87 cells: https://dropfiles.cshl.edu/link/mpkT92runIvNJ3QeBvZPzC
 
 AUTHOR/SUPPORT
