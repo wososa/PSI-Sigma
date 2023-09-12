@@ -14,19 +14,19 @@ Updates
 
 * Docker/Singularity version:
 ```
-docker pull docker.io/woodydon/psi_sigma_pipeline:3.9
+docker pull docker.io/woodydon/psi_sigma_pipeline:4.0
 ```
 ```
-singularity pull docker://woodydon/psi_sigma_pipeline:3.9
+singularity pull docker://woodydon/psi_sigma_pipeline:4.0
 ```
 ```
-singularity pull docker.io/woodydon/psi_sigma_pipeline:3.9
+singularity pull docker.io/woodydon/psi_sigma_pipeline:4.0
 ```
 * Run PSI-Sigma with singularity (example):
 ```
 singularity exec --bind /mnt:/mnt docker://woodydon/psi_sigma_pipeline:3.9 perl /usr/local/bin/PSI-Sigma-2.1/dummyai.pl --gtf Homo_sapiens.GRCh38.100.sorted.gtf --nread 10 --name PSIsigma2d1 --type 1 --fmode 3 --threads 6
 ```
-* The latest release: https://github.com/wososa/PSI-Sigma/releases/tag/v2.1
+* The latest release: https://github.com/wososa/PSI-Sigma/releases/tag/v2.3
 * Try the "--help" and "--threads" function.
 * Papers using PSI-Sigma: [Nature 2019](https://rdcu.be/bSL5W) [Nature 2023](https://www.nature.com/articles/s41586-023-05820-3)
 * Alignment file for nanopore long-read PCR-cDNA-seq of human U87 cells: https://dropfiles.cshl.edu/link/mpkT92runIvNJ3QeBvZPzC
