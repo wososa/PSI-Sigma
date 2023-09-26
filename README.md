@@ -24,7 +24,7 @@ singularity pull docker.io/woodydon/psi_sigma_pipeline:4.0
 ```
 * Run PSI-Sigma with singularity (example):
 ```
-singularity exec --bind /mnt:/mnt docker://woodydon/psi_sigma_pipeline:4.0 perl /usr/local/bin/PSI-Sigma-2.1/dummyai.pl --gtf Homo_sapiens.GRCh38.100.sorted.gtf --nread 10 --name PSIsigma2d1 --type 1 --fmode 3 --threads 6
+singularity exec --bind /mnt:/mnt docker://woodydon/psi_sigma_pipeline:4.0 perl /usr/local/bin/PSI-Sigma-2.3/dummyai.pl --gtf Homo_sapiens.GRCh38.100.sorted.gtf --nread 10 --name PSIsigma2d1 --type 1 --fmode 3 --threads 6
 ```
 * The latest release: https://github.com/wososa/PSI-Sigma/releases/tag/v2.3
 * Try the "--help" and "--threads" function.
